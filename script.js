@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
 
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -16,6 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+    });
+});
+
+  // In script.js
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const year = button.textContent;
+        document.querySelectorAll('.publication-item').forEach(item => {
+            const itemYear = item.querySelector('.pub-date').textContent;
+            item.style.display = (year === 'All' || itemYear === year) ? 'flex' : 'none';
         });
     });
 });
