@@ -31,3 +31,15 @@ document.querySelectorAll('.filter-btn').forEach(button => {
         });
     });
 });
+
+<script>
+function copyChicagoCitation(citation) {
+    navigator.clipboard.writeText(citation);
+    alert('Chicago citation copied to clipboard!');
+}
+
+function copyBibtex(bibtex) {
+    navigator.clipboard.writeText(bibtex);
+    alert('BibTeX entry copied to clipboard!');
+}
+</script>
