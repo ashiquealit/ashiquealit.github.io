@@ -1,73 +1,174 @@
-<section class="section" id="publications">
-    <div class="container">
-        <h2>Publications</h2>
-        <div class="publications-list">
-            <!-- Journal Papers -->
-            <div class="publication-category">
-                <h3>Journal Papers</h3>
-                
-                <!-- Publication 1 -->
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h4>Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms</h4>
-                        <p class="authors">Authors: Ashique Ali Thuppilikkat, Dipsita Dhar, Priyank Chandra</p>
-                        <p class="journal">Journal: Proceedings of the ACM on Human-Computer Interaction</p>
-                        <p class="year">Year: 2024 | Volume: 8, CSCW2 | Pages: 1-36</p>
-                        <div class="publication-links">
-                            <a href="assets/publications/Union Makes Us Strong.pdf" class="link" target="_blank">PDF</a>
-                            <a href="https://doi.org/10.1145/3687002" class="link" target="_blank">DOI</a>
-                            <button class="link bib-btn" onclick="copyBibtex(`@article{thuppilikkat2024union,...`)">BibTeX</button>
-                            <button class="link citation-btn" onclick="copyChicagoCitation(`Thuppilikkat, Ashique Ali,...`)">Chicago</button>
-                        </div>
-                    </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications of Ashique Ali - University of Toronto Researcher">
+    <meta name="theme-color" content="#ffffff">
+    <title>Ashique Ali - Publications</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', system-ui, sans-serif;
+        }
+        body {
+            font-family: 'Source Code Pro', system-ui, sans-serif;
+        }
+        .publication-section {
+            margin-top: 4rem;
+        }
+        .publication-item {
+            margin-bottom: 2rem;
+        }
+        .publication-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .publication-item p {
+            margin-bottom: 0.5rem;
+        }
+        .publication-item .links {
+            margin-top: 1rem;
+        }
+        .publication-item .links a {
+            margin-right: 1rem;
+            text-decoration: none;
+            color: #1a73e8;
+        }
+        .publication-item .links a:hover {
+            text-decoration: underline;
+        }
+        .google-scholar-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+        .google-scholar-link:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+    <!-- Header -->
+    <nav class="fixed w-full z-50 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 bg-olive-600">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-white">Ashique Ali</span>
                 </div>
-
-                <!-- Publication 2 -->
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h4>A Short History of the Cooperative Movement in Northern Malabar, Kerala</h4>
-                        <p class="authors">Authors: Ashique Ali Thuppilikkat</p>
-                        <p class="journal">Journal: Economic and Political Weekly</p>
-                        <p class="year">Year: 2024 | Volume: 59, Number 31 | Pages: 47-52</p>
-                        <div class="publication-links">
-                            <button class="link bib-btn" onclick="copyBibtex(`@article{thuppilikkat2024short,...`)">BibTeX</button>
-                            <button class="link citation-btn" onclick="copyChicagoCitation(`Thuppilikkat, Ashique Ali,...`)">Chicago</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publication 3 -->
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h4>Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms...</h4>
-                        <p class="authors">Authors: Dipsita Dhar, Ashique Ali Thuppilikkat</p>
-                        <p class="journal">Journal: Gender & Development</p>
-                        <p class="year">Year: 2022 | Volume: 30, Number 3 | Pages: 667-686</p>
-                        <div class="publication-links">
-                            <a href="assets/publications/Gendered labour s positions..." class="link" target="_blank">PDF</a>
-                            <a href="https://doi.org/10.1080/13552074.2022.2127574" class="link" target="_blank">DOI</a>
-                            <button class="link bib-btn" onclick="copyBibtex(`@article{dhar2022gendered,...`)">BibTeX</button>
-                            <button class="link citation-btn" onclick="copyChicagoCitation(`Dhar, Dipsita,...`)">Chicago</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Workshop Papers -->
-            <div class="publication-category">
-                <h3>Workshop Papers</h3>
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h4>[Add Title Here]</h4>
-                        <p class="authors">Authors: Ashique Ali Thuppilikkat</p>
-                        <p class="workshop">Workshop: [Workshop Name]</p>
-                        <p class="year">Year: 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="link" target="_blank">PDF</a>
-                        </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="publications.html" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-700">Publications</a>
+                        <a href="index.html#projects" class="px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                        <a href="index.html#contact" class="px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="mt-20 container mx-auto px-4">
+        <!-- Google Scholar Link -->
+        <div class="text-center">
+            <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en&oi=ao" target="_blank" class="google-scholar-link">
+                <i class="fab fa-google"></i> View Full Profile on Google Scholar
+            </a>
+        </div>
+
+        <!-- Peer-Reviewed Articles Section -->
+        <section class="publication-section">
+            <h2 class="text-2xl font-bold mb-4">Peer-Reviewed Articles</h2>
+            
+            <!-- Article 1 -->
+            <div class="publication-item">
+                <h3>Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi</h3>
+                <p><strong>Authors:</strong> Dipsita Dhar, Ashique Ali Thuppilikkat</p>
+                <p><strong>Journal:</strong> Gender & Development</p>
+                <p><strong>Volume:</strong> 30, <strong>Issue:</strong> 3, <strong>Pages:</strong> 667–686</p>
+                <p><strong>Year:</strong> 2022</p>
+                <p><strong>Publisher:</strong> Taylor & Francis</p>
+                <div class="links">
+                    <a href="https://doi.org/example" target="_blank"><i class="fas fa-link"></i> DOI</a>
+                    <a href="path/to/bibtex.bib" target="_blank"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="publication-item">
+                <h3>Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms</h3>
+                <p><strong>Authors:</strong> Ashique Ali Thuppilikkat, Dipsita Dhar, Priyank Chandra</p>
+                <p><strong>Journal:</strong> Proceedings of the ACM on Human-Computer Interaction</p>
+                <p><strong>Volume:</strong> 8, <strong>Issue:</strong> CSCW2, <strong>Pages:</strong> 1–36</p>
+                <p><strong>Year:</strong> 2024</p>
+                <p><strong>Publisher:</strong> ACM New York, NY, USA</p>
+                <div class="links">
+                    <a href="https://doi.org/example" target="_blank"><i class="fas fa-link"></i> DOI</a>
+                    <a href="path/to/bibtex.bib" target="_blank"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="publication-item">
+                <h3>A Short History of the Cooperative Movement in Northern Malabar, Kerala</h3>
+                <p><strong>Authors:</strong> Ashique Ali Thuppilikkat</p>
+                <p><strong>Journal:</strong> Economic and Political Weekly</p>
+                <p><strong>Volume:</strong> 59, <strong>Issue:</strong> 31, <strong>Pages:</strong> 47–52</p>
+                <p><strong>Year:</strong> 2024</p>
+                <div class="links">
+                    <a href="https://doi.org/example" target="_blank"><i class="fas fa-link"></i> DOI</a>
+                    <a href="path/to/bibtex.bib" target="_blank"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshops Organized Section -->
+        <section class="publication-section">
+            <h2 class="text-2xl font-bold mb-4">Workshops Organized</h2>
+            
+            <!-- Workshop 1 -->
+            <div class="publication-item">
+                <h3>Workshop Title 1</h3>
+                <p><strong>Organizers:</strong> Ashique Ali Thuppilikkat, Co-Organizer Name</p>
+                <p><strong>Event:</strong> Conference or Event Name</p>
+                <p><strong>Location:</strong> City, Country</p>
+                <p><strong>Date:</strong> Month Year</p>
+                <p><strong>Description:</strong> Brief description of the workshop...</p>
+                <div class="links">
+                    <a href="https://example.com/workshop" target="_blank"><i class="fas fa-link"></i> Link</a>
+                </div>
+            </div>
+
+            <!-- Workshop 2 -->
+            <div class="publication-item">
+                <h3>Workshop Title 2</h3>
+                <p><strong>Organizers:</strong> Ashique Ali Thuppilikkat, Co-Organizer Name</p>
+                <p><strong>Event:</strong> Conference or Event Name</p>
+                <p><strong>Location:</strong> City, Country</p>
+                <p><strong>Date:</strong> Month Year</p>
+                <p><strong>Description:</strong> Brief description of the workshop...</p>
+                <div class="links">
+                    <a href="https://example.com/workshop" target="_blank"><i class="fas fa-link"></i> Link</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
