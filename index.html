@@ -1,19 +1,79 @@
-<header class="header">
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">Ashique</a>
-        </div>
-        <ul class="nav-menu" id="navMenu">
-            <li class="nav-item"><a href="#about">About</a></li>
-            <li class="nav-item"><a href="research.html">Research</a></li>
-            <li class="nav-item"><a href="talks.html">Talks</a></li>
-            <li class="nav-item"><a href="publications.html">Publications</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ph.D. student at University of Toronto studying technology's role in worker resistance and unionization">
+    <meta name="theme-color" content="#ffffff">
+    <title>Ashique Ali - University of Toronto Researcher</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', system-ui, sans-serif;
+        }
+        body {
+            font-family: 'Source Code Pro', system-ui, sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+    <!-- Header -->
+    <nav class="fixed w-full z-50 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 bg-olive-600">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-white">Ashique Ali</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#publications" class="px-3 py-2 rounded-md text-sm font-medium">Publications</a>
+                        <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
-</header>
+
+    <!-- Keep all your existing sections as-is but: -->
+    <!-- 1. Replace {{...}} variables with actual content -->
+    <!-- 2. Update image src to "images/profile.jpg" -->
+    <!-- 3. Remove all Handlebars template code -->
+    
+    <!-- Add before closing body tag -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+            autoplay: { delay: 5000 },
+        });
+    </script>
+</body>
+</html>
