@@ -179,10 +179,11 @@ button:hover { background-color: #B2503E; }
 div[id^="citation-"] { margin-top: 15px; font-size: 0.9em; color: #333333; }
 .collapsible ol { display: block; }
 
-/* Contact Form */
-form { margin-top: 20px; }
-form input, form textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #D97A57; border-radius: 5px; background: #FFFFFF; color: #333333; }
-form button { background-color: #D97A57; padding: 10px 20px; }
+/* Contact Section */
+.social-links { display: flex; gap: 15px; margin-top: 10px; }
+.social-links a { display: flex; align-items: center; gap: 5px; font-size: 1.1em; }
+.social-links i { font-size: 1.2em; color: #D97A57; transition: color 0.3s ease; }
+.social-links a:hover i { color: #B2503E; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -192,6 +193,7 @@ form button { background-color: #D97A57; padding: 10px 20px; }
   h2 { font-size: 1.7em; }
   nav .container { padding: 0 10px; }
   .buttons { flex-direction: column; gap: 10px; }
+  .social-links { flex-direction: column; gap: 10px; }
 }
 
 /* Scroll Animation for Nav */
