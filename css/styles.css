@@ -8,6 +8,10 @@
   --background-section: #F2F2F0; /* Cool Gray */
 }
 
+<link rel="stylesheet" href="/styles.css">
+<script src="/main.js"></script>
+<script src="/citations.js"></script> <!-- Only for publications.html -->
+
 * {
   margin: 0;
   padding: 0;
