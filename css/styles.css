@@ -1,16 +1,21 @@
 :root {
-  --primary-accent: #556B2F;     /* Dark Olive Green */
-  --secondary-accent: #9CAF88;   /* Sage Green */
-  --hover-color: #7C4F2A;        /* Deep Bronze */
-  --background-body: #FAF9F7;    /* Warm Stone */
-  --background-card: #FFFFFF;    /* Pure White */
-  --text-primary: #1F1F1F;       /* Charcoal */
+  --primary-accent: #6B8E23; /* Olive Green, slightly brighter */
+  --secondary-accent: #A8BCA1; /* Lighter Sage Green */
+  --hover-color: #8B5A2B; /* Warm Bronze */
+  --background-body: #FAF9F7; /* Warm Stone */
+  --background-card: #FFFFFF; /* Pure White */
+  --text-primary: #1F1F1F; /* Charcoal */
   --background-section: #F2F2F0; /* Cool Gray */
+  --background-dark: #2D2D2D; /* Dark mode background */
+  --text-dark: #E0E0E0; /* Dark mode text */
 }
 
-<link rel="stylesheet" href="/styles.css">
-<script src="/main.js"></script>
-<script src="/citations.js"></script> <!-- Only for publications.html -->
+[data-theme="dark"] {
+  --background-body: var(--background-dark);
+  --text-primary: var(--text-dark);
+  --background-section: #3C3C3C;
+  --background-card: #4A4A4A;
+}
 
 * {
   margin: 0;
@@ -23,7 +28,8 @@ body {
   background-color: var(--background-body);
   color: var(--text-primary);
   line-height: 1.6;
-  margin-top: 80px; /* Account for fixed nav on all pages */
+  margin-top: 80px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -32,27 +38,44 @@ body {
   padding: 0 20px;
 }
 
+.hero {
+  background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+  color: var(--background-card);
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 .main-content {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .sidebar {
   width: 250px;
   background: var(--background-section);
   padding: 1.5rem;
-  margin-right: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+  transition: transform 0.3s ease;
 }
 
 .sidebar h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-}
-
-.filter-section {
-  margin-bottom: 1.5rem;
 }
 
 .filter-section label {
@@ -61,26 +84,7 @@ body {
   font-size: 0.9rem;
 }
 
-.filter-section select,
 .filter-section input[type="checkbox"] {
-  margin-right: 0.5rem;
-}
-
-.filter-section select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--text-primary);
-  border-radius: 5px;
-  background: var(--background-card);
-  color: var(--text-primary);
-}
-
-.publications {
-  flex: 1;
-  min-width: 0; /* Prevent overflow in flex container */
-}
-
-.social-links a i {
   margin-right: 0.5rem;
 }
 
@@ -91,8 +95,8 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  transition: background-color 0.3s ease;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 nav.scrolled {
@@ -123,9 +127,10 @@ nav ul li a {
   color: var(--background-card);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a:focus {
   color: var(--secondary-accent);
 }
 
@@ -139,7 +144,8 @@ nav ul li a:hover {
   background: var(--background-section);
   padding: 2rem;
   margin: 1rem 0;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 h1, h2, h3 {
@@ -147,7 +153,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--primary-accent);
   padding-bottom: 0.5rem;
@@ -170,9 +176,10 @@ p {
 a {
   color: var(--primary-accent);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-a:hover {
+a:hover, a:focus {
   color: var(--hover-color);
 }
 
@@ -180,8 +187,14 @@ a:hover {
   background: var(--background-card);
   padding: 1.5rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-item:hover, .publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .news-date, .pub-date {
@@ -196,7 +209,7 @@ a:hover {
 }
 
 .profile-img {
-  width: 150px; /* Reduced size for better proportion */
+  width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
@@ -204,7 +217,7 @@ a:hover {
 }
 
 .logo-img {
-  width: 100px; /* Smaller size for logos */
+  width: 100px;
   height: auto;
   margin: 0.5rem;
   object-fit: contain;
@@ -219,10 +232,17 @@ button, .toggle-citation, .download-btn, .bibtex-btn {
   cursor: pointer;
   border-radius: 5px;
   font-size: 0.9rem;
+  transition: background-color 0.2s;
 }
 
-button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
+button:hover, button:focus, .toggle-citation:hover, .toggle-citation:focus, 
+.download-btn:hover, .download-btn:focus, .bibtex-btn:hover, .bibtex-btn:focus {
   background-color: var(--hover-color);
+}
+
+button:focus, a:focus {
+  outline: 2px solid var(--secondary-accent);
+  outline-offset: 2px;
 }
 
 .subcategory {
@@ -241,12 +261,13 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
 .social-links a {
   color: var(--primary-accent);
   margin-right: 1rem;
-  font-size: 1.2rem; /* Smaller for better proportion */
+  font-size: 1.2rem;
 }
 
-.social-links a:hover {
+.social-links a:hover, .social-links a:focus {
   color: var(--hover-color);
 }
+
 .category-buttons {
   display: flex;
   gap: 1rem;
@@ -262,15 +283,28 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+  transition: background-color 0.2s;
 }
 
-.button:hover {
+.button:hover, .button:focus {
   background-color: var(--hover-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary-accent);
+  color: var(--background-card);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   body {
-    margin-top: 60px; /* Adjust for smaller nav on mobile */
+    margin-top: 60px;
   }
   .main-content {
     flex-direction: column;
@@ -280,9 +314,11 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
     margin-right: 0;
     margin-bottom: 1rem;
     display: none;
+    transform: translateX(-100%);
   }
   .sidebar.active {
     display: block;
+    transform: translateX(0);
   }
   #hamburger {
     display: block;
@@ -306,10 +342,10 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
     margin: 0.5rem 0;
   }
   .profile-img {
-    width: 120px; /* Smaller on mobile */
+    width: 120px;
     height: 120px;
   }
   .logo-img {
-    width: 80px; /* Smaller on mobile */
+    width: 80px;
   }
 }
