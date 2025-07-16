@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile Menu Toggle
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
-  if (hamburger && navMenu) {
+  const sidebar = document.querySelector('.sidebar');
+  if (hamburger && navMenu && sidebar) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
+      sidebar.classList.toggle('active');
     });
   }
 
@@ -23,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Navigation Scroll Effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+});
+
 
   // Publication Filter
   document.querySelectorAll('.filter-btn').forEach(button => {
