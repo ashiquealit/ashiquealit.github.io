@@ -19,6 +19,7 @@ body {
   background-color: var(--background-body);
   color: var(--text-primary);
   line-height: 1.6;
+  margin-top: 80px; /* Account for fixed nav on all pages */
 }
 
 .container {
@@ -29,7 +30,7 @@ body {
 
 .main-content {
   display: flex;
-  margin-top: 80px; /* Account for fixed nav */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
 
 .sidebar {
@@ -72,6 +73,7 @@ body {
 
 .publications {
   flex: 1;
+  min-width: 0; /* Prevent overflow in flex container */
 }
 
 nav {
@@ -127,8 +129,9 @@ nav ul li a:hover {
 
 .intro, .category, .news, .contact {
   background: var(--background-section);
-  padding: 3rem 0;
-  margin: 2rem 0;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 5px;
 }
 
 h1, h2, h3 {
@@ -136,20 +139,20 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--primary-accent);
   padding-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 p {
@@ -185,11 +188,18 @@ a:hover {
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 150px; /* Reduced size for better proportion */
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+.logo-img {
+  width: 100px; /* Smaller size for logos */
+  height: auto;
+  margin: 0.5rem;
+  object-fit: contain;
 }
 
 button, .toggle-citation, .download-btn, .bibtex-btn {
@@ -223,7 +233,7 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
 .social-links a {
   color: var(--primary-accent);
   margin-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Smaller for better proportion */
 }
 
 .social-links a:hover {
@@ -231,6 +241,9 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    margin-top: 60px; /* Adjust for smaller nav on mobile */
+  }
   .main-content {
     flex-direction: column;
   }
@@ -263,5 +276,12 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
   }
   nav ul li {
     margin: 0.5rem 0;
+  }
+  .profile-img {
+    width: 120px; /* Smaller on mobile */
+    height: 120px;
+  }
+  .logo-img {
+    width: 80px; /* Smaller on mobile */
   }
 }
