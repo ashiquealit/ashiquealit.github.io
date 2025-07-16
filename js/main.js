@@ -24,19 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Navigation Scroll Effect
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-});
-
-
+  
   // Publication Filter
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
