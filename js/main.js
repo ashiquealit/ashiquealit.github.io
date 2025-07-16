@@ -1,7 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   const sidebar = document.querySelector('.sidebar');
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'theme-toggle';
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  document.body.appendChild(themeToggle);
+
+  // Hamburger menu toggle
   if (hamburger && navMenu && sidebar) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -10,11 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Smooth Scroll
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
+      const targetId = anchor.getAttribute('href');
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({
@@ -24,28 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
-  // Publication Filter
-  document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const year = button.textContent.trim();
-      document.querySelectorAll('.publication-item').forEach(item => {
-        const itemYear = item.getAttribute('data-year');
-        item.style.display = (year === 'All' || itemYear === year) ? '' : 'none';
-      });
-    });
-  });
 
-  // Collapsible Sections
-  document.querySelectorAll('.collapsible h2').forEach(header => {
-    header.style.cursor = 'pointer';
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
-    });
-  });
-
-  // Navigation Scroll Effect
+  // Navigation scroll effect
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
@@ -53,5 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       nav.classList.remove('scrolled');
     }
+  });
+
+  // Dark mode toggle
+  themeToggle.addEventListener('click', () => {
+    document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
   });
 });
