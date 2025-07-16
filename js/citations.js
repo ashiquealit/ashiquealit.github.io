@@ -1,64 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Citation toggle functionality
-  const toggleButtons = document.querySelectorAll('.toggle-citation');
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
-      const citation = document.getElementById(targetId);
-      citation.style.display = citation.style.display === 'none' ? 'block' : 'none';
-      button.textContent = citation.style.display === 'none' ? 'Show Citation' : 'Hide Citation';
-    });
-  });
-
-  // Sorting and filtering
-  const publications = document.querySelectorAll('.publication-item');
-  const sortYear = document.getElementById('sort-year');
-  const filterCategories = document.querySelectorAll('.filter-category');
-  const subcategories = document.querySelectorAll('.subcategory');
-
-  // Store original publication order for reference
-  const publicationArray = Array.from(publications);
-  const categoryGroups = {
-    'peer-reviewed': document.querySelector('.subcategory:nth-child(1)'),
-    'extended-abstracts': document.querySelector('.subcategory:nth-child(2)'),
-    'book-chapters': document.querySelector('.subcategory:nth-child(3)'),
-    'public-facing': document.querySelector('.subcategory:nth-child(4)')
-  };
+  const container = document.getElementById('publications-container');
+  const checkboxes = document.querySelectorAll('.filter-category');
+  const sortYear = document.createElement('select');
+  sortYear.id = 'sort-year';
+  sortYear.innerHTML = `
+    <option value="desc">Sort by Year (Newest First)</option>
+    <option value="asc">Sort by Year (Oldest First)</option>
+  `;
+  document.querySelector('.filter-section').prepend(sortYear);
 
   function updatePublications() {
-    // Get selected categories
-    const selectedCategories = Array.from(filterCategories)
+    const selectedCategories = Array.from(checkboxes)
       .filter(checkbox => checkbox.checked)
       .map(checkbox => checkbox.value);
-
-    // Get sort order
     const sortOrder = sortYear.value;
 
-    // Clear current display
-    subcategories.forEach(subcategory => {
-      subcategory.querySelectorAll('.publication-item').forEach(item => item.remove());
-      subcategory.style.display = 'none'; // Hide all subcategories initially
-    });
+    // Group publications by year
+    const years = [...new Set(publications.map(pub => pub.year))].sort((a, b) => 
+      sortOrder === 'asc' ? a - b : b - a);
+    container.innerHTML = '';
 
-    // Sort publications
-    const sortedPublications = [...publicationArray].sort((a, b) => {
-      const yearA = parseInt(a.getAttribute('data-year'));
-      const yearB = parseInt(b.getAttribute('data-year'));
-      return sortOrder === 'asc' ? yearA - yearB : yearB - yearA;
-    });
-
-    // Append publications to their respective categories if selected
-    sortedPublications.forEach(pub => {
-      const category = pub.getAttribute('data-category');
-      if (selectedCategories.includes(category)) {
-        categoryGroups[category].appendChild(pub.cloneNode(true));
-        categoryGroups[category].style.display = 'block'; // Show subcategory if it has publications
+    years.forEach(year => {
+      const yearPublications = publications.filter(pub => 
+        pub.year === year && selectedCategories.includes(pub.category));
+      if (yearPublications.length > 0) {
+        const yearSection = document.createElement('div');
+        yearSection.className = 'subcategory';
+        yearSection.innerHTML = `<h3>${year}</h3>`;
+        yearPublications.forEach(pub => {
+          yearSection.innerHTML += pub.html;
+        });
+        container.appendChild(yearSection);
       }
     });
 
-    // Re-attach citation toggle listeners to newly appended publications
-    const newToggleButtons = document.querySelectorAll('.toggle-citation');
-    newToggleButtons.forEach(button => {
+    // Re-attach citation toggle listeners
+    document.querySelectorAll('.toggle-citation').forEach(button => {
       button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
         const citation = document.getElementById(targetId);
@@ -68,12 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Event listeners for sorting and filtering
   sortYear.addEventListener('change', updatePublications);
-  filterCategories.forEach(checkbox => {
+  checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', updatePublications);
   });
 
-  // Initial update to show all publications
   updatePublications();
 });
