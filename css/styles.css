@@ -71,15 +71,54 @@ nav ul li a:hover { color: #F28C38; }
   margin-bottom: 30px;
 }
 
+/* News Section */
+.news-item {
+  background: #3A454A; /* Darker card background */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.news-date {
+  display: block;
+  font-weight: bold;
+  color: #00C4B4; /* Teal accent */
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+.news-title {
+  font-size: 1.4em;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.news-title:hover {
+  color: #F28C38; /* Orange on hover */
+}
+.news-details {
+  font-size: 0.95em;
+  color: #ccc;
+}
+.news-details em {
+  font-style: italic;
+}
+.news-details br {
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .news-item { padding: 15px; }
+  .news-title { font-size: 1.2em; }
+  .news-date { font-size: 1em; }
+}
+
 /* Logos */
 .logos { display: flex; gap: 20px; align-items: center; margin: 20px 0; }
 .logos img { height: 80px; width: auto; border-radius: 8px; transition: transform 0.3s ease; }
 .logos img:hover { transform: scale(1.05); }
-
-/* News */
-.news-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #F28C38; }
-.news-item:last-child { border-bottom: none; }
-.news-date { font-weight: bold; color: #00C4B4; }
 
 /* Research */
 .category-summary { font-style: italic; color: #ccc; margin-bottom: 15px; }
