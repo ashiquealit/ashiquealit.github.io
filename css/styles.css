@@ -1,3 +1,4 @@
+/* Existing styles from previous response */
 :root {
   --primary-accent: #6B8E23; /* Olive Green, slightly brighter */
   --secondary-accent: #A8BCA1; /* Lighter Sage Green */
@@ -40,122 +41,38 @@ body {
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/background-hero.jpg') no-repeat center center;
-  background-size: cover; /* Adjusts the image to cover the hero section */
-  color: var(--background-card); /* Ensures text is white for readability */
+  background-size: cover;
+  color: var(--background-card);
   padding: 4rem 0;
   text-align: center;
   margin-bottom: 2rem;
-  position: relative; /* Allows text to be positioned over the image */
-  height: 400px; /* Suggested height; adjust based on your image size */
+  position: relative;
+  height: 400px;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .main-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: block; /* Changed from flex to block to remove sidebar layout */
+  width: 100%; /* Ensures content takes full width */
 }
 
 .sidebar {
-  width: 250px;
-  background: var(--background-section);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 100px;
-  transition: transform 0.3s ease;
+  display: none; /* Hide sidebar on home page; can be kept for other pages if needed */
 }
 
-.sidebar h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.filter-section {
-  margin-bottom: 1.5rem;
-}
-
-.filter-section label {
-  display: block;
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-}
-
-.filter-section select {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid var(--secondary-accent);
-  background: var(--background-card);
-  color: var(--text-primary);
-}
-
-.filter-section input[type="checkbox"] {
-  margin-right: 0.5rem;
-}
-
-nav {
-  background-color: var(--primary-accent);
-  color: var(--background-card);
-  padding: 1rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-nav.scrolled {
-  background-color: var(--hover-color);
-}
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav .title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 2rem;
-}
-
-nav ul li a {
-  color: var(--background-card);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-nav ul li a:hover, nav ul li a:focus {
-  color: var(--secondary-accent);
-}
-
-#hamburger {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
+.content {
+  width: 100%; /* Full width since sidebar is removed */
 }
 
 .intro, .category, .news, .contact, .research-item, .publications {
@@ -166,6 +83,7 @@ nav ul li a:hover, nav ul li a:focus {
   transition: background-color 0.3s;
 }
 
+/* Rest of the styles remain unchanged */
 h1, h2, h3, h4 {
   color: var(--text-primary);
 }
@@ -342,18 +260,10 @@ button:focus, a:focus {
     margin-top: 60px;
   }
   .main-content {
-    flex-direction: column;
+    display: block; /* Ensures content stacks on mobile */
   }
   .sidebar {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 1rem;
     display: none;
-    transform: translateX(-100%);
-  }
-  .sidebar.active {
-    display: block;
-    transform: translateX(0);
   }
   #hamburger {
     display: block;
@@ -388,7 +298,6 @@ button:focus, a:focus {
     margin-right: 0;
   }
   .hero {
-    height: 300px; /* Adjusted for mobile to avoid overflow */
+    height: 300px;
   }
 }
-
