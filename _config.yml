@@ -1,0 +1,8 @@
+theme: jekyll-theme-minimal
+title: Ashique Ali Thuppilikkat
+description: PhD Student at the Faculty of Information, University of Toronto, researching technology, worker resistance, and platformization
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+baseurl: ""
+url: "https://ashiqueali.github.io"
