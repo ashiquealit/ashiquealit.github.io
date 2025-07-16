@@ -239,6 +239,26 @@ button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
 .social-links a:hover {
   color: var(--hover-color);
 }
+.category-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  background-color: var(--primary-accent);
+  color: var(--background-card);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: var(--hover-color);
+}
 
 @media (max-width: 768px) {
   body {
