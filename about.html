@@ -4,33 +4,233 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Ashique Ali Thuppilikkat</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #5F6A7D; /* Slate Gray for body text */
+      background-color: #F9FAFB; /* Ivory background */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      background-color: #2D2D2D; /* Charcoal */
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    #hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    #navMenu {
+      display: flex;
+      list-style: none;
+    }
+
+    #navMenu li {
+      margin-left: 2rem;
+    }
+
+    #navMenu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    #navMenu a:hover {
+      color: #A8C7A7; /* Light Olive for hover */
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 0;
+      background: white;
+      border-radius: 8px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #E5E7EB; /* Warm Gray border */
+    }
+
+    .intro h1 {
+      font-size: 2.25rem;
+      color: #2D2D2D; /* Charcoal for headings */
+      margin-bottom: 1rem;
+    }
+
+    .category-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .button {
+      padding: 0.5rem 1.5rem;
+      background-color: #4C7046; /* Olive Green for buttons */
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #A8C7A7; /* Light Olive for button hover */
+    }
+
+    section {
+      margin: 3rem 0;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: #2D2D2D; /* Charcoal for section headings */
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #E5E7EB; /* Warm Gray border */
+      padding-bottom: 0.5rem;
+    }
+
+    p, ul {
+      font-size: 1rem;
+      color: #5F6A7D; /* Slate Gray for text */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: #4C7046; /* Olive Green for social links */
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-links a:hover {
+      color: #A8C7A7; /* Light Olive for social link hover */
+    }
+
+    .logo-img {
+      max-width: 150px;
+      margin: 1rem 1rem 0 0;
+    }
+
+    @media (max-width: 768px) {
+      #hamburger {
+        display: block;
+      }
+
+      #navMenu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #2D2D2D; /* Charcoal */
+        padding: 1rem;
+      }
+
+      #navMenu.active {
+        display: flex;
+      }
+
+      #navMenu li {
+        margin: 0.5rem 0;
+      }
+
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 <body>
- <nav>
-  <div class="container">
-    <div class="title">Ashique Ali Thuppilikkat</div>
-    <div id="hamburger">☰</div>
-    <ul id="navMenu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/publications.html">Publications</a></li>
-      <li><a href="/research.html">Research</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav>
+    <div class="container">
+      <div class="title">Ashique Ali Thuppilikkat</div>
+      <div id="hamburger">☰</div>
+      <ul id="navMenu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
     <section class="intro">
       <img src="images/profile.jpg" alt="Ashique Ali Thuppilikkat" class="profile-img">
-      <h1>About Ashique Ali Thuppilikkat</h1>
-      <div class="category-buttons">
-        <a href="about.html" class="button">About Me</a>
-        <a href="publications.html" class="button">Publications</a>
-        <a href="research/index.html" class="button">Research</a>
+      <div>
+        <h1>About Ashique Ali Thuppilikkat</h1>
+        <div class="category-buttons">
+          <a href="about.html" class="button">About Me</a>
+          <a href="publications.html" class="button">Publications</a>
+          <a href="research/index.html" class="button">Research</a>
+        </div>
       </div>
     </section>
 
@@ -40,34 +240,35 @@
       <p>My interests include worker-centric platform designs, tech-mediated resistance in social movements, and critical studies of caste and technology. Prof. Priyank Chandra advises my doctoral studies.</p>
     </section>
 
-    <section class="awards and grants">
-  <h2>Major Awards & Fellowships</h2>
-  <ul>
-    <li><strong>2025–2026</strong>: Connaught PhDs for Public Impact Fellowship, University of Toronto</li>
-    <li><strong>2024–2025</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
-    <li><strong>2023–2024</strong>: Graduate Fellow, School of Cities, University of Toronto, Canada</li>
-  </ul>
-</section>
+    <section class="awards">
+      <h2>Major Awards & Fellowships</h2>
+      <ul>
+        <li><strong>2025–2026</strong>: Connaught PhDs for Public Impact Fellowship, University of Toronto</li>
+        <li><strong>2024–2025</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
+        <li><strong>2023–2024</strong>: Graduate Fellow, School of Cities, University of Toronto, Canada</li>
+      </ul>
+    </section>
 
-<section class="awards and grants">
-  <h2>Other Funding</h2>
-  <ul>
-    <li><strong>2025</strong>: EDI Student Initiative Fund</li>
-    <li><strong>2025</strong>: University of Toronto Graduate Students’ Union Bursary</li>
-    <li><strong>2024–2025</strong>: Gary Marsden Travel Awards</li>
-    <li><strong>2024–2025</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-    <li><strong>2023–2024</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-    <li><strong>2023</strong>: SGS Conference Grant</li>
-    <li><strong>2023</strong>: Travel Bursary, British Sociology Association</li>
-  </ul>
-</section>
-
+    <section class="funding">
+      <h2>Other Funding</h2>
+      <ul>
+        <li><strong>2025</strong>: EDI Student Initiative Fund</li>
+        <li><strong>2025</strong>: University of Toronto Graduate Students’ Union Bursary</li>
+        <li><strong>2024–2025</strong>: Gary Marsden Travel Awards</li>
+        <li><strong>2024–2025</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
+        <li><strong>2023–2024</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
+        <li><strong>2023</strong>: SGS Conference Grant</li>
+        <li><strong>2023</strong>: Travel Bursary, British Sociology Association</li>
+      </ul>
+    </section>
 
     <section class="lab-affiliations">
       <h2>Lab Affiliations</h2>
       <p>I am part of the Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto.</p>
-      <img src="images/uoft-logo.png" alt="University of Toronto" class="logo-img">
-      <img src="images/street-lab-logo.png" alt="STREET Lab" class="logo-img">
+      <div>
+        <img src="images/uoft-logo.png" alt="University of Toronto" class="logo-img">
+        <img src="images/street-lab-logo.png" alt="STREET Lab" class="logo-img">
+      </div>
     </section>
 
     <section class="research-streams">
@@ -99,6 +300,11 @@
     </section>
   </div>
 
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
