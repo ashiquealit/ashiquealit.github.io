@@ -76,6 +76,10 @@ body {
   min-width: 0; /* Prevent overflow in flex container */
 }
 
+.social-links a i {
+  margin-right: 0.5rem;
+}
+
 nav {
   background-color: var(--primary-accent);
   color: var(--background-card);
