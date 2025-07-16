@@ -2,28 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Publications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications - Ashique Ali Thuppilikkat</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <nav><!-- Reused navigation --></nav>
-
-  <main>
-    <h1>Publications</h1>
-    
-    <section class="publication-category">
-      <h2>Peer-Reviewed Journal Articles</h2>
-      <div class="publication-item">
-        <h3>Union Makes Us Strong...</h3>
-        <div class="publication-meta">CSCW 2024</div>
-        <div class="publication-actions">
-          <button class="cite-btn" data-id="pub1">Cite</button>
-          <a href="#" class="pdf-link">PDF</a>
-        </div>
+  <nav>
+    <div class="container">
+      <div class="title">Ashique Ali Thuppilikkat</div>
+      <div id="hamburger">☰</div>
+      <div id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="research/index.html">Research</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
       </div>
-    </section>
-  </main>
+    </div>
+  </nav>
 
+  <section>
+    <h1>Publications</h1>
+    <p>Below is a list of my peer-reviewed publications and extended abstracts. Filter by year or select a citation format (APA, MLA, Chicago).</p>
+    <div id="filter-controls">
+      <button class="filter-btn">All</button>
+      <button class="filter-btn">2025</button>
+      <button class="filter-btn">2024</button>
+      <button class="filter-btn">2023</button>
+      <button class="filter-btn">2022</button>
+    </div>
+
+    <div id="peer-reviewed" class="collapsible">
+      <h2>Peer-Reviewed Publications</h2>
+      <ol>
+        <li class="publication-item" data-year="2024">
+          Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. “Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms.” <em>Proceedings of the ACM on Human-Computer Interaction</em> 8, no. CSCW2 (2024): 1–36.
+          <br>
+          <span class="pub-date">2024</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('pub1')">Download BibTeX</button> | 
+          <select onchange="showCitation('pub1', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-pub1"></div>
+        </li>
+        <li class="publication-item" data-year="2025">
+          Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.” <em>Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems</em>, pp. 1–18. 2025.
+          <br>
+          <span class="pub-date">2025</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('pub2')">Download BibTeX</button> | 
+          <select onchange="showCitation('pub2', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-pub2"></div>
+        </li>
+        <li class="publication-item" data-year="2024">
+          Thuppilikkat, Ashique Ali. “A Short History of the Cooperative Movement in Northern Malabar, Kerala.” <em>Economic and Political Weekly</em> 59, no. 31 (2024): 47–52.
+          <br>
+          <span class="pub-date">2024</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('pub3')">Download BibTeX</button> | 
+          <select onchange="showCitation('pub3', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-pub3"></div>
+        </li>
+        <li class="publication-item" data-year="2022">
+          Dhar, Dipsita, and Ashique Ali Thuppilikkat. “Gendered labour’s positions of vulnerabilities in digital labour platforms and strategies of resistance: a case study of women workers’ struggle in Urban Company, New Delhi.” <em>Gender & Development</em> 30, no. 3 (2022): 667–686.
+          <br>
+          <span class="pub-date">2022</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('pub4')">Download BibTeX</button> | 
+          <select onchange="showCitation('pub4', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-pub4"></div>
+        </li>
+      </ol>
+    </div>
+
+    <div id="extended-abstracts" class="collapsible">
+      <h2>Peer-Reviewed Extended Abstracts</h2>
+      <ol>
+        <li class="publication-item" data-year="2023">
+          Petterson, Adrian, Ashique Ali Thuppilikkat, Paridhi Gupta, Shamika Klassen, Margaret C. Jack, Jun Liu, and Priyank Chandra. “Supporting social movements through HCI and design.” <em>Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems</em>, pp. 1–5. 2023.
+          <br>
+          <span class="pub-date">2023</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('abs1')">Download BibTeX</button> | 
+          <select onchange="showCitation('abs1', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-abs1"></div>
+        </li>
+        <li class="publication-item" data-year="2024">
+          Fernandes, Kim, Rahaf Alharbi, Cella Sum, Vaishnav Kameswaran, Franchesca Spektor, Ashique Ali Thuppilikkat, Adrian Petterson, Megh Marathe, Foad Hamidi, and Priyank Chandra. “Organizing for More Just and Inclusive Futures: A Community Discussion.” <em>Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing</em>, pp. 689–692. 2024.
+          <br>
+          <span class="pub-date">2024</span> | 
+          <a href="[DOI or URL]" target="_blank">DOI/URL</a> | 
+          <button onclick="downloadBibTeX('abs2')">Download BibTeX</button> | 
+          <select onchange="showCitation('abs2', this.value)">
+            <option value="">Select Citation Format</option>
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="chicago">Chicago</option>
+          </select>
+          <div id="citation-abs2"></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/citation-js@0.6.8"></script>
+  <script src="js/main.js"></script>
   <script src="js/citations.js"></script>
 </body>
 </html>
