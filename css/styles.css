@@ -169,19 +169,14 @@ nav ul li a:hover { color: #F6F3EF; /* Light Beige on hover */ }
 .project-list li:before { content: "→"; position: absolute; left: 0; color: #D97A57; }
 
 /* Publications */
-#filter-controls { margin: 20px 0; }
-.filter-btn { background-color: #D97A57; color: #FFFFFF; padding: 8px 15px; border: none; cursor: pointer; margin: 0 5px; border-radius: 5px; transition: background-color 0.3s ease; }
-.filter-btn:hover { background-color: #B2503E; }
-.download-btn { background-color: #D97A57; color: #FFFFFF; padding: 8px 15px; border: none; cursor: pointer; margin: 0 5px; border-radius: 5px; transition: background-color 0.3s ease; }
-.download-btn:hover { background-color: #B2503E; }
-.download-btn a { color: #FFFFFF; text-decoration: none; }
 .publication-item { margin-bottom: 20px; }
 .pub-date { display: inline-block; margin-right: 10px; color: #6B8E23; }
 button { background-color: #D97A57; color: #FFFFFF; padding: 8px 15px; border: none; cursor: pointer; margin: 0 5px; border-radius: 5px; transition: background-color 0.3s ease; }
 button:hover { background-color: #B2503E; }
-select { padding: 8px; margin: 0 5px; border-radius: 5px; background: #F6F3EF; color: #333333; border: 1px solid #D97A57; }
+.download-btn, .bibtex-btn { background-color: #D97A57; color: #FFFFFF; padding: 8px 15px; border: none; cursor: pointer; margin: 0 5px; border-radius: 5px; transition: background-color 0.3s ease; }
+.download-btn a, .bibtex-btn a { color: #FFFFFF; text-decoration: none; }
+.download-btn:hover, .bibtex-btn:hover { background-color: #B2503E; }
 div[id^="citation-"] { margin-top: 15px; font-size: 0.9em; color: #333333; }
-div[id^="bibtex-"] { margin-top: 10px; font-size: 0.9em; background: #FFFFFF; padding: 10px; border-radius: 5px; }
 .collapsible ol { display: block; }
 
 /* Contact Form */
