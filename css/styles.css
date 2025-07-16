@@ -170,4 +170,98 @@ a:hover {
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 5px;
-  box
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-date, .pub-date {
+  color: var(--secondary-accent);
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+button, .toggle-citation, .download-btn, .bibtex-btn {
+  background-color: var(--primary-accent);
+  color: var(--background-card);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+button:hover, .toggle-citation:hover, .download-btn:hover, .bibtex-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.subcategory {
+  margin-bottom: 2rem;
+}
+
+.tag {
+  background-color: var(--secondary-accent);
+  color: var(--background-card);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.social-links a {
+  color: var(--primary-accent);
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-links a:hover {
+  color: var(--hover-color);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    display: none;
+  }
+  .sidebar.active {
+    display: block;
+  }
+  #hamburger {
+    display: block;
+  }
+  #navMenu {
+    display: none;
+  }
+  #navMenu.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-accent);
+    padding: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+}
