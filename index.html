@@ -3,260 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ashique Ali Thuppilikkat, PhD Candidate at University of Toronto, researching technology, worker resistance, and platform economies.">
-  <meta name="keywords" content="Ashique Ali Thuppilikkat, University of Toronto, platform economies, worker resistance, digital labor, climate change">
-  <title>Ashique Ali Thuppilikkat</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Ashique Ali - Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.22.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #5F6A7D; /* Slate Gray for body text */
-      background-color: #F9FAFB; /* Ivory background */
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav {
-      background-color: #2D2D2D; /* Charcoal */
-      color: white;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .title {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    #hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    #navMenu {
-      display: flex;
-      list-style: none;
-    }
-
-    #navMenu li {
-      margin-left: 2rem;
-    }
-
-    #navMenu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    #navMenu a:hover {
-      color: #A8C7A7; /* Light Olive for hover */
-    }
-
-    .hero {
-      background-color: white;
-      padding: 4rem 0;
-      text-align: center;
-      border-radius: 8px;
-      margin: 2rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .hero h1 {
-      font-size: 2.25rem;
-      color: #2D2D2D; /* Charcoal for headings */
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #5F6A7D; /* Slate Gray for text */
-      margin-bottom: 1.5rem;
-    }
-
-    .button {
-      padding: 0.5rem 1.5rem;
-      background-color: #4C7046; /* Olive Green for buttons */
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #A8C7A7; /* Light Olive for button hover */
-    }
-
-    section {
-      margin: 3rem 0;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: #2D2D2D; /* Charcoal for section headings */
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #E5E7EB; /* Warm Gray border */
-      padding-bottom: 0.5rem;
-    }
-
-    p, ul {
-      font-size: 1rem;
-      color: #5F6A7D; /* Slate Gray for text */
-    }
-
-    .news-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .news-date {
-      display: block;
-      font-weight: 600;
-      color: #4C7046; /* Olive Green for dates */
-      margin-bottom: 0.5rem;
-    }
-
-    .news-title {
-      color: #4C7046; /* Olive Green for links */
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .news-title:hover {
-      color: #A8C7A7; /* Light Olive for link hover */
-    }
-
-    .news-details {
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      #hamburger {
-        display: block;
-      }
-
-      #navMenu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #2D2D2D; /* Charcoal */
-        padding: 1rem;
-      }
-
-      #navMenu.active {
-        display: flex;
-      }
-
-      #navMenu li {
-        margin: 0.5rem 0;
-      }
-
-      .hero {
-        padding: 2rem 0;
-      }
-
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
-   <nav>
-    <div class="container">
-      <div class="title">Ashique Ali Thuppilikkat</div>
-      <div id="hamburger">☰</div>
-      <ul id="navMenu">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/publications.html">Publications</a></li>
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
 
-  <header class="hero">
-    <div class="container">
-      <h1>Ashique Ali Thuppilikkat</h1>
-      <p>PhD Candidate in Information Studies, University of Toronto</p>
-      <a href="#news" class="button">Recent News</a>
-    </div>
-  </header>
+    function App() {
+      const [activeSection, setActiveSection] = useState('home');
 
-  <div class="container main-content">
-    <section class="news" id="news">
-      <h2>Recent News</h2>
-      <div class="news-item">
-        <span class="news-date">July 2025</span>
-        <a href="https://www.utoronto.ca/news" class="news-title">Awarded Connaught PhD Fellowship for Public Impact Scholarship</a>
-        <p class="news-details">Received the Connaught PhD Fellowship to support research on digital labor and public impact scholarship at the University of Toronto, effective July 15, 2025.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">June 2025</span>
-        <a href="https://www.historicalmaterialism.org" class="news-title">Paper accepted to Historical Materialism at SOAS, University of London</a>
-        <p class="news-details">From Riders to Influencers: The “Gigfluencer” Phenomenon in On-demand Ridesourcing DLPs. <br><strong>Authors:</strong> Dipsita Dhar and Ashique Ali Thuppilikkat. <br><em>Conference dates:</em> November 6–9, 2025.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">May 2025</span>
-        <a href="https://sites.google.com/view/climateandplatformeconomies" class="news-title">Workshop accepted to ACM COMPASS 2025, Toronto</a>
-        <p class="news-details"><em>(Re)working for Sustainable Futures: Climate Change and Platform Economies</em><br><strong>Organizers:</strong> Ashique Ali Thuppilikkat, et al.<br><em>Conference dates:</em> July 22, 2025</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">May 2025</span>
-        <a href="https://www.indl.network" class="news-title">Paper accepted to INDL 8 (Bologna, Italy)</a>
-        <p class="news-details">Women, Platforms, & State Power: The Lunch Bell Project & Digital Solidarity Economies in Kerala. <br><strong>Authors:</strong> Ashique Ali Thuppilikkat and Priyank Chandra. <br><em>Conference dates:</em> September 10–12, 2025.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">May 2025</span>
-        <a href="https://www.4sonline.org" class="news-title">Paper accepted to 4S 2025 (Seattle, United States)</a>
-        <p class="news-details">Delivering Inequality: Caste and Labour in Location-based Digital Labour Platforms. <br><strong>Author:</strong> Ashique Ali Thuppilikkat. <br><em>Conference dates:</em> October 8–11, 2025.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">March 2025</span>
-        <a href="https://cscw.acm.org" class="news-title">Paper accepted to CSCW 2025 (Norway)</a>
-        <p class="news-details">Dissent, Distance, Dilemmas: The Belarusian Diaspora, ICTs, and Adaptive Authoritarianism. <br><strong>Authors:</strong> Ashique Ali Thuppilikkat, Janna Akimova, and Priyank Chandra. <br><em>Conference dates:</em> March 15–19, 2025.</p>
-      </div>
-    </section>
-  </div>
+      const navItems = [
+        { name: 'Home', id: 'home' },
+        { name: 'About', id: 'about' },
+        { name: 'Projects', id: 'projects' },
+        { name: 'Contact', id: 'contact' },
+      ];
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
+      const projects = [
+        {
+          title: 'Project 1',
+          description: 'A web application built with modern technologies.',
+          link: '#',
+        },
+        {
+          title: 'Project 2',
+          description: 'A mobile-responsive dashboard for data analytics.',
+          link: '#',
+        },
+        {
+          title: 'Project 3',
+          description: 'An e-commerce platform with payment integration.',
+          link: '#',
+        },
+      ];
 
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+      return (
+        <div className="min-h-screen bg-gray-100 font-sans">
+          {/* Navigation */}
+          <nav className="fixed top-0 w-full bg-white shadow-md z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+              <div className="flex justify-between items-center">
+                <h1 className="text-2xl font-bold text-gray-800">Ashique Ali</h1>
+                <div className="space-x-4">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className={`text-gray-600 hover:text-blue-600 transition-colors ${
+                        activeSection === item.id ? 'font-bold text-blue-600' : ''
+                      }`}
+                      onClick={() => setActiveSection(item.id)}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          {/* Home Section */}
+          <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+            <div className="text-center">
+              <h2 className="text-5xl font-bold mb-4">Hello, I'm Ashique Ali</h2>
+              <p className="text-xl mb-6">A passionate Full Stack Developer</p>
+              <a
+                href="#contact"
+                className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
+              >
+                Get in Touch
+              </a>
+            </div>
+          </section>
+
+          {/* About Section */}
+          <section id="about" className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">About Me</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                I'm a dedicated developer with expertise in building scalable web applications using
+                modern frameworks like React, Node.js, and Python. I love creating user-friendly
+                interfaces and solving complex problems with clean, efficient code.
+              </p>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section id="projects" className="py-20 bg-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Projects</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+                  >
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <a
+                      href={project.link}
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section id="contact" className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Contact Me</h2>
+              <div className="max-w-lg mx-auto">
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  />
+                  <textarea
+                    placeholder="Your Message"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    rows="5"
+                  ></textarea>
+                  <button
+                    className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    onClick={() => alert('Message sent!')}
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="bg-gray-800 text-white py-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <p>&copy; 2025 Ashique Ali. All rights reserved.</p>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
+</body>
+</html>
