@@ -4,25 +4,156 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications - Ashique Ali Thuppilikkat</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #5F6A7D; /* Slate Gray for body text */
+      background-color: #F9FAFB; /* Ivory background */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .main-content {
+      flex: 3;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+
+    .filter-section {
+      margin-top: 1rem;
+    }
+
+    .filter-section h4 {
+      font-size: 1.25rem;
+      color: #2D2D2D; /* Charcoal for headings */
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-section label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .filter-section input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #2D2D2D; /* Charcoal for headings */
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #E5E7EB; /* Warm Gray border */
+      padding-bottom: 0.5rem;
+    }
+
+    .category-section {
+      margin-bottom: 2rem;
+    }
+
+    .subcategory {
+      margin-bottom: 1.5rem;
+    }
+
+    .subcategory h4 {
+      font-size: 1.5rem;
+      color: #2D2D2D; /* Charcoal for year headings */
+      margin-bottom: 1rem;
+    }
+
+    .publication-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .pub-date {
+      font-weight: bold;
+      color: #4C7046; /* Olive Green for dates */
+      margin-right: 1rem;
+    }
+
+    .publication-item a {
+      color: #4C7046; /* Olive Green for links */
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .publication-item a:hover {
+      text-decoration: underline;
+      color: #A8C7A7; /* Light Olive for link hover */
+    }
+
+    .publication-item button {
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #4C7046; /* Olive Green for buttons */
+      color: white; /* White text for buttons */
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .publication-item button:hover {
+      background-color: #A8C7A7; /* Light Olive for button hover */
+    }
+
+    .publication-item button a {
+      color: white; /* White text for links inside buttons */
+      text-decoration: none;
+    }
+
+    .publication-item button a:hover {
+      color: white; /* Ensure white text on hover */
+    }
+
+    .publication-item div[id^="citation"] {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #F9FAFB; /* Ivory background for citations */
+      border-left: 4px solid #4C7046; /* Olive Green border */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
- <nav>
-  <div class="container">
-    <div class="title">Ashique Ali Thuppilikkat</div>
-    <div id="hamburger">☰</div>
-    <ul id="navMenu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/publications.html">Publications</a></li>
-      <li><a href="/research.html">Research</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
   <div class="container main-content">
     <aside class="sidebar">
       <h3>Filter Publications</h3>
@@ -275,100 +406,4 @@
               <span>Techno-nationalism and Chinese Cyber Dominance, <i>Deshabhimani Weekly</i></span><br>
               Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.<br>
               Tags: Malayalam Articles<br>
-              <button class="toggle-citation" data-target="citation-14">Show Citation</button>
-              <button class="download-btn"><a href="publications/thuppilikkat-2020-technonationalism.pdf" target="_blank">Download PDF</a></button>
-              <div id="citation-14" style="display: none;">
-                <p>Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2020. “Techno-nationalism and Chinese Cyber Dominance.” <i>Deshabhimani Weekly</i> 13, no. 51: 6–11.</p>
-              </div>
-            </div>`
-        },
-        {
-          year: 2019,
-          category: "public-facing",
-          html: `
-            <div class="publication-item" data-year="2019" data-category="public-facing">
-              <span class="pub-date">2019</span>
-              <span>Ours Is a Struggle for Survival, <i>Kalakaumudi Weekly</i></span><br>
-              Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.<br>
-              Tags: Malayalam Articles<br>
-              <button class="toggle-citation" data-target="citation-15">Show Citation</button>
-              <button class="download-btn"><a href="publications/thuppilikkat-2019-struggle.pdf" target="_blank">Download PDF</a></button>
-              <div id="citation-15" style="display: none;">
-                <p>Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2019. “Ours Is a Struggle for Survival.” <i>Kalakaumudi Weekly</i> 44, no. 35: 16–19.</p>
-              </div>
-            </div>`
-        }
-      ];
-
-      function updatePublications() {
-        // Get selected categories
-        const selectedCategories = Array.from(checkboxes)
-          .filter(checkbox => checkbox.checked)
-          .map(checkbox => checkbox.value);
-
-        // Define category order and titles
-        const categoryOrder = [
-          { id: "peer-reviewed", title: "Peer-Reviewed Publications" },
-          { id: "extended-abstracts", title: "Peer-Reviewed Extended Abstracts" },
-          { id: "book-chapters", title: "Book Chapters" },
-          { id: "public-facing", title: "Public-Facing Scholarship" }
-        ];
-
-        container.innerHTML = '';
-
-        // Iterate over categories
-        categoryOrder.forEach(category => {
-          if (selectedCategories.includes(category.id)) {
-            // Filter publications for this category
-            const categoryPublications = publications.filter(pub => pub.category === category.id);
-            if (categoryPublications.length > 0) {
-              // Create category section
-              const categorySection = document.createElement('div');
-              categorySection.className = 'category-section';
-              categorySection.innerHTML = `<h3>${category.title}</h3>`;
-
-              // Group publications by year within this category
-              const years = [...new Set(categoryPublications.map(pub => pub.year))].sort((a, b) => b - a);
-              years.forEach(year => {
-                const yearPublications = categoryPublications.filter(pub => pub.year === year);
-                if (yearPublications.length > 0) {
-                  const yearSection = document.createElement('div');
-                  yearSection.className = 'subcategory';
-                  yearSection.innerHTML = `<h4>${year}</h4>`;
-                  yearPublications.forEach(pub => {
-                    yearSection.innerHTML += pub.html;
-                  });
-                  categorySection.appendChild(yearSection);
-                }
-              });
-
-              container.appendChild(categorySection);
-            }
-          }
-        });
-
-        // Re-attach citation toggle listeners
-        const toggleButtons = document.querySelectorAll('.toggle-citation');
-        toggleButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            const targetId = button.getAttribute('data-target');
-            const citation = document.getElementById(targetId);
-            citation.style.display = citation.style.display === 'none' ? 'block' : 'none';
-            button.textContent = citation.style.display === 'none' ? 'Show Citation' : 'Hide Citation';
-          });
-        });
-      }
-
-      // Event listeners for category filtering
-      checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', updatePublications);
-      });
-
-      // Initial render
-      updatePublications();
-    });
-  </script>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+              <button class="toggle-c 
