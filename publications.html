@@ -38,7 +38,7 @@
     <section class="category publications">
       <h2>Publications</h2>
       <div id="publications-container">
-        <!-- Publications will be dynamically grouped by year -->
+        <!-- Publications will be dynamically grouped by category and year -->
       </div>
     </section>
   </div>
@@ -306,20 +306,44 @@
           .filter(checkbox => checkbox.checked)
           .map(checkbox => checkbox.value);
 
-        // Group publications by year
-        const years = [...new Set(publications.map(pub => pub.year))].sort((a, b) => b - a); // Sort years descending
+        // Define category order and titles
+        const categoryOrder = [
+          { id: "peer-reviewed", title: "Peer-Reviewed Publications" },
+          { id: "extended-abstracts", title: "Peer-Reviewed Extended Abstracts" },
+          { id: "book-chapters", title: "Book Chapters" },
+          { id: "public-facing", title: "Public-Facing Scholarship" }
+        ];
+
         container.innerHTML = '';
 
-        years.forEach(year => {
-          const yearPublications = publications.filter(pub => pub.year === year && selectedCategories.includes(pub.category));
-          if (yearPublications.length > 0) {
-            const yearSection = document.createElement('div');
-            yearSection.className = 'subcategory';
-            yearSection.innerHTML = `<h3>${year}</h3>`;
-            yearPublications.forEach(pub => {
-              yearSection.innerHTML += pub.html;
-            });
-            container.appendChild(yearSection);
+        // Iterate over categories
+        categoryOrder.forEach(category => {
+          if (selectedCategories.includes(category.id)) {
+            // Filter publications for this category
+            const categoryPublications = publications.filter(pub => pub.category === category.id);
+            if (categoryPublications.length > 0) {
+              // Create category section
+              const categorySection = document.createElement('div');
+              categorySection.className = 'category-section';
+              categorySection.innerHTML = `<h3>${category.title}</h3>`;
+
+              // Group publications by year within this category
+              const years = [...new Set(categoryPublications.map(pub => pub.year))].sort((a, b) => b - a);
+              years.forEach(year => {
+                const yearPublications = categoryPublications.filter(pub => pub.year === year);
+                if (yearPublications.length > 0) {
+                  const yearSection = document.createElement('div');
+                  yearSection.className = 'subcategory';
+                  yearSection.innerHTML = `<h4>${year}</h4>`;
+                  yearPublications.forEach(pub => {
+                    yearSection.innerHTML += pub.html;
+                  });
+                  categorySection.appendChild(yearSection);
+                }
+              });
+
+              container.appendChild(categorySection);
+            }
           }
         });
 
