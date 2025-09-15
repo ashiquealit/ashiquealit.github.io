@@ -13,70 +13,53 @@
     .smooth-scroll { scroll-behavior: smooth; }
     .card { transition: transform 0.3s; }
     .card:hover { transform: scale(1.05); }
-    [data-theme="dark"] {
-      --bg-body: #1F2937;
-      --text-primary: #E0E0E0;
-      --bg-card: #374151;
-    }
+    [data-theme="dark"] { --bg-body: #1F2937; --text-primary: #E0E0E0; --bg-card: #374151; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
-  <!-- Navbar -->
+  <!-- Navbar (same as index.html) -->
   <nav class="bg-gray-800 text-white sticky top-0 z-10">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
-      <button id="hamburger" class="md:hidden text-2xl">☰</button>
+      <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
       <ul id="navMenu" class="flex md:flex space-x-6 hidden md:block">
         <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
         <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
-        <li><a href="/publications.html" class="hover:text-emerald-400">Publications</a></li>
-        <li><a href="/research.html" class="hover:text-emerald-400">Research</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-emerald-400">Publications</a>
+          <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2">
+            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
+            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
+          </ul>
+        </li>
+        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
         <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+        <li><a href="/cv.pdf" class="hover:text-emerald-400">CV</a></li>
       </ul>
-      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded"><i class="fas fa-moon"></i></button>
+      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="bg-emerald-50 py-16 text-center" data-aos="fade-up">
-    <div class="container mx-auto">
-      <img src="images/profile.jpg" alt="Ashique Ali Thuppilikkat" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-emerald-200">
-      <h1 class="text-3xl font-bold">About Ashique Ali Thuppilikkat</h1>
-      <p class="text-lg mt-2">PhD Student | Technology, Worker Resistance, and Platformization</p>
-      <div class="flex justify-center gap-4 mt-4">
-        <a href="about.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">About Me</a>
-        <a href="publications.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">Publications</a>
-        <a href="research/index.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">Research</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bio Section -->
+  <!-- Education Section -->
   <section class="container mx-auto py-8" data-aos="fade-up">
     <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Bio</h2>
-      <p class="mt-4">I am a PhD student at the Faculty of Information, University of Toronto, Canada. My research examines the role of technology in worker resistance and unionization amidst the platformization of urban life. Specifically, I investigate how digital tools can support unions and workers in location-based labour platforms to organize around and resist/confront the impacts of climate change on their working conditions.</p>
-      <p class="mt-2">My interests include worker-centric platform designs, tech-mediated resistance in social movements, and critical studies of caste and technology. Prof. Priyank Chandra advises my doctoral studies.</p>
-    </div>
-  </section>
-
-  <!-- Awards Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Major Awards & Fellowships</h2>
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Education</h2>
       <ul class="list-disc pl-6 mt-4">
-        <li><strong>2025–2026</strong>: Connaught PhDs for Public Impact Fellowship, University of Toronto</li>
-        <li><strong>2024–2025</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
-        <li><strong>2023–2024</strong>: Graduate Fellow, School of Cities, University of Toronto, Canada</li>
+        <li><strong>Ph.D., Faculty of Information</strong>, University of Toronto, Canada, 2022–Present</li>
+        <li><strong>M.Phil., Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, New Delhi, 2022</li>
+        <li><strong>MA, Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, New Delhi, 2018</li>
+        <li><strong>BA (Hons), Political Science</strong>, Ramjas College, University of Delhi, New Delhi, 2016</li>
       </ul>
     </div>
   </section>
 
-  <!-- Lab Affiliations Section -->
+  <!-- Research Lab Section -->
   <section class="container mx-auto py-8" data-aos="fade-up">
     <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Lab Affiliations</h2>
-      <p class="mt-4">I am part of the Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto.</p>
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Research Lab</h2>
+      <p class="mt-4"><strong>2022–Present</strong>: Socio-technical Resistance and Ethical Technologies (STREET) Lab, Knowledge Media Design Institute (KMDI), University of Toronto, Canada</p>
+      <p class="mt-2">Advised by Prof. Priyank Chandra, focusing on tech-mediated labour practices and technology use in social movements.</p>
       <div class="flex flex-wrap gap-4 mt-4">
         <img src="images/uoft-logo.png" alt="University of Toronto" class="w-24 h-auto">
         <img src="images/street-lab-logo.png" alt="STREET Lab" class="w-24 h-auto">
@@ -84,46 +67,31 @@
     </div>
   </section>
 
-  <!-- Research Streams Section -->
+  <!-- Grants and Awards Section -->
   <section class="container mx-auto py-8" data-aos="fade-up">
     <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Research Streams</h2>
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Grants and Awards</h2>
       <ul class="list-disc pl-6 mt-4">
-        <li><strong>Computer-Supported Cooperative Work (CSCW)</strong></li>
-        <li><strong>Human-Computer Interaction (HCI)</strong></li>
+        <li><strong>2025–26</strong>: Connaught PhDs for Public Impact Fellowship</li>
+        <li><strong>2025</strong>: EDI Student Initiative Fund</li>
+        <li><strong>2025</strong>: University of Toronto Graduate Students' Union Bursary</li>
+        <li><strong>2024–25</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
+        <li><strong>2024–25</strong>: Gary Marsden Travel Awards</li>
+        <li><strong>2024–25</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
+        <li><strong>2023–24</strong>: Graduate Fellow, School of Cities, University of Toronto</li>
+        <li><strong>2023–24</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
+        <li><strong>2023</strong>: SGS Conference Grant</li>
+        <li><strong>2023</strong>: Travel Bursary, British Sociology Association</li>
+        <li><strong>2020–22</strong>: National Fellowship for Other Backward Classes, Ministry of Social Justice and Empowerment, Government of India</li>
+        <li><strong>2018</strong>: National Eligibility Test for Assistant Professor in Political Science, India</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Past Education Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Past Education</h2>
-      <ul class="list-disc pl-6 mt-4">
-        <li><strong>M.Phil in Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, India</li>
-        <li><strong>Master of Arts in Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, India</li>
-        <li><strong>BA (Hons) Political Science</strong>, Ramjas College, University of Delhi, India</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Contact</h2>
-      <p class="mt-4">Email: <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-emerald-600 hover:text-emerald-500">ashique.thuppilikkat@mail.utoronto.ca</a></p>
-      <div class="flex gap-4 mt-4">
-        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en&oi=ao" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-google-scholar"></i> Google Scholar</a>
-        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://x.com/ashiquealit/" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-x-twitter"></i> Twitter/X</a>
-        <a href="https://orcid.org/0000-0002-9760-6847" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-orcid"></i> ORCID</a>
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center py-4">
     <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+    <p>Updated <span id="current-date"></span></p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -132,6 +100,8 @@
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const themeToggle = document.querySelector('.theme-toggle');
+    const currentDate = document.getElementById('current-date');
+    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('hidden');
