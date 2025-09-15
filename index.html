@@ -92,23 +92,44 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    const themeToggle = document.querySelector('.theme-toggle');
-    const currentDate = document.getElementById('current-date');
+<script>
+  AOS.init();
+  // Hamburger menu toggle (for mobile)
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Publications dropdown toggle for mobile (click to open/close)
+  const publicationsDropdown = document.getElementById('publications-dropdown');
+  const publicationsSubmenu = document.getElementById('publications-submenu');
+  publicationsDropdown.addEventListener('click', (e) => {
+    if (window.innerWidth < 768) { // Mobile only
+      e.preventDefault();
+      publicationsSubmenu.classList.toggle('hidden');
+    }
+  });
+
+  // Dark mode toggle
+  const themeToggle = document.querySelector('.theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  });
+
+  // Close dropdown on outside click (for better UX)
+  document.addEventListener('click', (e) => {
+    if (!publicationsDropdown.contains(e.target)) {
+      publicationsSubmenu.classList.add('hidden');
+    }
+  });
+
+  // Set current date in footer
+  const currentDate = document.getElementById('current-date');
+  if (currentDate) {
     currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('hidden');
-      navMenu.classList.toggle('block');
-    });
-
-    themeToggle.addEventListener('click', () => {
-      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-      themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
-  </script>
+  }
+</script>
 </body>
 </html>
