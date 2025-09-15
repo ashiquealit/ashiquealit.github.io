@@ -19,27 +19,29 @@
 <body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
  
  <!-- Navbar -->
-<nav class="bg-gray-800 text-white sticky top-0 z-10">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
-    <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
-    <ul id="navMenu" class="hidden md:flex space-x-6">
-      <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
-      <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
-      <li class="relative group">
-        <a href="#" class="hover:text-emerald-400 cursor-pointer" id="publications-dropdown">Publications</a>
-        <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
-          <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
-          <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
-        </ul>
-      </li>
-      <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
-      <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
-      <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
-    </ul>
-    <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-  </div>
-</nav>
+  <nav class="sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
+      <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
+      <ul id="navMenu" class="hidden md:flex space-x-6">
+        <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
+        <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
+        <li class="relative group">
+          <a href="#" id="publications-dropdown" class="block px-4 py-2 hover:bg-emerald-600">Publications</a>
+          <ul class="absolute bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
+            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
+            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
+          </ul>
+        </li>
+        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
+        <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+      </ul>
+      <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
 
   <!-- Education Section -->
   <section class="container mx-auto py-8" data-aos="fade-up">
