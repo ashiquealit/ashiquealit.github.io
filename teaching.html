@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching - Ashique Ali Thuppilikkat</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .smooth-scroll { scroll-behavior: smooth; }
+    .card { transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+    [data-theme="dark"] { --bg-body: #1F2937; --text-primary: #E0E0E0; --bg-card: #374151; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
+      <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
+      <ul id="navMenu" class="flex md:flex space-x-6 hidden md:block">
+        <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
+        <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-emerald-400">Publications</a>
+          <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2">
+            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
+            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
+          </ul>
+        </li>
+        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
+        <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+        <li><a href="/cv.pdf" class="hover:text-emerald-400">CV</a></li>
+      </ul>
+      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <!-- Teaching Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Teaching</h2>
+
+      <!-- Faculty of Information, University of Toronto -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">Faculty of Information, University of Toronto, St. George, Canada</h3>
+        <ul class="list-disc pl-6 mt-4">
+          <li><strong>ICT, Designs & Marginality</strong> (Fall 2023, Fall 2024)</li>
+          <li><strong>Information Experience</strong> (Fall 2023)</li>
+          <li><strong>Accessibility and Inclusive Design</strong> (Winter 2023)</li>
+        </ul>
+      </div>
+
+      <!-- Institute of Communication, Culture, Information and Technology, University of Toronto Mississauga -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">Institute of Communication, Culture, Information and Technology (ICCIT), University of Toronto, Mississauga, Canada</h3>
+        <ul class="list-disc pl-6 mt-4">
+          <li><strong>Technology and City</strong> (Fall 2023)</li>
+          <li><strong>Rhetoric and Media</strong> (Winter 2023, Summer 2023)</li>
+        </ul>
+      </div>
+
+      <!-- University of Toronto Scarborough -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">University of Toronto Scarborough</h3>
+        <ul class="list-disc pl-6 mt-4">
+          <li><strong>Platforms and Cultural Production</strong> (Summer 2025)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+    <p>Updated <span id="current-date"></span></p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const currentDate = document.getElementById('current-date');
+    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+      navMenu.classList.toggle('block');
+    });
+
+    themeToggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+      themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
+</body>
+</html>
