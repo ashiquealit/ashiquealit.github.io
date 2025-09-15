@@ -17,17 +17,17 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
-  <!-- Navbar (same as index.html) -->
+  <!-- Navbar -->
   <nav class="bg-gray-800 text-white sticky top-0 z-10">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
       <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
-      <ul id="navMenu" class="flex md:flex space-x-6 hidden md:block">
+      <ul id="navMenu" class="hidden md:flex space-x-6">
         <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
         <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
         <li class="relative group">
-          <a href="#" class="hover:text-emerald-400">Publications</a>
-          <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2">
+          <a href="#" class="hover:text-emerald-400 cursor-pointer" id="publications-dropdown">Publications</a>
+          <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
             <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
             <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
           </ul>
@@ -55,8 +55,8 @@
             <a href="https://fair.work/en/fw/blog/riding-through-the-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" class="text-lg font-semibold">Riding Through the Smog: A ‘Roznamcha’ of Ride-Sourcing Bike Taxis</a><br>
             <p>Authors: Ashique Ali Thuppilikkat, Dipsita Dhar, Kadambari K. B., Priyank Chandra</p>
             <p>Runner-up in Knowledge Mobilization Project, School of Cities, University of Toronto</p>
-            <p>Tags: Comic Strip</p>
-            <a href="publications/thuppilikkat-2024-roznamcha.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <p>Tags: Comic Strip, Gig Work, Urban Studies</p>
+            <a href="/publications/thuppilikkat-2024-roznamcha.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" aria-label="Download PDF">Download PDF</a>
           </div>
         </div>
       </div>
@@ -64,22 +64,26 @@
       <!-- Action Research -->
       <div class="mt-6">
         <h3 class="text-xl font-semibold">Action Research</h3>
-        <div class="mt-4">
-          <div class="publication-item mb-4">
+        <div class="mt-4 space-y-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2025</span>
             <p>Co-founded Shared Alternative Futures with Action Research (SAFAR), Kolkata, India</p>
+            <p>Tags: Action Research, Community Organizing</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2024</span>
             <p>Organized a health camp for gig workers in New Delhi, addressing the health impacts of severe air pollution, in collaboration with Jan Swasthya Abhiyan, Delhi Science Forum, and STREET Lab, University of Toronto, November 28</p>
+            <p>Tags: Action Research, Gig Work, Public Health</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2024</span>
             <p>Organised food-delivery gig workers in Kolkata into an informal labour collective named "We Shall Overcome," August 05–28</p>
+            <p>Tags: Action Research, Labour Organizing</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2024</span>
             <p>Conducted a participatory design workshop with gig workers in Kolkata, India to map wage-related grievances, in collaboration with the Workers' Observatory, Edinburgh, August 04</p>
+            <p>Tags: Action Research, Participatory Design</p>
           </div>
         </div>
       </div>
@@ -87,34 +91,34 @@
       <!-- English Articles -->
       <div class="mt-6">
         <h3 class="text-xl font-semibold">English Articles</h3>
-        <div class="mt-4">
-          <div class="publication-item mb-4">
+        <div class="mt-4 space-y-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2023</span>
             <a href="https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747" target="_blank" class="text-lg font-semibold">Far-right Hindu Nationalists Are Using Digital Propaganda to Delegitimize India’s Wrestler Protests</a><br>
             <p>Authors: Ashique Ali Thuppilikkat</p>
             <p>The Conversation</p>
-            <p>Tags: English Articles</p>
+            <p>Tags: Digital Propaganda, Social Movements</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2021</span>
             <a href="https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp" target="_blank" class="text-lg font-semibold">The Indian Farmers’ Movement Has Shattered Narendra Modi’s Strongman Image</a><br>
             <p>Authors: Ashique Ali Thuppilikkat</p>
             <p>Jacobin</p>
-            <p>Tags: English Articles</p>
+            <p>Tags: Social Movements, Political Economy</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2021</span>
             <a href="https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad" target="_blank" class="text-lg font-semibold">Kerala’s Communists Are Showing India a Path Out of Poverty</a><br>
             <p>Authors: Ashique Ali Thuppilikkat, Angshuman Sharma</p>
             <p>Jacobin</p>
-            <p>Tags: English Articles</p>
+            <p>Tags: Cooperatives, Political Economy</p>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2019</span>
             <a href="https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/" target="_blank" class="text-lg font-semibold">Breaking Barriers: Women Enter Sabarimala Hours After Women’s Wall</a><br>
             <p>Authors: Ashique Ali Thuppilikkat</p>
             <p>Indian Cultural Forum</p>
-            <p>Tags: English Articles</p>
+            <p>Tags: Gender, Social Movements</p>
           </div>
         </div>
       </div>
@@ -122,22 +126,22 @@
       <!-- Malayalam Articles -->
       <div class="mt-6">
         <h3 class="text-xl font-semibold">Malayalam Articles</h3>
-        <div class="mt-4">
-          <div class="publication-item mb-4">
+        <div class="mt-4 space-y-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2020</span>
             <span class="text-lg font-semibold">Techno-nationalism and Chinese Cyber Dominance</span><br>
             <p>Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.</p>
             <p>Deshabhimani Weekly, 13(51), 6–11</p>
-            <p>Tags: Malayalam Articles</p>
-            <a href="publications/thuppilikkat-2020-technonationalism.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <p>Tags: Techno-nationalism, Digital Policy</p>
+            <a href="/publications/thuppilikkat-2020-technonationalism.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" aria-label="Download PDF">Download PDF</a>
           </div>
-          <div class="publication-item mb-4">
+          <div class="publication-item">
             <span class="text-emerald-600 font-bold">2019</span>
             <span class="text-lg font-semibold">Ours Is a Struggle for Survival</span><br>
             <p>Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.</p>
             <p>Kalakaumudi Weekly, 44(35), 16–19</p>
-            <p>Tags: Malayalam Articles</p>
-            <a href="publications/thuppilikkat-2019-struggle.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <p>Tags: Social Movements, Labour</p>
+            <a href="/publications/thuppilikkat-2019-struggle.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" aria-label="Download PDF">Download PDF</a>
           </div>
         </div>
       </div>
@@ -151,44 +155,44 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  // Hamburger menu toggle (for mobile)
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('hidden');
-  });
+  <script>
+    AOS.init();
+    // Hamburger menu toggle (for mobile)
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
 
-  // Publications dropdown toggle for mobile (click to open/close)
-  const publicationsDropdown = document.getElementById('publications-dropdown');
-  const publicationsSubmenu = document.getElementById('publications-submenu');
-  publicationsDropdown.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) { // Mobile only
-      e.preventDefault();
-      publicationsSubmenu.classList.toggle('hidden');
+    // Publications dropdown toggle for mobile (click to open/close)
+    const publicationsDropdown = document.getElementById('publications-dropdown');
+    const publicationsSubmenu = document.getElementById('publications-submenu');
+    publicationsDropdown.addEventListener('click', (e) => {
+      if (window.innerWidth < 768) { // Mobile only
+        e.preventDefault();
+        publicationsSubmenu.classList.toggle('hidden');
+      }
+    });
+
+    // Dark mode toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+      themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+
+    // Close dropdown on outside click (for better UX)
+    document.addEventListener('click', (e) => {
+      if (!publicationsDropdown.contains(e.target)) {
+        publicationsSubmenu.classList.add('hidden');
+      }
+    });
+
+    // Set current date in footer
+    const currentDate = document.getElementById('current-date');
+    if (currentDate) {
+      currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
     }
-  });
-
-  // Dark mode toggle
-  const themeToggle = document.querySelector('.theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-    themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-  });
-
-  // Close dropdown on outside click (for better UX)
-  document.addEventListener('click', (e) => {
-    if (!publicationsDropdown.contains(e.target)) {
-      publicationsSubmenu.classList.add('hidden');
-    }
-  });
-
-  // Set current date in footer
-  const currentDate = document.getElementById('current-date');
-  if (currentDate) {
-    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-  }
-</script>
+  </script>
 </body>
 </html>
