@@ -10,6 +10,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
+    .smooth-scroll { scroll-behavior: smooth; }
     .card { transition: transform 0.3s; }
     .card:hover { transform: scale(1.05); }
     [data-theme="dark"] {
@@ -19,8 +20,8 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800" data-theme="light">
-  <!-- Navbar (same as above) -->
+<body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
+  <!-- Navbar -->
   <nav class="bg-gray-800 text-white sticky top-0 z-10">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
@@ -48,7 +49,7 @@
           <label class="block"><input type="checkbox" class="filter-category" value="extended-abstracts" checked> Peer-Reviewed Extended Abstracts</label>
           <label class="block"><input type="checkbox" class="filter-category" value="book-chapters" checked> Book Chapters</label>
           <label class="block"><input type="checkbox" class="filter-category" value="public-facing" checked> Public-Facing Scholarship</label>
-          <select id="sort-year" class="mt-4 p-2 border rounded">
+          <select id="sort-year" class="mt-4 p-2 border rounded w-full">
             <option value="desc">Sort by Year (Newest First)</option>
             <option value="asc">Sort by Year (Oldest First)</option>
           </select>
@@ -89,7 +90,7 @@
       themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
 
-    // Publications data (same as provided)
+    // Full publications list
     const publications = [
       {
         year: 2025,
@@ -108,7 +109,237 @@
             </div>
           </div>`
       },
-      // Add remaining publications (omitted for brevity; use your existing array)
+      {
+        year: 2024,
+        category: "peer-reviewed",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2024" data-category="peer-reviewed">
+            <span class="pub-date text-emerald-600 font-bold">2024</span>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3687002" target="_blank" class="text-lg font-semibold">Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms</a><br>
+            <p>Authors: Ashique Ali Thuppilikkat, Dipsita Dhar, Priyank Chandra</p>
+            <p>Tags: Digital Labour, Gig Work, Trade Union, Resistance</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-2">Show Citation</button>
+            <a href="publications/thuppilikkat-2024-union.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/thuppilikkat2024union.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-2" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. 2024. “Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms.” <i>Proceedings of the ACM on Human-Computer Interaction</i> 8, no. CSCW2: 1–36. <a href="https://dl.acm.org/doi/abs/10.1145/3687002" target="_blank">https://dl.acm.org/doi/abs/10.1145/3687002</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2024,
+        category: "peer-reviewed",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2024" data-category="peer-reviewed">
+            <span class="pub-date text-emerald-600 font-bold">2024</span>
+            <a href="https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html" target="_blank" class="text-lg font-semibold">A Short History of the Cooperative Movement in Northern Malabar, Kerala</a><br>
+            <p>Authors: Ashique Ali Thuppilikkat</p>
+            <p>Tags: Cooperatives, Digital Solidarity Economy, Indian Political Process</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-3">Show Citation</button>
+            <a href="publications/thuppilikkat-2024-cooperative.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/thuppilikkat2024cooperative.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-3" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali. 2024. “A Short History of the Cooperative Movement in Northern Malabar, Kerala.” <i>Economic and Political Weekly</i> 59, no. 31: 47–52. <a href="https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html" target="_blank">https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2022,
+        category: "peer-reviewed",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2022" data-category="peer-reviewed">
+            <span class="pub-date text-emerald-600 font-bold">2022</span>
+            <a href="https://www.tandfonline.com/doi/full/10.1080/13552074.2022.2127574" target="_blank" class="text-lg font-semibold">Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi</a><br>
+            <p>Authors: Dipsita Dhar, Ashique Ali Thuppilikkat</p>
+            <p>Tags: Digital Labour, Gig Work, Trade Union, Resistance</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-4">Show Citation</button>
+            <a href="publications/dhar-2022-gendered.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/dhar2022gendered.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-4" class="mt-2 hidden">
+              <p>Dhar, Dipsita, and Ashique Ali Thuppilikkat. 2022. “Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi.” <i>Gender & Development</i> 30, no. 3: 667–686. <a href="https://www.tandfonline.com/doi/full/10.1080/13552074.2022.2127574" target="_blank">https://www.tandfonline.com/doi/full/10.1080/13552074.2022.2127574</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2024,
+        category: "extended-abstracts",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2024" data-category="extended-abstracts">
+            <span class="pub-date text-emerald-600 font-bold">2024</span>
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3678884.3687143" target="_blank" class="text-lg font-semibold">Organizing for More Just and Inclusive Futures: A Community Discussion</a><br>
+            <p>Authors: Kim Fernandes, Rahaf Alharbi, Cella Sum, Vaishnav Kameswaran, Franchesca Spektor, Ashique Ali Thuppilikkat, Adrian Petterson, Megh Marathe, Foad Hamidi, Priyank Chandra</p>
+            <p>Tags: Disability Justice, Social Movements, Organizing, Technologies, Access</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-5">Show Citation</button>
+            <a href="publications/fernandes-2024-organizing.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/fernandes2024organizing.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-5" class="mt-2 hidden">
+              <p>Fernandes, Kim, Rahaf Alharbi, Cella Sum, Vaishnav Kameswaran, Franchesca Spektor, Ashique Ali Thuppilikkat, Adrian Petterson, Megh Marathe, Foad Hamidi, and Priyank Chandra. 2024. “Organizing for More Just and Inclusive Futures: A Community Discussion.” In <i>Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing</i>, 689–692. <a href="https://dl.acm.org/doi/pdf/10.1145/3678884.3687143" target="_blank">https://dl.acm.org/doi/pdf/10.1145/3678884.3687143</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2023,
+        category: "extended-abstracts",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2023" data-category="extended-abstracts">
+            <span class="pub-date text-emerald-600 font-bold">2023</span>
+            <a href="https://dl.acm.org/doi/full/10.1145/3544549.3573812" target="_blank" class="text-lg font-semibold">Supporting Social Movements through HCI and Design</a><br>
+            <p>Authors: Adrian Petterson, Ashique Ali Thuppilikkat, Paridhi Gupta, Shamika Klassen, Margaret C. Jack, Jun Liu, Priyank Chandra</p>
+            <p>Tags: Social Movements, Design, Activism</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-6">Show Citation</button>
+            <a href="publications/petterson-2023-supporting.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/petterson2023supporting.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-6" class="mt-2 hidden">
+              <p>Petterson, Adrian, Ashique Ali Thuppilikkat, Paridhi Gupta, Shamika Klassen, Margaret C. Jack, Jun Liu, and Priyank Chandra. 2023. “Supporting Social Movements through HCI and Design.” In <i>Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems</i>, 1–5. <a href="https://dl.acm.org/doi/full/10.1145/3544549.3573812" target="_blank">https://dl.acm.org/doi/full/10.1145/3544549.3573812</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2025,
+        category: "book-chapters",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2025" data-category="book-chapters">
+            <span class="pub-date text-emerald-600 font-bold">2025</span>
+            <span class="text-lg font-semibold">Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power</span><br>
+            <p>Authors: Dipsita Dhar, Ashique Ali Thuppilikkat, Soham Battacharya</p>
+            <p>Tags: Digital Labour, Resistance, Neoliberalism</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-7">Show Citation</button>
+            <a href="publications/dhar-2025-transversal.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/dhar2022transversal.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-7" class="mt-2 hidden">
+              <p>Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power.” In <i>Migrant Labour in the Gig Economy: The Intersection of Labour Digitization, Platform Capitalism, and Migration, and Resistance</i>, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2022,
+        category: "book-chapters",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2022" data-category="book-chapters">
+            <span class="pub-date text-emerald-600 font-bold">2022</span>
+            <span class="text-lg font-semibold">Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies</span><br>
+            <p>Authors: V.P. Sanu, Ashique Ali Thuppilikkat</p>
+            <p>Tags: Caste, Education Policy, Indian Politics</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-8">Show Citation</button>
+            <a href="publications/sanu-2022-entrenching.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <a href="bib/sanu2022entrenching.bib" download class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download BibTeX</a>
+            <div id="citation-8" class="mt-2 hidden">
+              <p>Sanu, V.P., and Ashique Ali Thuppilikkat. 2022. “Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies.” In <i>Education or Exclusion? The Plight of Indian Students</i>, edited by Dipsita Dhar and Nitheesh Narayanan, 144–155. New Delhi: LeftWord Books.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2023,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2023" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2023</span>
+            <a href="https://fair.work/en/fw/blog/riding-through-the-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" class="text-lg font-semibold">Riding through the Smog: A ‘Roznamcha’ of Ride-Sourcing Bike Taxis, <i>School of Cities, University of Toronto</i></a><br>
+            <p>Authors: Ashique Ali Thuppilikkat, Dipsita Dhar, Kadambari K. B., Priyank Chandra</p>
+            <p>Tags: Comic Strip</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-9">Show Citation</button>
+            <a href="publications/thuppilikkat-2023-riding.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <div id="citation-9" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2023. “Riding through the Smog: A ‘Roznamcha’ of Ride-Sourcing Bike Taxis.” Comic Strip, Runner-up in Knowledge Mobilization Project, School of Cities, University of Toronto. <a href="https://fair.work/en/fw/blog/riding-through-the-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank">https://fair.work/en/fw/blog/riding-through-the-smog-a-roznamcha-of-ride-sourcing-bike-taxis/</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2023,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2023" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2023</span>
+            <a href="https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747" target="_blank" class="text-lg font-semibold">Far-right Hindu Nationalists Are Using Digital Propaganda to Delegitimize India’s Wrestler Protests, <i>The Conversation</i></a><br>
+            <p>Authors: Ashique Ali Thuppilikkat</p>
+            <p>Tags: English Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-10">Show Citation</button>
+            <a href="https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">View Article</a>
+            <div id="citation-10" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali. 2023. “Far-right Hindu Nationalists Are Using Digital Propaganda to Delegitimize India’s Wrestler Protests.” <i>The Conversation</i>, May 24, 2023. <a href="https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747" target="_blank">https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2021,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2021" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2021</span>
+            <a href="https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp" target="_blank" class="text-lg font-semibold">The Indian Farmers’ Movement Has Shattered Narendra Modi’s Strongman Image, <i>Jacobin</i></a><br>
+            <p>Authors: Ashique Ali Thuppilikkat</p>
+            <p>Tags: English Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-11">Show Citation</button>
+            <a href="https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">View Article</a>
+            <div id="citation-11" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali. 2021. “The Indian Farmers’ Movement Has Shattered Narendra Modi’s Strongman Image.” <i>Jacobin</i>, November 2021. <a href="https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp" target="_blank">https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2021,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2021" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2021</span>
+            <a href="https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad" target="_blank" class="text-lg font-semibold">Kerala’s Communists Are Showing India a Path Out of Poverty, <i>Jacobin</i></a><br>
+            <p>Authors: Ashique Ali Thuppilikkat, Angshuman Sharma</p>
+            <p>Tags: English Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-12">Show Citation</button>
+            <a href="https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">View Article</a>
+            <div id="citation-12" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali, and Angshuman Sharma. 2021. “Kerala’s Communists Are Showing India a Path Out of Poverty.” <i>Jacobin</i>, November 2021. <a href="https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad" target="_blank">https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2019,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2019" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2019</span>
+            <a href="https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/" target="_blank" class="text-lg font-semibold">Breaking Barriers: Women Enter Sabarimala Hours after Women’s Wall, <i>Indian Cultural Forum</i></a><br>
+            <p>Authors: Ashique Ali Thuppilikkat</p>
+            <p>Tags: English Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-13">Show Citation</button>
+            <a href="https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">View Article</a>
+            <div id="citation-13" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali. 2019. “Breaking Barriers: Women Enter Sabarimala Hours after Women’s Wall.” <i>Indian Cultural Forum</i>, January 2, 2019. <a href="https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/" target="_blank">https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/</a>.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2020,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2020" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2020</span>
+            <span class="text-lg font-semibold">Techno-nationalism and Chinese Cyber Dominance, <i>Deshabhimani Weekly</i></span><br>
+            <p>Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.</p>
+            <p>Tags: Malayalam Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-14">Show Citation</button>
+            <a href="publications/thuppilikkat-2020-technonationalism.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <div id="citation-14" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2020. “Techno-nationalism and Chinese Cyber Dominance.” <i>Deshabhimani Weekly</i> 13, no. 51: 6–11.</p>
+            </div>
+          </div>`
+      },
+      {
+        year: 2019,
+        category: "public-facing",
+        html: `
+          <div class="publication-item bg-white p-4 rounded-lg shadow card mb-4" data-year="2019" data-category="public-facing">
+            <span class="pub-date text-emerald-600 font-bold">2019</span>
+            <span class="text-lg font-semibold">Ours Is a Struggle for Survival, <i>Kalakaumudi Weekly</i></span><br>
+            <p>Authors: Ashique Ali Thuppilikkat, Arun Kumar P.K.</p>
+            <p>Tags: Malayalam Articles</p>
+            <button class="toggle-citation bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500" data-target="citation-15">Show Citation</button>
+            <a href="publications/thuppilikkat-2019-struggle.pdf" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-500">Download PDF</a>
+            <div id="citation-15" class="mt-2 hidden">
+              <p>Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2019. “Ours Is a Struggle for Survival.” <i>Kalakaumudi Weekly</i> 44, no. 35: 16–19.</p>
+            </div>
+          </div>`
+      }
     ];
 
     function updatePublications() {
