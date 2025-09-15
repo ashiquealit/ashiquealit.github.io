@@ -13,57 +13,81 @@
     .smooth-scroll { scroll-behavior: smooth; }
     .card { transition: transform 0.3s; }
     .card:hover { transform: scale(1.05); }
-    [data-theme="dark"] {
-      --bg-body: #1F2937;
-      --text-primary: #E0E0E0;
-      --bg-card: #374151;
-    }
+    [data-theme="dark"] { --bg-body: #1F2937; --text-primary: #E0E0E0; --bg-card: #374151; }
+    .form-input { transition: all 0.3s ease; }
+    .form-input:focus { border-color: #10B981; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
-  <!-- Navbar (same as above) -->
+  <!-- Navbar -->
   <nav class="bg-gray-800 text-white sticky top-0 z-10">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
-      <button id="hamburger" class="md:hidden text-2xl">☰</button>
+      <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
       <ul id="navMenu" class="flex md:flex space-x-6 hidden md:block">
         <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
         <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
-        <li><a href="/publications.html" class="hover:text-emerald-400">Publications</a></li>
-        <li><a href="/research.html" class="hover:text-emerald-400">Research</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-emerald-400">Publications</a>
+          <ul class="absolute hidden group-hover:block bg-gray-800 text-white rounded-lg shadow-lg mt-2">
+            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
+            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
+          </ul>
+        </li>
+        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
         <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+        <li><a href="/cv.pdf" class="hover:text-emerald-400">CV</a></li>
       </ul>
-      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded"><i class="fas fa-moon"></i></button>
+      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
     </div>
   </nav>
 
   <!-- Contact Section -->
-  <section class="container mx-auto py-16" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card max-w-lg mx-auto">
-      <h1 class="text-3xl font-bold border-b-2 border-emerald-200 pb-2">Get in Touch</h1>
-      <p class="mt-4">Feel free to reach out for collaborations, inquiries, or to discuss my research.</p>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="mt-6">
-        <div class="mb-4">
-          <label for="name" class="block text-sm font-medium">Name</label>
-          <input type="text" name="name" id="name" class="w-full p-3 border rounded-lg" required>
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block text-sm font-medium">Email</label>
-          <input type="email" name="email" id="email" class="w-full p-3 border rounded-lg" required>
-        </div>
-        <div class="mb-4">
-          <label for="message" class="block text-sm font-medium">Message</label>
-          <textarea name="message" id="message" rows="5" class="w-full p-3 border rounded-lg" required></textarea>
-        </div>
-        <button type="submit" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">Send</button>
-      </form>
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Contact Me</h2>
       <div class="mt-6">
-        <p>Email: <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-emerald-600 hover:text-emerald-500">ashique.thuppilikkat@mail.utoronto.ca</a></p>
-        <div class="flex gap-4 mt-4">
-          <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en&oi=ao" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-google-scholar"></i> Google Scholar</a>
-          <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://x.com/ashiquealit/" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-x-twitter"></i> Twitter/X</a>
-          <a href="https://orcid.org/0000-0002-9760-6847" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-orcid"></i> ORCID</a>
+        <p class="text-lg">Feel free to reach out for collaborations, inquiries, or to discuss research on technology, worker resistance, or related topics.</p>
+
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="mt-6 space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" class="form-input mt-1 block w-full p-2 border rounded-md focus:ring-emerald-500 focus:border-emerald-500" required aria-label="Your Name">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" class="form-input mt-1 block w-full p-2 border rounded-md focus:ring-emerald-500 focus:border-emerald-500" required aria-label="Your Email">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="5" class="form-input mt-1 block w-full p-2 border rounded-md focus:ring-emerald-500 focus:border-emerald-500" required aria-label="Your Message"></textarea>
+          </div>
+          <button type="submit" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500" aria-label="Submit Contact Form">Send Message</button>
+        </form>
+
+        <!-- Email and Social Links -->
+        <div class="mt-8">
+          <h3 class="text-xl font-semibold">Contact Information</h3>
+          <div class="mt-4 space-y-2">
+            <p>
+              <i class="fas fa-envelope mr-2 text-emerald-600"></i>
+              <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="hover:text-emerald-500">ashique.thuppilikkat@mail.utoronto.ca</a>
+            </p>
+            <p>
+              <i class="fab fa-linkedin mr-2 text-emerald-600"></i>
+              <a href="https://www.linkedin.com/in/ashique-ali-thuppilikkat" target="_blank" class="hover:text-emerald-500">LinkedIn</a>
+            </p>
+            <p>
+              <i class="fab fa-twitter mr-2 text-emerald-600"></i>
+              <a href="https://x.com/ashique_ali" target="_blank" class="hover:text-emerald-500">Twitter/X</a>
+            </p>
+            <p>
+              <i class="fas fa-graduation-cap mr-2 text-emerald-600"></i>
+              <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank" class="hover:text-emerald-500">Google Scholar</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -72,6 +96,7 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center py-4">
     <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+    <p>Updated <span id="current-date"></span></p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -80,6 +105,8 @@
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const themeToggle = document.querySelector('.theme-toggle');
+    const currentDate = document.getElementById('current-date');
+    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('hidden');
