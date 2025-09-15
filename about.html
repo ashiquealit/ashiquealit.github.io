@@ -4,295 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Ashique Ali Thuppilikkat</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #5F6A7D; /* Slate Gray for body text */
-      background-color: #F9FAFB; /* Ivory background */
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav {
-      background-color: #2D2D2D; /* Charcoal */
-      color: white;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .title {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    #hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    #navMenu {
-      display: flex;
-      list-style: none;
-    }
-
-    #navMenu li {
-      margin-left: 2rem;
-    }
-
-    #navMenu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    #navMenu a:hover {
-      color: #A8C7A7; /* Light Olive for hover */
-    }
-
-    .intro {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      padding: 4rem 0;
-      background: white;
-      border-radius: 8px;
-      margin: 2rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #E5E7EB; /* Warm Gray border */
-    }
-
-    .intro h1 {
-      font-size: 2.25rem;
-      color: #2D2D2D; /* Charcoal for headings */
-      margin-bottom: 1rem;
-    }
-
-    .category-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .button {
-      padding: 0.5rem 1.5rem;
-      background-color: #4C7046; /* Olive Green for buttons */
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #A8C7A7; /* Light Olive for button hover */
-    }
-
-    section {
-      margin: 3rem 0;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: #2D2D2D; /* Charcoal for section headings */
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #E5E7EB; /* Warm Gray border */
-      padding-bottom: 0.5rem;
-    }
-
-    p, ul {
-      font-size: 1rem;
-      color: #5F6A7D; /* Slate Gray for text */
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .social-links a {
-      color: #4C7046; /* Olive Green for social links */
-      text-decoration: none;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .social-links a:hover {
-      color: #A8C7A7; /* Light Olive for social link hover */
-    }
-
-    .logo-img {
-      max-width: 150px;
-      margin: 1rem 1rem 0 0;
-    }
-
-    @media (max-width: 768px) {
-      #hamburger {
-        display: block;
-      }
-
-      #navMenu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #2D2D2D; /* Charcoal */
-        padding: 1rem;
-      }
-
-      #navMenu.active {
-        display: flex;
-      }
-
-      #navMenu li {
-        margin: 0.5rem 0;
-      }
-
-      .intro {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
+    body { font-family: 'Poppins', sans-serif; }
+    .smooth-scroll { scroll-behavior: smooth; }
+    .card { transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+    [data-theme="dark"] {
+      --bg-body: #1F2937;
+      --text-primary: #E0E0E0;
+      --bg-card: #374151;
     }
   </style>
 </head>
-<body>
-  <nav>
-    <div class="container">
-      <div class="title">Ashique Ali Thuppilikkat</div>
-      <div id="hamburger">☰</div>
-      <ul id="navMenu">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/publications.html">Publications</a></li>
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+<body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
+      <button id="hamburger" class="md:hidden text-2xl">☰</button>
+      <ul id="navMenu" class="flex md:flex space-x-6 hidden md:block">
+        <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
+        <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
+        <li><a href="/publications.html" class="hover:text-emerald-400">Publications</a></li>
+        <li><a href="/research.html" class="hover:text-emerald-400">Research</a></li>
+        <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
       </ul>
+      <button class="theme-toggle fixed top-4 right-4 bg-emerald-600 text-white p-2 rounded"><i class="fas fa-moon"></i></button>
     </div>
   </nav>
 
-  <div class="container">
-    <section class="intro">
-      <img src="images/profile.jpg" alt="Ashique Ali Thuppilikkat" class="profile-img">
-      <div>
-        <h1>About Ashique Ali Thuppilikkat</h1>
-        <div class="category-buttons">
-          <a href="about.html" class="button">About Me</a>
-          <a href="publications.html" class="button">Publications</a>
-          <a href="research/index.html" class="button">Research</a>
-        </div>
+  <!-- Hero Section -->
+  <section class="bg-emerald-50 py-16 text-center" data-aos="fade-up">
+    <div class="container mx-auto">
+      <img src="images/profile.jpg" alt="Ashique Ali Thuppilikkat" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-emerald-200">
+      <h1 class="text-3xl font-bold">About Ashique Ali Thuppilikkat</h1>
+      <p class="text-lg mt-2">PhD Student | Technology, Worker Resistance, and Platformization</p>
+      <div class="flex justify-center gap-4 mt-4">
+        <a href="about.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">About Me</a>
+        <a href="publications.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">Publications</a>
+        <a href="research/index.html" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-500">Research</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="bio">
-      <h2>Bio</h2>
-      <p>I am a PhD student at the Faculty of Information, University of Toronto, Canada. My research examines the role of technology in worker resistance and unionization amidst the platformization of urban life. Specifically, I investigate how digital tools can support unions and workers in location-based labour platforms to organize around and resist/confront the impacts of climate change on their working conditions.</p>
-      <p>My interests include worker-centric platform designs, tech-mediated resistance in social movements, and critical studies of caste and technology. Prof. Priyank Chandra advises my doctoral studies.</p>
-    </section>
+  <!-- Bio Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Bio</h2>
+      <p class="mt-4">I am a PhD student at the Faculty of Information, University of Toronto, Canada. My research examines the role of technology in worker resistance and unionization amidst the platformization of urban life. Specifically, I investigate how digital tools can support unions and workers in location-based labour platforms to organize around and resist/confront the impacts of climate change on their working conditions.</p>
+      <p class="mt-2">My interests include worker-centric platform designs, tech-mediated resistance in social movements, and critical studies of caste and technology. Prof. Priyank Chandra advises my doctoral studies.</p>
+    </div>
+  </section>
 
-    <section class="awards">
-      <h2>Major Awards & Fellowships</h2>
-      <ul>
+  <!-- Awards Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Major Awards & Fellowships</h2>
+      <ul class="list-disc pl-6 mt-4">
         <li><strong>2025–2026</strong>: Connaught PhDs for Public Impact Fellowship, University of Toronto</li>
         <li><strong>2024–2025</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
         <li><strong>2023–2024</strong>: Graduate Fellow, School of Cities, University of Toronto, Canada</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-
-    <section class="lab-affiliations">
-      <h2>Lab Affiliations</h2>
-      <p>I am part of the Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto.</p>
-      <div>
-        <img src="images/uoft-logo.png" alt="University of Toronto" class="logo-img">
-        <img src="images/street-lab-logo.png" alt="STREET Lab" class="logo-img">
+  <!-- Lab Affiliations Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Lab Affiliations</h2>
+      <p class="mt-4">I am part of the Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto.</p>
+      <div class="flex flex-wrap gap-4 mt-4">
+        <img src="images/uoft-logo.png" alt="University of Toronto" class="w-24 h-auto">
+        <img src="images/street-lab-logo.png" alt="STREET Lab" class="w-24 h-auto">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="research-streams">
-      <h2>Research Streams</h2>
-      <ul>
-        <li><strong>Computer-Supported Cooperative Work (CSCW)
-        <li><strong>Human-Computer Interaction (HCI)
+  <!-- Research Streams Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Research Streams</h2>
+      <ul class="list-disc pl-6 mt-4">
+        <li><strong>Computer-Supported Cooperative Work (CSCW)</strong></li>
+        <li><strong>Human-Computer Interaction (HCI)</strong></li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="past-education">
-      <h2>Past Education</h2>
-      <ul>
+  <!-- Past Education Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Past Education</h2>
+      <ul class="list-disc pl-6 mt-4">
         <li><strong>M.Phil in Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, India</li>
         <li><strong>Master of Arts in Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, India</li>
         <li><strong>BA (Hons) Political Science</strong>, Ramjas College, University of Delhi, India</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca">ashique.thuppilikkat@mail.utoronto.ca</a></p>
-      <div class="social-links">
-        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en&oi=ao" target="_blank"><i class="fab fa-google-scholar"></i> Google Scholar</a>
-        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://x.com/ashiquealit/" target="_blank"><i class="fab fa-x-twitter"></i> Twitter/X</a>
-        <a href="https://orcid.org/0000-0002-9760-6847" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+  <!-- Contact Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="bg-white p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Contact</h2>
+      <p class="mt-4">Email: <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-emerald-600 hover:text-emerald-500">ashique.thuppilikkat@mail.utoronto.ca</a></p>
+      <div class="flex gap-4 mt-4">
+        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en&oi=ao" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-google-scholar"></i> Google Scholar</a>
+        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://x.com/ashiquealit/" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-x-twitter"></i> Twitter/X</a>
+        <a href="https://orcid.org/0000-0002-9760-6847" target="_blank" class="text-emerald-600 hover:text-emerald-500"><i class="fab fa-orcid"></i> ORCID</a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init();
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
+    const themeToggle = document.querySelector('.theme-toggle');
 
     hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      navMenu.classList.toggle('hidden');
+      navMenu.classList.toggle('block');
+    });
+
+    themeToggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+      themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
   </script>
+</body>
+</html>
