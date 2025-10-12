@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Technology, Design & Labour Resistance | Ashique Ali Thuppilikkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Lora', serif; }
+        .nav-link.active { color: #2563eb; font-weight: 600; position: relative; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background-color: #2563eb; }
+        .item-list > li { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .item-list > li:last-child { border-bottom: none; margin-bottom: 0; }
+        .tag { display: inline-block; background-color: #eef2ff; color: #4338ca; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-right: 0.5rem; margin-top: 0.5rem; }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #2d3748; color: white; padding: 10px 20px; border-radius: 8px; z-index: 100; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .toast.show { opacity: 1; }
+    </style>
+</head>
+<body class="text-gray-700 leading-relaxed bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
+            <nav class="hidden lg:flex space-x-6">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link active">Research</a>
+                <a href="index.html#writing" class="nav-link">Writing</a>
+                <a href="index.html#talks" class="nav-link">Talks & Workshops</a>
+                <a href="index.html#teaching" class="nav-link">Teaching</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="lg:hidden p-2"><svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h16"></path></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
+             <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="block py-2">Home</a>
+                <a href="index.html#about" class="block py-2">About</a>
+                <a href="index.html#research" class="block py-2">Research</a>
+                <a href="index.html#writing" class="block py-2">Writing</a>
+                <a href="index.html#talks" class="block py-2">Talks & Workshops</a>
+                <a href="index.html#teaching" class="block py-2">Teaching</a>
+                <a href="index.html#contact" class="block py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 lg:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <a href="index.html#research" class="text-blue-600 hover:underline mb-8 inline-block">&larr; Back to All Research</a>
+                <h1 class="text-4xl font-bold font-serif text-gray-800 mb-4">Technology, Design & Labour Resistance</h1>
+                <p class="text-lg text-gray-600 max-w-3xl mb-12">
+                    This research stream investigates the dual role of technology as a tool for both managerial control and worker empowerment. My work focuses on how workers on digital labour platforms navigate algorithmic management, surveillance, and precarious conditions. I explore the innovative ways workers and traditional unions are adopting and adapting digital tools—from secure messaging apps to social media—to organize, build solidarity, and launch collective actions for better pay, rights, and working conditions. A key focus is understanding how to design technologies that genuinely support and amplify worker-led resistance.
+                </p>
+
+                <h2 class="text-2xl font-bold font-serif text-gray-800 mt-16 mb-8">Sub-Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <!-- Unions, Worker Resistance & Digital Labour Platforms -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Unions & Digital Labour Platforms</h3>
+                        <p>Analyzes the strategies of traditional trade unions and new forms of worker collectives in organizing gig workers on ridesourcing and delivery platforms.</p>
+                    </div>
+                    <!-- Environmental Hazards & Digital Labour -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Environmental Hazards & Digital Labour</h3>
+                        <p>Investigates the intersection of climate change and platform work, focusing on how environmental risks like pollution disproportionately affect gig workers.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">All Related Publications & Talks</h2>
+                <ul class="item-list">
+                    <!-- Publications will be dynamically added here based on tags -->
+                    <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the smog: A ‘roznamcha’ of ride-sourcing bike taxis.”</p>
+                        <p class="italic text-gray-600">School of Cities, University of Toronto.</p>
+                        <div class="mt-2"><a href="https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.”</p>
+                        <p class="italic text-gray-600">In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25).</p>
+                        <div class="mt-2"><a href="https://doi.org/10.1145/3706598.3713266" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@article{thuppilikkat2025generative, title = {Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Raval, Noopur and Chandra, Priyank}, year = {2025}, journal = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems}, pages = {1--18}, url = {https://dl.acm.org/doi/full/10.1145/3706598.3713266}}</div>
+                        <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.” In *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)*. https://doi.org/10.1145/3706598.3713266.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                     <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a neo liberal city through identity and labour power.”</p>
+                        <p class="italic text-gray-600">In *Migrant Labour in the Gig Economy: The intersection of labour digitization, platform capitalism, and migration, and resistance*, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</p>
+                        <div class="mt-2"><a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@incollection{dhar2025transversal, title = {Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power}, author = {Dhar, Dipsita and Thuppilikkat, Ashique Ali and Battacharya, Soham}, year = {2025}, booktitle = {Migrant Labour in the Gig Economy: The Intersection of Labour Digitization, Platform Capitalism, and Migration, and Resistance}, editor = {Della Puppa, Francesco and Dhar, Dipsita and Monttagna, Nicola}, publisher = {Palgrave}, address = {London}}</div>
+                        <div class="cite-data hidden">Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power.” In *Migrant Labour in the Gig Economy: The Intersection of Labour Digitization, Platform Capitalism, and Migration, and Resistance*, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-500 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Ashique Ali Thuppilikkat. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <div id="toast-notification" class="toast"></div>
+
+    <script>
+        // Script for mobile menu, toast notifications, and copy buttons
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            
+            const toast = document.getElementById('toast-notification');
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => { toast.classList.remove('show'); }, 2000);
+            }
+
+            document.body.addEventListener('click', function(event) {
+                const target = event.target;
+                if (target.classList.contains('bibtex-btn') || target.classList.contains('cite-btn')) {
+                    event.preventDefault();
+                    const isBibtex = target.classList.contains('bibtex-btn');
+                    const selector = isBibtex ? '.bibtex-data' : '.cite-data';
+                    const message = isBibtex ? 'BibTeX copied to clipboard!' : 'Citation copied to clipboard!';
+                    const textToCopy = target.closest('li').querySelector(selector).textContent;
+                    
+                    const textarea = document.createElement('textarea');
+                    textarea.value = textToCopy;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try { document.execCommand('copy'); showToast(message); } catch (err) { showToast('Failed to copy.'); }
+                    document.body.removeChild(textarea);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
