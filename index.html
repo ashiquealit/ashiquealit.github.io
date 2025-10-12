@@ -101,7 +101,7 @@
       }
     }
     
-    /* Mobile responsiveness */
+    /* Mobile responsiveness enhancements */
     @media (max-width: 767px) {
       .desktop-menu {
         display: none;
@@ -125,6 +125,66 @@
       .btn-mobile {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Grid adjustments */
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      /* Navigation padding */
+      nav .container {
+        padding: 1rem;
+      }
+
+      /* Section padding reduction */
+      .py-16 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      /* Hero height */
+      #home {
+        height: 70vh;
+      }
+
+      /* Contact form inputs */
+      input, textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+
+      /* Social icons */
+      .flex.space-x-4 {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
       }
     }
     
@@ -172,6 +232,15 @@
     .back-to-top.visible {
       opacity: 1;
     }
+
+    @media (max-width: 767px) {
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
     
     /* Improved contrast for accessibility */
     .improved-contrast {
@@ -181,6 +250,15 @@
     [data-theme="dark"] .improved-contrast {
       color: #e0e0e0;
     }
+
+    /* Publication specific */
+    .publication-item {
+      background-color: var(--bg-card);
+    }
+    .tag-filter { cursor: pointer; }
+    .tag-filter.selected { background-color: var(--text-accent); color: white; }
+    .filter-section label { color: var(--text-body); }
+    .filter-section h4 { color: var(--text-body); }
   </style>
 </head>
 <body class="smooth-scroll" data-theme="light">
@@ -193,32 +271,18 @@
       
       <!-- Desktop Menu -->
       <ul class="desktop-menu hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-emerald-400 transition-colors">Home</a></li>
-        <li><a href="#about" class="hover:text-emerald-400 transition-colors">About</a></li>
-        <li class="relative group">
-          <a href="#publications" class="hover:text-emerald-400 transition-colors block px-4 py-2">Publications</a>
-          <ul class="absolute bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
-            <li><a href="#academic" class="block px-4 py-2 hover:bg-emerald-600 transition-colors">Academic Publications</a></li>
-            <li><a href="#public-facing" class="block px-4 py-2 hover:bg-emerald-600 transition-colors">Public-Facing Scholarship</a></li>
-          </ul>
-        </li>
-        <li><a href="#news" class="hover:text-emerald-400 transition-colors">News</a></li>
-        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/" class="hover:text-emerald-400 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="hover:text-emerald-400 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="hover:text-emerald-400 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400 transition-colors">Teaching</a></li>
       </ul>
       
       <!-- Mobile Menu -->
       <ul class="mobile-menu" id="mobileMenu">
-        <li><a href="#home" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Home</a></li>
-        <li><a href="#about" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">About</a></li>
-        <li>
-          <a href="#publications" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Publications</a>
-          <ul class="pl-6 mt-2">
-            <li><a href="#academic" class="block py-2 hover:text-emerald-400 transition-colors">Academic Publications</a></li>
-            <li><a href="#public-facing" class="block py-2 hover:text-emerald-400 transition-colors">Public-Facing Scholarship</a></li>
-          </ul>
-        </li>
-        <li><a href="#news" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">News</a></li>
-        <li><a href="#contact" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Contact</a></li>
+        <li><a href="/" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Teaching</a></li>
       </ul>
       
       <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded hover:bg-emerald-500 transition-colors" aria-label="Toggle Dark Mode">
@@ -235,12 +299,12 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 text-white px-4 max-w-4xl animate-fade-in">
+    <div class="relative z-10 text-white px-4 max-w-4xl animate-fade-in hero-content">
       <h1 class="text-4xl md:text-6xl font-bold text-shadow-md mb-4">Ashique Ali Thuppilikkat</h1>
       <p class="text-xl md:text-2xl mb-8 text-shadow-md">
         PhD Student | University of Toronto | Technology & Resistance Researcher
       </p>
-      <div class="flex justify-center gap-4 mt-6 flex-wrap">
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6 flex-wrap">
         <a href="#about" class="bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg border border-emerald-700 hover:bg-emerald-500 hover:shadow-xl transition-all duration-300 btn-mobile">
           Learn More
         </a>
@@ -259,11 +323,11 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 bg-gray-50">
+  <section id="about" class="py-16" style="background-color: var(--bg-body);">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
       
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="card-bg p-8 rounded-lg shadow-lg card">
           <h3 class="text-2xl font-semibold mb-4 text-accent">Background</h3>
           <p class="mb-4 improved-contrast">
@@ -276,7 +340,7 @@
             location-based labour platforms to organise around and resist/confront the impacts of 
             climate change on their working conditions.
           </p>
-          <a href="#" class="inline-flex items-center text-emerald-600 hover:text-emerald-500 font-semibold">
+          <a href="#full-bio" class="inline-flex items-center text-emerald-600 hover:text-emerald-500 font-semibold">
             Read Full Bio <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -306,6 +370,11 @@
           </p>
         </div>
       </div>
+      <!-- Full Bio Section (Added for link functionality) -->
+      <section id="full-bio" class="mt-12 card-bg p-8 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4 text-accent">Full Bio</h3>
+        <p class="improved-contrast">Detailed biography content goes here. Expand on background, education, and career highlights.</p>
+      </section>
     </div>
   </section>
 
@@ -314,7 +383,13 @@
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">Recent News & Achievements</h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card-bg p-6 rounded-lg shadow card">
+          <div class="text-accent font-bold text-lg mb-2">2024</div>
+          <h3 class="text-xl font-semibold mb-3">SDG Graduate Student Award</h3>
+          <p class="improved-contrast">Received the Sustainable Development Goal (SDG) UofT Graduate Student Award for research impact.</p>
+        </div>
+        
         <div class="card-bg p-6 rounded-lg shadow card">
           <div class="text-accent font-bold text-lg mb-2">2025</div>
           <h3 class="text-xl font-semibold mb-3">Connaught PhDs for Public Impact Fellowship</h3>
@@ -325,12 +400,6 @@
           <div class="text-accent font-bold text-lg mb-2">2025</div>
           <h3 class="text-xl font-semibold mb-3">CHI 2025 Publication</h3>
           <p class="improved-contrast">Published "Generative Politics and Labour Markets" in the CHI 2025 conference proceedings.</p>
-        </div>
-        
-        <div class="card-bg p-6 rounded-lg shadow card">
-          <div class="text-accent font-bold text-lg mb-2">2024</div>
-          <h3 class="text-xl font-semibold mb-3">SDG Graduate Student Award</h3>
-          <p class="improved-contrast">Received the Sustainable Development Goal (SDG) UofT Graduate Student Award for research impact.</p>
         </div>
       </div>
       
@@ -343,11 +412,11 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-50">
+  <section id="contact" class="py-16" style="background-color: var(--bg-body);">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
       
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
           <div class="space-y-4">
@@ -357,7 +426,7 @@
               </div>
               <div>
                 <h4 class="font-semibold">Email</h4>
-                <p class="improved-contrast">ashique.ali@example.com</p>
+                <a href="mailto:ashique.ali@example.com" class="improved-contrast">ashique.ali@example.com</a>
               </div>
             </div>
             
@@ -384,39 +453,39 @@
           
           <div class="mt-8">
             <h4 class="font-semibold mb-4">Connect With Me</h4>
-            <div class="flex space-x-4">
-              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+            <div class="flex space-x-4 justify-center">
+              <a href="https://www.linkedin.com/in/ashiqueali" aria-label="LinkedIn Profile" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+              <a href="https://twitter.com/ashiqueali" aria-label="Twitter Profile" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+              <a href="https://github.com/ashiquealit" aria-label="GitHub Profile" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+              <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" aria-label="Google Scholar Profile" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-google-scholar"></i>
               </a>
             </div>
           </div>
         </div>
         
-        <div class="card-bg p-8 rounded-lg shadow">
+        <div class="card-bg p-8 rounded-lg shadow card">
           <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
           <form>
             <div class="mb-4">
               <label for="name" class="block font-medium mb-2 improved-contrast">Name</label>
-              <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+              <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" required>
             </div>
             
             <div class="mb-4">
               <label for="email" class="block font-medium mb-2 improved-contrast">Email</label>
-              <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+              <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" required>
             </div>
             
             <div class="mb-4">
               <label for="message" class="block font-medium mb-2 improved-contrast">Message</label>
-              <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"></textarea>
+              <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" required></textarea>
             </div>
             
             <button type="submit" class="bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors w-full">
@@ -435,11 +504,10 @@
       <p class="mt-2">Updated <span id="current-date"></span></p>
       
       <div class="mt-6">
-        <a href="#home" class="text-emerald-400 hover:text-emerald-300 mx-2">Home</a>
-        <a href="#about" class="text-emerald-400 hover:text-emerald-300 mx-2">About</a>
-        <a href="#publications" class="text-emerald-400 hover:text-emerald-300 mx-2">Publications</a>
-        <a href="#news" class="text-emerald-400 hover:text-emerald-300 mx-2">News</a>
-        <a href="#contact" class="text-emerald-400 hover:text-emerald-300 mx-2">Contact</a>
+        <a href="/" class="text-emerald-400 hover:text-emerald-300 mx-2">Home</a>
+        <a href="/academic-publications.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Academic Publications</a>
+        <a href="/public-scholarship.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Public Scholarship</a>
+        <a href="/teaching.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Teaching</a>
       </div>
     </div>
   </footer>
@@ -535,6 +603,15 @@
         }
       });
     });
+
+    // Form submission handler (basic prevention of default, add real backend as needed)
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Message sent! (Demo - integrate with backend for real submission)');
+      });
+    }
   </script>
 
 </body>
