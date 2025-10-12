@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talks & Workshops | Ashique Ali Thuppilikkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Lora', serif; }
+        .section-title { position: relative; padding-bottom: 0.75rem; margin-bottom: 2rem; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #2563eb; }
+        .nav-link.active { color: #2563eb; font-weight: 600; position: relative; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background-color: #2563eb; }
+        .item-list > li { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .item-list > li:last-child { border-bottom: none; margin-bottom: 0; }
+        .tag { display: inline-block; background-color: #eef2ff; color: #4338ca; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-right: 0.5rem; margin-top: 0.5rem; }
+        .active-tab { border-color: #2563eb; color: #1e3a8a; font-weight: 600; }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #2d3748; color: white; padding: 10px 20px; border-radius: 8px; z-index: 100; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .toast.show { opacity: 1; }
+    </style>
+</head>
+<body class="text-gray-700 leading-relaxed bg-gray-50">
 
+    <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
+            <nav class="hidden lg:flex space-x-6">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="writing.html" class="nav-link">Writing</a>
+                <a href="talks.html" class="nav-link active">Talks & Workshops</a> <a href="index.html#teaching" class="nav-link">Teaching</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h16"></path></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html#home" class="block py-2">Home</a>
+                <a href="index.html#about" class="block py-2">About</a>
+                <a href="index.html#research" class="block py-2">Research</a>
+                <a href="writing.html" class="block py-2">Writing</a>
+                <a href="talks.html" class="block py-2">Talks & Workshops</a>
+                <a href="index.html#teaching" class="block py-2">Teaching</a>
+                <a href="index.html#contact" class="block py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-20 lg:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Talks & Workshops</h2>
+
+            <div class="mb-8 border-b border-gray-200">
+                <nav class="-mb-px flex space-x-6" aria-label="Tabs">
+                    <button class="tab-button talks-tab active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="conference-presentations">
+                        Conference Presentations
+                    </button>
+                    <button class="tab-button talks-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300" data-target="invited-talks">
+                        Invited Talks
+                    </button>
+                    <button class="tab-button talks-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300" data-target="workshop-organising">
+                        Workshop Organising
+                    </button>
+                </nav>
+            </div>
+
+            <div id="conference-presentations" class="talks-content">
+                <ul class="item-list">
+                    <li data-tags="Digital Solidarity Economy">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, and Priyank Chandra. "Women, Platforms, and State Power: The Lunch Bell Project and Digital Solidarity Economies in Kerala."</p>
+                        <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
+                        <p class="font-semibold">Chung, Hiu-Fung, Ashique Ali Thuppilikkat, and Kaushar Mahetaji. "Delivering ``Broken Promises'' to Save the Planet: Climate Crisis, Breakdowns and Socio-Ecological Infrastructure in Platform Capitalism."</p>
+                        <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "From Riders to Influencers: Exploring the Gigfluencer Phenomenon in Ridesourcing DLPs."</p>
+                        <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Critical Caste Studies in Social Computing,Technology, Design & Labour Resistance,Methods,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Aditya Nayak, and Aditi Vashistha. "Delivering Inequality: Caste and Labour in Location-based Digital Labour Platforms."</p>
+                        <p class="italic text-gray-600">Paper presented at 4s 2025, Seattle, United States of America, September 03-06, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Critical Caste Studies in Social Computing</span><span class="tag">Technology, Design & Labour Resistance</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. "Traditional Trade Unions in Transition: Confronting the Gig Economy."</p>
+                        <p class="italic text-gray-600">Paper presented at the Workshop on Labour in the Global South and from a Global South Lens, University of Toronto Scarborough, Canada, April 02, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Digital Solidarity Economy">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. "Big Tech and Worker Alternatives."</p>
+                        <p class="italic text-gray-600">Paper presented at Cyber-Marx @25: reflecting on 25 years of impact, Centre for Culture and Technology, University of Toronto, Canada, February 28, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, and Priyank Chandra. "Nudging away from protests and unions?: Exploring Dynamics of Power, Agency and Resistance in Online Communities of Auto-rickshaw drivers in On-demand Ridesourcing Digital Labour Platforms."</p>
+                        <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-7 (INDL) conference, Santiago, Chile, October 28-30, 2024.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. "Tech-mediated Resistance and Traditional Trade Union: A Case Study of Kolkata App Cab Ola Uber Union, West Bengal."</p>
+                        <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. "Union Makes us Strong: Experiences of Traditional Trade Union Organizing in Ride Sharing Digital Labour Platforms in Kolkata, West Bengal."</p>
+                        <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "Gendered Vulnerabilities in Platform Capitalism and the Strategies of Women's Resistance: A case study from India."</p>
+                        <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "The Survival Strategy among the Malayali Diaspora in Malta: Negotiating through the Gig Economy."</p>
+                        <p class="italic text-gray-600">Paper presented at the Second Athens Historical Materialism Conference, Panteion University, Athens, Greece, April 20-23, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "Understanding Gig Economy & Socially Reproductive Labour: A Case Study from India."</p>
+                        <p class="italic text-gray-600">Paper presented at the 41st International Labour Process Conference (ILPC), Glasgow, Scotland, April 12-14, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Critical Caste Studies in Social Computing,Methods">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. "Understanding Digital Caste Publics: Examining YouTube Vlogging amongst the Brahmin-Savarnas in Kerala."</p>
+                        <p class="italic text-gray-600">Paper presented at the Eastern Sociological Society, Baltimore, MD, USA, February 23-26, 2023.</p>
+                        <div class="tags-container mt-1"><span class="tag">Critical Caste Studies in Social Computing</span><span class="tag">Methods</span></div>
+                    </li>
+                    <li data-tags="">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. "Caste Inequalities and State Responses in the Education Sector: Marginalising Dalit Students’ Access to Education during the Covid-19 Pandemic in India."</p>
+                        <p class="italic text-gray-600">Paper presented at Dublin City University’s 5th Annual South Asia Conference, Dublin, Ireland, April 26-29, 2022.</p>
+                    </li>
+                    <li>
+                        <p class="font-semibold">Gupta, Paridhi, Ashique Ali Thuppilikkat, Cagdas Dedeoglu and Priyank Chandra. "Mediated Activism: Clicks for Justice and Freedom."</p>
+                        <p class="italic text-gray-600">Panel presentation at the International Federation of Information Processing (IFIP) 9.4, Lima, Peru, May 25-27, 2022.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="invited-talks" class="talks-content hidden">
+                <ul class="item-list">
+                    <li>
+                        <p class="font-semibold">"Unions and Gig Economy."</p>
+                        <p class="italic text-gray-600">Invited talk for 'Labour and Media' course, York University, Canada, February 07, 2025.</p>
+                    </li>
+                    <li>
+                        <p class="font-semibold">"Transport Infrastructures."</p>
+                        <p class="italic text-gray-600">Invited talk for 'Platform Politics and Power' course, Faculty of Information, University of Toronto, October 16, 2024.</p>
+                    </li>
+                    <li>
+                        <p class="font-semibold">"Digital Labour Platforms: A Study of Workplace Resistance and Unionization."</p>
+                        <p class="italic text-gray-600">Invited talk at Mahatma Gandhi University, Kerala, India, April 04, 2024.</p>
+                    </li>
+                    <li>
+                        <p class="font-semibold">"Caste in Canada: Discrimination and Resistance."</p>
+                        <p class="italic text-gray-600">Invited talk for the Department of History, University of Toronto, Canada, November 15, 2023.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="workshop-organising" class="talks-content hidden">
+                 <ul class="item-list">
+                    <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, et al. 2025. “(Re) working for Sustainable Futures: Climate Change and Platform Economies.”</p>
+                        <p class="italic text-gray-600">In *Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies*.</p>
+                        <div class="mt-2"><a href="https://doi.org/10.1145/3715335.3737685" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@inproceedings{thuppilikkat2025re, title={(Re) working for Sustainable Futures: Climate Change and Platform Economies}, author={Thuppilikkat, Ashique Ali and Chung, Hiu-Fung and Mahetaji, Kaushar and Singh, Anubha and Tieanklin, Nussara and Rodriguez, Isabella Jaimes and Liu, Jen and Raval, Noopur and Chandra, Priyank}, booktitle={Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies}, pages={848--852}, year={2025}}</div>
+                        <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Hiu-Fung Chung, Kaushar Mahetaji, Anubha Singh, Nussara Tieanklin, Isabella Jaimes Rodriguez, Jen Liu, Noopur Raval, and Priyank Chandra. 2025. “(Re) working for Sustainable Futures: Climate Change and Platform Economies.” In *Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies*, 848-852. https://doi.org/10.1145/3715335.3737685.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
+                    </li>
+                    <li data-tags="Technology & Social Movements">
+                        <p class="font-semibold">Fernandes, Kim, et al. 2024. “Organizing for More Just and Inclusive Futures: A Community Discussion.”</p>
+                        <p class="italic text-gray-600">In *Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing*.</p>
+                        <div class="mt-2"><a href="https://doi.org/10.1145/3678884.3687143" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@inproceedings{fernandes2024organizing, title = {Organizing for More Just and Inclusive Futures: A Community Discussion}, author = {Fernandes, Kim and Alharbi, Rahaf and Sum, Cella and Kameswaran, Vaishnav and Spektor, Franchesca and Thuppilikkat, Ashique Ali and Petterson, Adrian and Marathe, Megh and Hamidi, Foad and Chandra, Priyank}, year = {2024}, booktitle = {Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing}, pages = {689--692}, url = {https://dl.acm.org/doi/pdf/10.1145/3678884.3687143}}</div>
+                        <div class="cite-data hidden">Fernandes, Kim, Rahaf Alharbi, Cella Sum, Vaishnav Kameswaran, Franchesca Spektor, Ashique Ali Thuppilikkat, Adrian Petterson, Megh Marathe, Foad Hamidi, and Priyank Chandra. 2024. “Organizing for More Just and Inclusive Futures: A Community Discussion.” In *Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing*, 689–92. New York, NY: Association for Computing Machinery. https://doi.org/10.1145/3678884.3687143.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span></div>
+                    </li>
+                    <li data-tags="Technology & Social Movements">
+                        <p class="font-semibold">Petterson, Adrian, et al. 2023. “Supporting Social Movements Through HCI and Design.”</p>
+                        <p class="italic text-gray-600">In *Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems*.</p>
+                        <div class="mt-2"><a href="https://doi.org/10.1145/3544549.3573812" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@inproceedings{petterson2023supporting, title = {Supporting Social Movements through HCI and Design}, author = {Petterson, Adrian and Thuppilikkat, Ashique Ali and Gupta, Paridhi and Klassen, Shamika and Jack, Margaret C. and Liu, Jun and Chandra, Priyank}, year = {2023}, booktitle = {Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems}, pages = {1--5}, url = {https://dl.acm.org/doi/full/10.1145/3544549.3573812}}</div>
+                        <div class="cite-data hidden">Petterson, Adrian, Ashique Ali Thuppilikkat, Paridhi Gupta, Shamika Klassen, Margaret C. Jack, Jun Liu, and Priyank Chandra. 2023. “Supporting Social Movements Through HCI and Design.” In *Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems*, Article 364, 1–5. New York, NY: Association for Computing Machinery. https://doi.org/10.1145/3544549.3573812.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-500 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Ashique Ali Thuppilikkat. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <div id="toast-notification" class="toast"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.talks-tab');
+        const contents = document.querySelectorAll('.talks-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.dataset.target;
+                tabs.forEach(t => {
+                    t.classList.remove('active-tab');
+                    t.classList.add('text-gray-500', 'border-transparent', 'hover:text-gray-700', 'hover:border-gray-300');
+                });
+                tab.classList.add('active-tab');
+                tab.classList.remove('text-gray-500', 'border-transparent', 'hover:text-gray-700', 'hover:border-gray-300');
+                contents.forEach(content => {
+                    content.id === targetId ? content.classList.remove('hidden') : content.classList.add('hidden');
+                });
+            });
+        });
+        
+        // Copy functionality
+        const toast = document.getElementById('toast-notification');
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 2000);
+        }
+        document.body.addEventListener('click', function(event) {
+            const target = event.target;
+            let textToCopy = ''; let message = '';
+            if (target.classList.contains('bibtex-btn')) {
+                event.preventDefault();
+                textToCopy = target.closest('li').querySelector('.bibtex-data').textContent;
+                message = "BibTeX copied to clipboard!";
+            } else if (target.classList.contains('cite-btn')) {
+                event.preventDefault();
+                textToCopy = target.closest('li').querySelector('.cite-data').textContent;
+                message = "Citation copied to clipboard!";
+            }
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy).then(() => showToast(message)).catch(() => showToast('Failed to copy.'));
+            }
+        });
+    });
+    </script>
+</body>
+</html>
