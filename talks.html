@@ -6,308 +6,613 @@
   <title>Talks/Presentations - Ashique Ali Thuppilikkat</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .smooth-scroll { scroll-behavior: smooth; }
-    .card { transition: transform 0.3s; }
-    .card:hover { transform: scale(1.05); }
-    [data-theme="dark"] { --bg-body: #1F2937; --text-primary: #E0E0E0; --bg-card: #374151; }
+    :root {
+      --bg-body: #f9fafb;
+      --text-body: #1f2937;
+      --bg-card: #ffffff;
+      --bg-nav: #1f2937;
+      --text-nav: #ffffff;
+      --bg-footer: #1f2937;
+      --text-footer: #ffffff;
+      --border-accent: #d1fae5;
+      --text-accent: #059669;
+    }
+    [data-theme="dark"] {
+      --bg-body: #1f2937;
+      --text-body: #e0e0e0;
+      --bg-card: #374151;
+      --bg-nav: #111827;
+      --text-nav: #e0e0e0;
+      --bg-footer: #111827;
+      --text-footer: #e0e0e0;
+      --border-accent: #047857;
+      --text-accent: #34d399;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    nav {
+      background-color: var(--bg-nav);
+      color: var(--text-nav);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: var(--bg-footer);
+      color: var(--text-footer);
+    }
+    .card-bg {
+      background-color: var(--bg-card);
+      border-radius: 12px;
+    }
+    .border-accent {
+      border-color: var(--border-accent);
+    }
+    .text-accent {
+      color: var(--text-accent);
+    }
+    .smooth-scroll { 
+      scroll-behavior: smooth; 
+    }
+    .card { 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow-md { 
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+    }
+    
+    /* Mobile menu styles */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-nav);
+      padding: 1rem;
+      z-index: 20;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-menu.active {
+      display: flex;
+    }
+    .mobile-menu li {
+      margin: 0.75rem 0;
+    }
+    
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .desktop-menu {
+        display: flex !important;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+    
+    /* Mobile responsiveness enhancements */
+    @media (max-width: 767px) {
+      .desktop-menu {
+        display: none;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      /* Button adjustments for mobile */
+      .btn-mobile {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Grid adjustments */
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      /* Navigation padding */
+      nav .container {
+        padding: 1rem;
+      }
+
+      /* Section padding reduction */
+      .py-16 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      /* Hero height */
+      #home {
+        height: 70vh;
+      }
+
+      /* Contact form inputs */
+      input, textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+
+      /* Social icons */
+      .flex.space-x-4 {
+        justify-content: center;
+      }
+
+      /* Talks items */
+      .talk-item {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+    
+    /* Accessibility improvements */
+    a:focus, button:focus {
+      outline: 2px solid var(--text-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Loading animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    /* Hero section improvements */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--text-accent);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+    /* Improved contrast for accessibility */
+    .improved-contrast {
+      color: #333;
+    }
+    
+    [data-theme="dark"] .improved-contrast {
+      color: #e0e0e0;
+    }
+
+    /* Publication specific */
+    .publication-item {
+      background-color: var(--bg-card);
+    }
+    .tag-filter { cursor: pointer; }
+    .tag-filter.selected { background-color: var(--text-accent); color: white; }
+    .filter-section label { color: var(--text-body); }
+    .filter-section h4 { color: var(--text-body); }
+
+    /* Talks specific */
+    .talk-item {
+      background-color: var(--bg-card);
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
+<body class="smooth-scroll" data-theme="light">
   <!-- Navbar -->
- <!-- Navbar -->
-  <nav class="sticky top-0 z-10">
+  <nav class="sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
       <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
-      <ul id="navMenu" class="hidden md:flex space-x-6">
-        <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
-        <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
-        <li class="relative group">
-          <a href="#" id="publications-dropdown" class="block px-4 py-2 hover:bg-emerald-600">Publications</a>
-          <ul class="absolute bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
-            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
-            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
-          </ul>
-        </li>
-        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
-        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
-        <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+      
+      <!-- Desktop Menu -->
+      <ul class="desktop-menu hidden md:flex space-x-6">
+        <li><a href="/" class="hover:text-emerald-400 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="hover:text-emerald-400 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="hover:text-emerald-400 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400 transition-colors">Teaching</a></li>
       </ul>
-      <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode">
+      
+      <!-- Mobile Menu -->
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="/" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Teaching</a></li>
+      </ul>
+      
+      <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded hover:bg-emerald-500 transition-colors" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
       </button>
     </div>
   </nav>
- <!-- Talks/Presentations Section -->
-<section class="container mx-auto py-8" data-aos="fade-up">
-  <div class="bg-white p-6 rounded-lg shadow card">
-    <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Talks/Presentations</h2>
 
-    <!-- Conference Presentations -->
-    <div class="mt-6">
-      <h3 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Conference Presentations</h3>
-      <div class="mt-4 space-y-6">
+  <!-- Google Scholar Integration Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="card-bg p-6 rounded-lg shadow card text-center">
+      <h2 class="text-2xl font-semibold mb-4">Google Scholar Profile</h2>
+      <p class="mb-4">Explore my publications and citations on Google Scholar (37 citations as of October 2025).</p>
+      <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" class="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors inline-flex items-center" rel="noopener noreferrer">
+        <i class="fab fa-google-scholar mr-2"></i> View Google Scholar
+      </a>
+    </div>
+  </section>
 
+  <!-- Talks/Presentations Section -->
+  <section class="container mx-auto py-8" data-aos="fade-up">
+    <div class="card-bg p-6 rounded-lg shadow card">
+      <h2 class="text-2xl font-semibold border-b-2 border-accent pb-2">Talks/Presentations</h2>
 
-        <!-- 2025 Presentations -->
-<div>
-  <span class="text-emerald-600 font-bold">2025</span>
-  
-  <div class="mt-2">
-    <p><strong>Women, Platforms, and State Power: The Lunch Bell Project and Digital Solidarity Economies in Kerala</strong><br>
-      International Digital Labor Network (INDL)-8, Bologna, 10-12 September<br>
-    By Ashique Ali Thuppilikkat, and Priyank Chandra</p>
-    <span class="text-sm text-gray-500">#Digital Solidarity Economy</span>
-  </div>
+      <!-- Conference Presentations -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold border-b-2 border-accent pb-2">Conference Presentations</h3>
+        <div class="mt-4 space-y-6">
+          <!-- 2025 Presentations -->
+          <div>
+            <span class="text-accent font-bold text-lg mb-2 block">2025</span>
+            
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>Women, Platforms, and State Power: The Lunch Bell Project and Digital Solidarity Economies in Kerala</strong><br>
+                International Digital Labor Network (INDL)-8, Bologna, 10-12 September<br>
+                By Ashique Ali Thuppilikkat, and Priyank Chandra</p>
+              <span class="text-sm text-gray-500">#Digital Solidarity Economy</span>
+            </div>
 
-  <div class="mt-2">
-    <p><strong>From Riders to Influencers: The "Gigfluencer" Phenomenon in Ridesourcing DLPs</strong><br>
-International Digital Labor Network (INDL)-8, Bologna, 10-12 September <br>
-      By Dipsita Dhar, and Ashique Ali Thuppilikkat</p>
-    <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-  </div>
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>From Riders to Influencers: The "Gigfluencer" Phenomenon in Ridesourcing DLPs</strong><br>
+                International Digital Labor Network (INDL)-8, Bologna, 10-12 September <br>
+                By Dipsita Dhar, and Ashique Ali Thuppilikkat</p>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </div>
 
-  <div class="mt-2">
-    <p><strong>Delivering “Broken Promises” to Save the Planet: Climate Crisis, Breakdowns and Socio-Ecological Infrastructure in Platform Capitalism</strong><br>
-International Digital Labor Network (INDL)-8, Bologna, 10-12 September <br>
-      By Hiu Fung Chung, Kaushar Mahetaji, and Ashique Ali Thuppilikkat</p>
-    <span class="text-sm text-gray-500">#Platform and Climate Change</span>
-  </div>
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>Delivering “Broken Promises” to Save the Planet: Climate Crisis, Breakdowns and Socio-Ecological Infrastructure in Platform Capitalism</strong><br>
+                International Digital Labor Network (INDL)-8, Bologna, 10-12 September <br>
+                By Hiu Fung Chung, Kaushar Mahetaji, and Ashique Ali Thuppilikkat</p>
+              <span class="text-sm text-gray-500">#Platform and Climate Change</span>
+            </div>
 
-  <div class="mt-2">
-    <p><strong> Delivering Inequality: Caste and Labour in Location-based Digital Labour Platforms.</strong><br>
-      4S 2025, Seattle, United States, 3-6,September.<br>
-     By Ashique Ali Thuppilikkat, Aditya Nayak and Aditi Vashistha.</p>
-<span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-  </div>
-  
-  <div class="mt-2">
-    <p><strong>Traditional Trade Unions in Transition: Confronting the Gig Economy</strong><br>
-    Workshop on Labour in the Global South and from a Global South Lens, University of Toronto Scarborough, Ontario, Canada, April 02</p>
-    <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-  </div>
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>Delivering Inequality: Caste and Labour in Location-based Digital Labour Platforms.</strong><br>
+                4S 2025, Seattle, United States, 3-6 September.<br>
+                By Ashique Ali Thuppilikkat, Aditya Nayak and Aditi Vashistha.</p>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </div>
+            
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>Traditional Trade Unions in Transition: Confronting the Gig Economy</strong><br>
+                Workshop on Labour in the Global South and from a Global South Lens, University of Toronto Scarborough, Ontario, Canada, April 02</p>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </div>
 
-  <div class="mt-2">
-    <p><strong>Big Tech and Worker Alternatives</strong><br>
-    Cyber-Marx @25: Reflecting on 25 Years of Impact, Centre for Culture and Technology, University of Toronto, Ontario, Canada, February 28</p>
-    <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-  </div>
-</div>
+            <div class="talk-item card p-4 rounded-lg shadow mb-4">
+              <p><strong>Big Tech and Worker Alternatives</strong><br>
+                Cyber-Marx @25: Reflecting on 25 Years of Impact, Centre for Culture and Technology, University of Toronto, Ontario, Canada, February 28</p>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </div>
+          </div>
 
+          <!-- 2024 -->
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2024</span>
+            <p>
+              <strong>Nudging Away from Protests and Unions?: Exploring Dynamics of Power, Agency and Resistance in Online Communities of Auto-rickshaw Drivers in On-demand Ridesourcing Digital Labour Platforms</strong><br>
+              International Network on Digital Labour-7 (INDL) Conference, Santiago, Chile, October 28–30<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
 
-        <!-- 2024 -->
-        <div>
-          <span class="text-emerald-600 font-bold">2024</span>
-          <p>
-            <strong>Nudging Away from Protests and Unions?: Exploring Dynamics of Power, Agency and Resistance in Online Communities of Auto-rickshaw Drivers in On-demand Ridesourcing Digital Labour Platforms</strong><br>
-            International Network on Digital Labour-7 (INDL) Conference, Santiago, Chile, October 28–30<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
+          <!-- 2023 -->
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Tech-mediated Resistance and Traditional Trade Union: A Case Study of Kolkata App Cab Ola Uber Union, West Bengal</strong><br>
+              BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Union Makes Us Strong: Experiences of Traditional Trade Union Organizing in Ride Sharing Digital Labour Platforms in Kolkata, West Bengal</strong><br>
+              BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Gendered Vulnerabilities in Platform Capitalism and the Strategies of Women's Resistance: A Case Study from India</strong><br>
+              BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>The Survival Strategy Among the Malayali Diaspora in Malta: Negotiating Through the Gig Economy</strong><br>
+              Second Athens Historical Materialism Conference, Panteion University, Athens, Greece, April 20–23<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Understanding Gig Economy & Socially Reproductive Labour: A Case Study from India</strong><br>
+              41st International Labour Process Conference (ILPC), Glasgow, Scotland, April 12–14<br>
+              <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Understanding Digital Caste Publics: Examining YouTube Vlogging Amongst the Brahmin-Savarnas in Kerala</strong><br>
+              Eastern Sociological Society, Baltimore, MD, USA, February 23–26<br>
+              <span class="text-sm text-gray-500">#Caste and Technology</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Combating Crisis: Lessons from the Cooperative Movement in North Malabar, Kerala</strong><br>
+              Centre for South Asian Studies Graduate Symposium 2023, University of Toronto, Canada, April 20–21<br>
+              <span class="text-sm text-gray-500">#Solidarity Economy</span>
+            </p>
+          </div>
+
+          <!-- 2022 -->
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2022</span>
+            <p>
+              <strong>Caste Inequalities and State Responses in the Education Sector: Marginalising Dalit Students’ Access to Education During the Covid-19 Pandemic in India</strong><br>
+              Dublin City University’s 5th Annual South Asia Conference, Dublin, Ireland, April 26–29<br>
+              <span class="text-sm text-gray-500">#Caste and Technology</span>
+            </p>
+          </div>
+
+          <!-- 2019 -->
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2019</span>
+            <p>
+              <strong>Democracy in the Age of Social Networking Sites</strong><br>
+              Democracy and Public Institutions in India: Crisis and Opportunity?, Ambedkar University, New Delhi, India, March 29<br>
+              <span class="text-sm text-gray-500">#Democracy and Technology</span>
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow mb-4">
+            <span class="text-accent font-bold text-lg mb-2 block">2019</span>
+            <p>
+              <strong>The Political Economy of a Successful Cooperative Movement: A Kerala Experience</strong><br>
+              YSI Asia Convening, Hanoi, Vietnam, August 12–15<br>
+              <span class="text-sm text-gray-500">#Solidarity Economy</span>
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!-- 2023 -->
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Tech-mediated Resistance and Traditional Trade Union: A Case Study of Kolkata App Cab Ola Uber Union, West Bengal</strong><br>
-            BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
+      <!-- Panel Presentations -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold border-b-2 border-accent pb-2">Conference Panel Presentations</h3>
+        <div class="mt-4 space-y-4">
+          <div class="talk-item card p-4 rounded-lg shadow">
+            <span class="text-accent font-bold text-lg mb-2 block">2022</span>
+            <p>
+              <strong>Mediated Activism: Clicks for Justice and Freedom</strong><br>
+              Authors: Paridhi Gupta, Ashique Ali Thuppilikkat, Cagdas Dedeoglu, Priyank Chandra<br>
+              International Federation of Information Processing (IFIP) 9.4, Lima, Peru, May 25–27
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Union Makes Us Strong: Experiences of Traditional Trade Union Organizing in Ride Sharing Digital Labour Platforms in Kolkata, West Bengal</strong><br>
-            BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
+      <!-- Invited Talks -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold border-b-2 border-accent pb-2">Invited Talks</h3>
+        <div class="mt-4 space-y-4">
+          <div class="talk-item card p-4 rounded-lg shadow">
+            <span class="text-accent font-bold text-lg mb-2 block">2025</span>
+            <p>
+              <strong>Unions and Gig Economy</strong><br>
+              Year 4, Undergraduate Course on ‘Labour and Media’, York University, Canada, February 07
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow">
+            <span class="text-accent font-bold text-lg mb-2 block">2024</span>
+            <p>
+              <strong>Transport Infrastructures</strong><br>
+              Graduate Course on ‘Platform Politics and Power’, Faculty of Information, University of Toronto, October 16
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow">
+            <span class="text-accent font-bold text-lg mb-2 block">2024</span>
+            <p>
+              <strong>Digital Labour Platforms: A Study of Workplace Resistance and Unionization</strong><br>
+              Mahatma Gandhi University, Kerala, India, April 04
+            </p>
+          </div>
+
+          <div class="talk-item card p-4 rounded-lg shadow">
+            <span class="text-accent font-bold text-lg mb-2 block">2023</span>
+            <p>
+              <strong>Caste in Canada: Discrimination and Resistance</strong><br>
+              Department of History, University of Toronto, Canada, November 15
+            </p>
+          </div>
         </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Gendered Vulnerabilities in Platform Capitalism and the Strategies of Women's Resistance: A Case Study from India</strong><br>
-            BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13–15<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>The Survival Strategy Among the Malayali Diaspora in Malta: Negotiating Through the Gig Economy</strong><br>
-            Second Athens Historical Materialism Conference, Panteion University, Athens, Greece, April 20–23<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Understanding Gig Economy & Socially Reproductive Labour: A Case Study from India</strong><br>
-            41st International Labour Process Conference (ILPC), Glasgow, Scotland, April 12–14<br>
-            <span class="text-sm text-gray-500">#Labour, Technology and Resistance</span>
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Understanding Digital Caste Publics: Examining YouTube Vlogging Amongst the Brahmin-Savarnas in Kerala</strong><br>
-            Eastern Sociological Society, Baltimore, MD, USA, February 23–26<br>
-            <span class="text-sm text-gray-500">#Caste and Technology</span>
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Combating Crisis: Lessons from the Cooperative Movement in North Malabar, Kerala</strong><br>
-            Centre for South Asian Studies Graduate Symposium 2023, University of Toronto, Canada, April 20–21<br>
-            <span class="text-sm text-gray-500">#Solidarity Economy</span>
-          </p>
-        </div>
-
-        <!-- 2022 -->
-        <div>
-          <span class="text-emerald-600 font-bold">2022</span>
-          <p>
-            <strong>Caste Inequalities and State Responses in the Education Sector: Marginalising Dalit Students’ Access to Education During the Covid-19 Pandemic in India</strong><br>
-            Dublin City University’s 5th Annual South Asia Conference, Dublin, Ireland, April 26–29<br>
-            <span class="text-sm text-gray-500">#Caste and Technology</span>
-          </p>
-        </div>
-
-        <!-- 2019 -->
-        <div>
-          <span class="text-emerald-600 font-bold">2019</span>
-          <p>
-            <strong>Democracy in the Age of Social Networking Sites</strong><br>
-            Democracy and Public Institutions in India: Crisis and Opportunity?, Ambedkar University, New Delhi, India, March 29<br>
-            <span class="text-sm text-gray-500">#Democracy and Technology</span>
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2019</span>
-          <p>
-            <strong>The Political Economy of a Successful Cooperative Movement: A Kerala Experience</strong><br>
-            YSI Asia Convening, Hanoi, Vietnam, August 12–15<br>
-            <span class="text-sm text-gray-500">#Solidarity Economy</span>
-          </p>
-        </div>
-
       </div>
     </div>
-
-    <!-- Panel Presentations -->
-    <div class="mt-6">
-      <h3 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Conference Panel Presentations</h3>
-      <div class="mt-4 space-y-4">
-        <div>
-          <span class="text-emerald-600 font-bold">2022</span>
-          <p>
-            <strong>Mediated Activism: Clicks for Justice and Freedom</strong><br>
-            Authors: Paridhi Gupta, Ashique Ali Thuppilikkat, Cagdas Dedeoglu, Priyank Chandra<br>
-            International Federation of Information Processing (IFIP) 9.4, Lima, Peru, May 25–27
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Invited Talks -->
-    <div class="mt-6">
-      <h3 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Invited Talks</h3>
-      <div class="mt-4 space-y-4">
-
-        <div>
-          <span class="text-emerald-600 font-bold">2025</span>
-          <p>
-            <strong>Unions and Gig Economy</strong><br>
-            Year 4, Undergraduate Course on ‘Labour and Media’, York University, Canada, February 07
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2024</span>
-          <p>
-            <strong>Transport Infrastructures</strong><br>
-            Graduate Course on ‘Platform Politics and Power’, Faculty of Information, University of Toronto, October 16
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2024</span>
-          <p>
-            <strong>Digital Labour Platforms: A Study of Workplace Resistance and Unionization</strong><br>
-            Mahatma Gandhi University, Kerala, India, April 04
-          </p>
-        </div>
-
-        <div>
-          <span class="text-emerald-600 font-bold">2023</span>
-          <p>
-            <strong>Caste in Canada: Discrimination and Resistance</strong><br>
-            Department of History, University of Toronto, Canada, November 15
-          </p>
-        </div>
-
-      </div>
-    </
-
-  
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-4">
-    <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
-    <p>Updated <span id="current-date"></span></p>
+  <footer class="text-center py-8">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+      <p class="mt-2">Updated <span id="current-date"></span></p>
+      
+      <div class="mt-6">
+        <a href="/" class="text-emerald-400 hover:text-emerald-300 mx-2">Home</a>
+        <a href="/academic-publications.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Academic Publications</a>
+        <a href="/public-scholarship.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Public Scholarship</a>
+        <a href="/teaching.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Teaching</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  // Hamburger menu toggle (for mobile)
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('hidden');
-  });
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
 
-  // Publications dropdown toggle for mobile (click to open/close)
-  const publicationsDropdown = document.getElementById('publications-dropdown');
-  const publicationsSubmenu = document.getElementById('publications-submenu');
-  publicationsDropdown.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) { // Mobile only
-      e.preventDefault();
-      publicationsSubmenu.classList.toggle('hidden');
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.dataset.theme === 'dark';
+      document.body.dataset.theme = isDark ? 'light' : 'dark';
+      themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      
+      // Save theme preference to localStorage
+      localStorage.setItem('theme', document.body.dataset.theme);
+    });
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.body.dataset.theme = savedTheme;
+      themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
-  });
 
-  // Dark mode toggle
-  const themeToggle = document.querySelector('.theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-    themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-  });
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
 
-  // Close dropdown on outside click (for better UX)
-  document.addEventListener('click', (e) => {
-    if (!publicationsDropdown.contains(e.target)) {
-      publicationsSubmenu.classList.add('hidden');
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        hamburger.textContent = '☰';
+      });
+    });
+
+    // Update current date in footer
+    const currentDate = document.getElementById('current-date');
+    if (currentDate) {
+      currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
     }
-  });
-
-  // Set current date in footer
-  const currentDate = document.getElementById('current-date');
-  if (currentDate) {
-    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-  }
-</script>
+  </script>
 </body>
 </html>
