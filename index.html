@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Ashique Ali Thuppilikkat | University of Toronto</title>
+    <meta name="description" content="The academic portfolio of Ashique Ali Thuppilikkat, a PhD student at the University of Toronto focusing on Labour & Social Computing, CSCW, and HCI.">
+    <meta name="theme-color" content="#ffffff">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Custom styles to complement Tailwind CSS */
         body {
@@ -18,12 +23,11 @@
         h1, h2, h3, h4, .font-serif {
             font-family: 'Lora', serif;
         }
-        .nav-link.active {
-            color: #2563eb; /* blue-600 */
-            font-weight: 600;
+        .nav-link {
             position: relative;
+            transition: color 0.2s ease-in-out;
         }
-        .nav-link.active::after {
+        .nav-link::after {
             content: '';
             position: absolute;
             bottom: -4px;
@@ -31,6 +35,16 @@
             right: 0;
             height: 2px;
             background-color: #2563eb; /* blue-600 */
+            transform: scaleX(0);
+            transition: transform 0.2s ease-in-out;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        .nav-link.active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 600;
         }
         .section-title {
             position: relative;
@@ -50,15 +64,21 @@
             left: 50%;
             transform: translateX(-50%);
         }
+        /* Accessibility focus ring */
+        :focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="text-gray-700 leading-relaxed bg-gray-50">
 
     <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
+            <a href="#home" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
             
-            <nav class="hidden lg:flex space-x-6">
+            <nav class="hidden lg:flex space-x-6" aria-label="Main Navigation">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#research" class="nav-link">Research</a>
@@ -68,13 +88,13 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
-            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-label="Open main menu">
+            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Open main menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h16"></path></svg>
             </button>
         </div>
         
         <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
-            <nav class="flex flex-col space-y-4">
+            <nav class="flex flex-col space-y-4" aria-label="Mobile Navigation">
                 <a href="#home" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Home</a>
                 <a href="#about" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">About</a>
                 <a href="#research" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Research</a>
@@ -91,7 +111,7 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/3 text-center">
-                        <img src="profile.jpg" alt="Ashique Ali Thuppilikkat" class="rounded-full shadow-lg mx-auto w-64 h-64 object-cover border-4 border-white">
+                        <img src="profile.jpg" alt="Ashique Ali Thuppilikkat" class="rounded-full shadow-lg mx-auto w-64 h-64 object-cover border-4 border-white" loading="lazy">
                     </div>
                     <div class="md:w-2/3">
                         <h1 class="text-4xl font-bold font-serif text-gray-800 mb-2">Ashique Ali Thuppilikkat</h1>
@@ -103,8 +123,8 @@
                                 <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
                             </div>
                         </div>
-                        <p class="mb-4 mt-6">
-                            Ashique Ali Thuppilikkat (he/him) is a PhD student at the Faculty of Information, University of Toronto, Canada and a researcher at STREET Lab. His research focuses on the role of technology in worker resistance and unionisation amidst the platformization of urban life. Specifically, he examines how digital tools can support unions and workers on location-based digital labour platforms to organise and resist the impacts of algorithmic management and environmental hazards on labour practices.
+                        <p class="mb-4 mt-6 max-w-prose">
+                            Ashique Ali Thuppilikkat (he/him) is a PhD student at the Faculty of Information, University of Toronto, and a researcher at STREET Lab. His research focuses on the role of technology in worker resistance and unionisation amidst the platformization of urban life. He examines how digital tools can support unions and workers on location-based digital labour platforms to organise and resist the impacts of algorithmic management.
                         </p>
                         <a href="#about" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">Learn More About Me</a>
                     </div>
@@ -115,47 +135,22 @@
         <section id="about" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">About Me</h2>
-                <p class="mb-12 max-w-3xl">Ashique is a recipient of the 2025–26 Connaught PhDs for Public Impact Fellowship and the 2024 SDGs@UofT Student Award, and a former School of Cities Graduate Fellow. Ashique is also the co-founder of SAFAR, a research-action centre based in West Bengal, India.</p>
+                <p class="mb-12 max-w-3xl">Ashique is a recipient of the 2025–26 Connaught PhDs for Public Impact Fellowship and the 2024 SDGs@UofT Student Award, and a former School of Cities Graduate Fellow. He is also the co-founder of SAFAR, a research-action centre based in West Bengal, India.</p>
                 <div class="grid md:grid-cols-2 gap-12 pt-8">
                     <div>
                         <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">Research Streams</h3>
                         <ul class="list-disc list-inside space-y-2">
                             <li>Computer-Supported Cooperative Work (CSCW)</li>
                             <li>Human-Computer Interaction (HCI)</li>
-                            <li>Digital Labour</li>
+                            <li>Digital Labour & Platform Studies</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">Education</h3>
                         <ul class="list-disc list-inside space-y-2">
                             <li>M.Phil in Political Science: Jawaharlal Nehru University, India</li>
-                            <li>Master of Arts in Political Science: Jawaharlal Nehru University, India</li>
-                            <li>BA (H)Political Science: Ramjas College, University of Delhi, India</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-200 mt-12 pt-12 grid md:grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-4 text-gray-800">Grants and Awards</h3>
-                        <ul class="space-y-3">
-                            <li><b class="font-semibold">2025-26:</b> Florence Partridge Scholarship</li>
-                            <li><b class="font-semibold">2025-26:</b> Connaught PhDs for Public Impact Fellowship</li>
-                            <li><b class="font-semibold">2025-26:</b> EDI Student Initiative Fund</li>
-                            <li><b class="font-semibold">2025-26:</b> University of Toronto Graduate Students' Union Bursary</li>
-                            <li><b class="font-semibold">2024-25:</b> Sustainable Development Goal (SDG) UofT graduate student award</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-4 text-gray-800">Professional Activities</h3>
-                        <h4 class="font-semibold text-gray-700">Research Assistant</h4>
-                        <ul class="list-disc list-inside space-y-2 mb-6">
-                            <li>Workers Governing Technologies (May 2025- March 2026). <a href="https://creativelabourcriticalfutures.ca/blog/workers-governing-technologies-workshop/" class="text-blue-600 hover:underline">[Link]</a></li>
-                        </ul>
-                        <h4 class="font-semibold text-gray-700">Working Groups</h4>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Theories and Praxis of Digital Labour, Jackman Humanities Institute (2024-2026)</li>
-                            <li>Digital Labour and Data Subjectivities, University of Toronto (2023-24)</li>
+                            <li>MA in Political Science: Jawaharlal Nehru University, India</li>
+                            <li>BA (H) in Political Science: Ramjas College, University of Delhi, India</li>
                         </ul>
                     </div>
                 </div>
@@ -168,12 +163,10 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
                         <h3 class="font-semibold text-blue-700">Published in CSCW '25</h3>
-                        <p class="text-sm mt-1">
-                            Published <em>"Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community"</em>. The paper also received the CSCW 2025 Diversity, Equity, and Inclusion (DEI) Award.
-                        </p>
+                        <p class="text-sm mt-1">Published <em>"Dissent, Distance, Dilemmas..."</em>. The paper also received the CSCW 2025 Diversity, Equity, and Inclusion (DEI) Award.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Connaught PhDs for Public Impact Fellowship</h3>
+                        <h3 class="font-semibold text-blue-700">Connaught Public Impact Fellowship</h3>
                         <p class="text-sm mt-1">Awarded the prestigious Connaught PhDs for Public Impact Fellowship at the University of Toronto for 2025-26.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
@@ -182,7 +175,9 @@
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="news.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">View News Archive</a>
+                    <a href="news.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">
+                        View News Archive
+                    </a>
                 </div>
             </div>
         </section>
@@ -191,19 +186,31 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Research Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="project-labour-resistance.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
-                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Labour+Resistance" alt="Labour Resistance concept image" class="rounded-md mb-4 object-cover">
+                    <a href="#research" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Labour+Resistance" alt="Labour Resistance concept image" class="rounded-md mb-4 object-cover" loading="lazy">
                         <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology, Design & Labour Resistance</h3>
-                        <p class="flex-grow">Investigating the role of digital tools in worker organization, unionization, and resistance against algorithmic management.</p>
+                        <p class="flex-grow">Investigating the role of digital tools in worker organization and resistance against algorithmic management.</p>
                         <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
                     </a>
-                    <a href="project-social-movements.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
-                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Social+Movements" alt="Social Movements concept image" class="rounded-md mb-4 object-cover">
+                    <a href="#research" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Social+Movements" alt="Social Movements concept image" class="rounded-md mb-4 object-cover" loading="lazy">
                         <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology & Social Movements</h3>
-                        <p class="flex-grow">Examining how technology is used by and against social movements, with a focus on diasporic communities and digital propaganda.</p>
+                        <p class="flex-grow">Examining how technology is used by and against social movements, focusing on diasporic communities.</p>
                         <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
                     </a>
-                    </div>
+                    <a href="#research" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Critical+Caste+Studies" alt="Critical Caste Studies concept image" class="rounded-md mb-4 object-cover" loading="lazy">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Critical Caste Studies in Social Computing</h3>
+                        <p class="flex-grow">Analyzing the reproduction of caste hierarchies in digital spaces and potentials for technology to challenge them.</p>
+                        <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
+                    </a>
+                    <a href="#research" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Solidarity+Economy" alt="Solidarity Economy concept image" class="rounded-md mb-4 object-cover" loading="lazy">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Solidarity Economy</h3>
+                        <p class="flex-grow">Exploring cooperative models and digital tools that foster economic and social solidarity.</p>
+                        <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -216,6 +223,7 @@
                         <ul class="list-disc list-inside space-y-2">
                             <li>ICT, Designs & Marginality (Fall 2023, Fall 2024)</li>
                             <li>Information Experience (Fall 2023)</li>
+                            <li>Accessibility and Inclusive Design (Winter 2023)</li>
                         </ul>
                     </div>
                     <div>
@@ -240,10 +248,14 @@
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title text-center">Get In Touch</h2>
                 <div class="text-center max-w-xl mx-auto">
                     <p class="text-lg"><b>Email:</b> <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-blue-600 hover:underline">ashique.thuppilikkat@mail.utoronto.ca</a></p>
-                    <p class="text-lg mt-2"><b>Location:</b> Faculty of Information, University of Toronto, Canada</p>
-                    <div class="flex items-center justify-center gap-6 mt-8">
-                        <img src="https://placehold.co/150x40/ffffff/000000?text=UofT" alt="University of Toronto Logo" class="h-8">
-                        <img src="https://placehold.co/150x50/ffffff/000000?text=STREET+Lab" alt="STREET Lab Logo" class="h-10">
+                    <p class="text-lg mt-2"><b>Location:</b> Faculty of Information, University of Toronto</p>
+                    <div class="flex items-center justify-center gap-8 mt-8">
+                        <a href="https://www.utoronto.ca" target="_blank" rel="noopener noreferrer" aria-label="University of Toronto">
+                            <svg class="h-10 text-gray-600 hover:text-gray-800 transition-colors" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.8 1.8H1.2C.5 1.8 0 2.3 0 3v18c0 .7.5 1.2 1.2 1.2h21.6c.7 0 1.2-.5 1.2-1.2V3c0-.7-.5-1.2-1.2-1.2zM8.4 19.8H4.2V8.3h4.2v11.5zm11.3 0h-4.2V14c0-1.5-.8-2.5-2-2.5s-2.1 1-2.1 2.5v5.8H7.2V8.3h4.2v1.9c.6-1.1 1.9-2.2 3.8-2.2 2.8 0 4.7 1.8 4.7 5.6v6.2z"/></svg>
+                        </a>
+                        <a href="https://streetlab.io" target="_blank" rel="noopener noreferrer" aria-label="STREET Lab">
+                            <svg class="h-8 text-gray-600 hover:text-gray-800 transition-colors" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5zM12 6c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6-2.691-6-6-6zm0 10.5c-2.481 0-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5 4.5 2.019 4.5 4.5-2.019 4.5-4.5 4.5z"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -251,7 +263,7 @@
 
     </main>
 
-    <footer class="bg-gray-900 text-gray-500 py-6">
+    <footer class="bg-gray-900 text-gray-400 py-6">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2025 Ashique Ali Thuppilikkat. All Rights Reserved.</p>
         </div>
@@ -259,23 +271,35 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // --- Mobile Menu ---
+        // --- Mobile Menu Logic ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function toggleMenu() {
+            const isExpanded = mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
             });
         });
 
-        // --- Active Nav Link on Scroll ---
+        // --- Active Nav Link on Scroll Logic ---
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('header nav a.nav-link');
+        const homeLink = document.querySelector('a.nav-link[href="#home"]');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Trigger in the vertical center of the viewport
+            threshold: 0
+        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -290,11 +314,16 @@
                     });
                 }
             });
-        }, { threshold: 0.4 });
+        }, observerOptions);
 
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Set Home as active by default if at the top
+        if (window.scrollY < 200) {
+             homeLink.classList.add('active');
+        }
     });
     </script>
 </body>
