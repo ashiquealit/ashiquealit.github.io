@@ -9,7 +9,6 @@
     <meta name="theme-color" content="#ffffff">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- ADDED FONT AWESOME FOR ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +25,17 @@
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #2563eb; }
         .section-title.text-center::after { left: 50%; transform: translateX(-50%); }
         :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 4px; }
+        /* Style for the new circular bullet */
+        .list-bullet {
+            display: inline-block;
+            width: 0.5rem; /* 8px */
+            height: 0.5rem; /* 8px */
+            background-color: #2563eb; /* blue-600 */
+            border-radius: 9999px; /* rounded-full */
+            margin-right: 0.75rem; /* mr-3 */
+            margin-top: 0.4rem; /* Adjust vertical alignment */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
     </style>
 </head>
 <body class="text-gray-700 leading-relaxed bg-gray-50">
@@ -69,24 +79,12 @@
                     </div>
                     <div class="md:w-2/3">
                         <h1 class="text-4xl font-bold font-serif text-gray-800 mb-2">Ashique Ali Thuppilikkat</h1>
-                        <p class="text-lg text-blue-700 font-semibold mb-4">Labour & Social Computing</p>
+                        <p class="text-lg text-blue-700 font-semibold mb-4">Socio-technical Designs for Resistance</p>
                         <div class="mt-4 flex flex-wrap gap-4 items-center">
-                            <!-- Google Scholar Icon -->
-                            <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg>
-                            </a>
-                            <!-- ORCID iD Icon -->
-                            <a href="https://orcid.org/0000-0002-8987-8175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg>
-                            </a>
-                             <!-- Bluesky Icon -->
-                            <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky">
-                                <i class="fa-brands fa-bluesky text-2xl"></i>
-                            </a>
-                            <!-- LinkedIn Icon -->
-                            <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin text-2xl"></i>
-                            </a>
+                            <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg></a>
+                            <a href="https://orcid.org/0000-0002-8987-8175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg></a>
+                            <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky"><i class="fa-brands fa-bluesky text-2xl"></i></a>
+                            <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
                         </div>
                         <p class="mb-4 mt-6 max-w-prose">
                             Ashique Ali Thuppilikkat (he/him) is a PhD student at the Faculty of Information, University of Toronto, and a researcher at STREET Lab. His research focuses on the role of technology in worker resistance and unionisation amidst the platformization of urban life. He examines how digital tools can support unions and workers on location-based digital labour platforms to organise and resist the impacts of algorithmic management.
@@ -119,7 +117,7 @@
                         </ul>
                     </div>
                 </div>
-                <div id="about-details" class="border-t border-gray-200 mt-12 pt-12 grid md:grid-cols-1 lg:grid-cols-2 gap-12 hidden">
+                <div class="border-t border-gray-200 mt-12 pt-12 grid md:grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
                         <h3 class="text-xl font-semibold font-serif mb-4 text-gray-800">Grants and Awards</h3>
                         <ul class="space-y-3">
@@ -195,41 +193,35 @@
             </div>
         </section>
 
-        <!-- UPDATED TEACHING SECTION -->
         <section id="teaching" class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Teaching</h2>
-                
-                <h3 class="text-lg font-medium text-gray-600 mt-4 mb-8 italic">
-                    Teaching Assistantships
-                </h3>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">
-                            Faculty of Information, University of Toronto
-                        </h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>ICT, Designs & Marginality (Fall 2023, Fall 2024)</li>
-                            <li>Information Experience (Fall 2023)</li>
-                            <li>Accessibility and Inclusive Design (Winter 2023)</li>
+                <div class="text-center mb-12">
+                     <p class="text-lg text-gray-600 italic">A summary of my teaching assistantship roles across various departments.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Faculty of Information</h3>
+                        <p class="text-sm text-gray-500 mb-6">University of Toronto St. George Campus</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>ICT, Designs & Marginality</strong><br><span class="text-xs text-gray-500">Fall 2023, Fall 2024</span></div></li>
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Information Experience</strong><br><span class="text-xs text-gray-500">Fall 2023</span></div></li>
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Accessibility and Inclusive Design</strong><br><span class="text-xs text-gray-500">Winter 2023</span></div></li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">
-                            Institute of Communication, Culture, Information and Technology (ICCIT), University of Toronto Mississauga
-                        </h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Technology and City (Fall 2023)</li>
-                            <li>Rhetoric and Media (Winter 2023, Summer 2023, Summer 2025)</li>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Institute of Communication, Culture, Information & Technology (ICCIT)</h3>
+                        <p class="text-sm text-gray-500 mb-6">University of Toronto Mississauga</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Technology and City</strong><br><span class="text-xs text-gray-500">Fall 2023</span></div></li>
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Rhetoric and Media</strong><br><span class="text-xs text-gray-500">Winter 2023, Summer 2023, Summer 2025</span></div></li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">
-                            Department of Arts, Culture and Media, University of Toronto Scarborough
-                        </h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Platforms and Cultural Production (Summer 2025)</li>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Department of Arts, Culture and Media</h3>
+                        <p class="text-sm text-gray-500 mb-6">University of Toronto Scarborough</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Platforms and Cultural Production</strong><br><span class="text-xs text-gray-500">Summer 2025</span></div></li>
                         </ul>
                     </div>
                 </div>
@@ -243,18 +235,10 @@
                     <p class="text-lg"><b>Email:</b> <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-blue-600 hover:underline">ashique.thuppilikkat@mail.utoronto.ca</a></p>
                     <p class="text-lg mt-2"><b>Location:</b> Faculty of Information, University of Toronto</p>
                     <div class="mt-8 flex justify-center gap-4">
-                        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg>
-                        </a>
-                        <a href="https://orcid.org/0000-0002-8987-8175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg>
-                        </a>
-                        <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky">
-                            <i class="fa-brands fa-bluesky text-2xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn">
-                           <i class="fa-brands fa-linkedin text-2xl"></i>
-                        </a>
+                        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg></a>
+                        <a href="https://orcid.org/0000-0002-8987-8175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg></a>
+                        <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky"><i class="fa-brands fa-bluesky text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -298,19 +282,33 @@
         if (window.scrollY < 200) { document.querySelector('a.nav-link[href="#home"]').classList.add('active'); }
         
         const aboutTriggers = document.querySelectorAll('a[href="#about"]');
-        const aboutDetails = document.getElementById('about-details');
         const aboutSection = document.getElementById('about');
+        const toggleAboutBtn = document.querySelector('#home a[href="#about"]'); 
 
         aboutTriggers.forEach(trigger => {
             trigger.addEventListener('click', function(event) {
-                event.preventDefault(); 
-                aboutSection.classList.remove('hidden'); 
-                aboutDetails.classList.remove('hidden'); 
-                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                event.preventDefault();
+                
+                const isHidden = aboutSection.classList.contains('hidden');
+
+                if (isHidden) {
+                    aboutSection.classList.remove('hidden');
+                    if (toggleAboutBtn) toggleAboutBtn.textContent = 'Show Less';
+                    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    // Only scroll to the top of the home section if we are collapsing the about section
+                    if (window.scrollY > aboutSection.offsetTop - 100) {
+                        document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    aboutSection.classList.add('hidden');
+                    if (toggleAboutBtn) toggleAboutBtn.textContent = 'Learn More About Me';
+                }
             });
         });
     });
     </script>
 </body>
 </html>
+
+
 
