@@ -3,138 +3,602 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Ashique Ali Thuppilikkat</title>
+  <title>Ashique Ali Thuppilikkat - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .smooth-scroll { scroll-behavior: smooth; }
-    .card { transition: transform 0.3s; }
-    .card:hover { transform: scale(1.05); }
-    [data-theme="dark"] { --bg-body: #1F2937; --text-primary: #E0E0E0; --bg-card: #374151; }
+    :root {
+      --bg-body: #f9fafb;
+      --text-body: #1f2937;
+      --bg-card: #ffffff;
+      --bg-nav: #1f2937;
+      --text-nav: #ffffff;
+      --bg-footer: #1f2937;
+      --text-footer: #ffffff;
+      --border-accent: #d1fae5;
+      --text-accent: #059669;
+    }
+    [data-theme="dark"] {
+      --bg-body: #1f2937;
+      --text-body: #e0e0e0;
+      --bg-card: #374151;
+      --bg-nav: #111827;
+      --text-nav: #e0e0e0;
+      --bg-footer: #111827;
+      --text-footer: #e0e0e0;
+      --border-accent: #047857;
+      --text-accent: #34d399;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    nav {
+      background-color: var(--bg-nav);
+      color: var(--text-nav);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: var(--bg-footer);
+      color: var(--text-footer);
+    }
+    .card-bg {
+      background-color: var(--bg-card);
+      border-radius: 12px;
+    }
+    .border-accent {
+      border-color: var(--border-accent);
+    }
+    .text-accent {
+      color: var(--text-accent);
+    }
+    .smooth-scroll { 
+      scroll-behavior: smooth; 
+    }
+    .card { 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .text-shadow-md { 
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+    }
+    
+    /* Mobile menu styles */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-nav);
+      padding: 1rem;
+      z-index: 20;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-menu.active {
+      display: flex;
+    }
+    .mobile-menu li {
+      margin: 0.75rem 0;
+    }
+    
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .desktop-menu {
+        display: flex !important;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+    
+    /* Mobile responsiveness enhancements */
+    @media (max-width: 767px) {
+      .desktop-menu {
+        display: none;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      /* Button adjustments for mobile */
+      .btn-mobile {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Grid adjustments */
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      /* Navigation padding */
+      nav .container {
+        padding: 1rem;
+      }
+
+      /* Section padding reduction */
+      .py-16 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      /* Hero height */
+      #home {
+        height: 70vh;
+      }
+
+      /* Contact form inputs */
+      input, textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+
+      /* Social icons */
+      .flex.space-x-4 {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+    
+    /* Accessibility improvements */
+    a:focus, button:focus {
+      outline: 2px solid var(--text-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Loading animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    /* Hero section improvements */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--text-accent);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+    /* Improved contrast for accessibility */
+    .improved-contrast {
+      color: #333;
+    }
+    
+    [data-theme="dark"] .improved-contrast {
+      color: #e0e0e0;
+    }
+
+    /* Publication specific */
+    .publication-item {
+      background-color: var(--bg-card);
+    }
+    .tag-filter { cursor: pointer; }
+    .tag-filter.selected { background-color: var(--text-accent); color: white; }
+    .filter-section label { color: var(--text-body); }
+    .filter-section h4 { color: var(--text-body); }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 smooth-scroll" data-theme="light">
- 
- <!-- Navbar -->
-  <nav class="sticky top-0 z-10">
+<body class="smooth-scroll" data-theme="light">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="/" class="text-2xl font-semibold">Ashique Ali Thuppilikkat</a>
       <button id="hamburger" class="md:hidden text-2xl" aria-label="Toggle Menu">☰</button>
-      <ul id="navMenu" class="hidden md:flex space-x-6">
-        <li><a href="/index.html" class="hover:text-emerald-400">Home</a></li>
-        <li><a href="/about.html" class="hover:text-emerald-400">About</a></li>
-        <li class="relative group">
-          <a href="#" id="publications-dropdown" class="block px-4 py-2 hover:bg-emerald-600">Publications</a>
-          <ul class="absolute bg-gray-800 text-white rounded-lg shadow-lg mt-2 min-w-48 z-50" id="publications-submenu">
-            <li><a href="/academic-publications.html" class="block px-4 py-2 hover:bg-emerald-600">Academic Publications</a></li>
-            <li><a href="/public-facing-scholarship.html" class="block px-4 py-2 hover:bg-emerald-600">Public-Facing Scholarship</a></li>
-          </ul>
-        </li>
-        <li><a href="/talks.html" class="hover:text-emerald-400">Talks/Presentations</a></li>
-        <li><a href="/teaching.html" class="hover:text-emerald-400">Teaching</a></li>
-        <li><a href="/contact.html" class="hover:text-emerald-400">Contact</a></li>
+      
+      <!-- Desktop Menu -->
+      <ul class="desktop-menu hidden md:flex space-x-6">
+        <li><a href="/" class="hover:text-emerald-400 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="hover:text-emerald-400 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="hover:text-emerald-400 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="hover:text-emerald-400 transition-colors">Teaching</a></li>
       </ul>
-      <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded" aria-label="Toggle Dark Mode">
+      
+      <!-- Mobile Menu -->
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="/" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Home</a></li>
+        <li><a href="/academic-publications.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Academic Publications</a></li>
+        <li><a href="/public-scholarship.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Public Scholarship</a></li>
+        <li><a href="/teaching.html" class="block py-3 px-4 hover:bg-emerald-700 transition-colors">Teaching</a></li>
+      </ul>
+      
+      <button class="theme-toggle ml-4 bg-emerald-600 text-white p-2 rounded hover:bg-emerald-500 transition-colors" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
       </button>
     </div>
   </nav>
 
-  <!-- Education Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Education</h2>
-      <ul class="list-disc pl-6 mt-4">
-        <li><strong>Ph.D., Faculty of Information</strong>, University of Toronto, Canada, 2022–Present</li>
-        <li><strong>M.Phil., Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, New Delhi, 2022</li>
-        <li><strong>MA, Political Science</strong>, Centre for Political Studies, Jawaharlal Nehru University, New Delhi, 2018</li>
-        <li><strong>BA (Hons), Political Science</strong>, Ramjas College, University of Delhi, New Delhi, 2016</li>
-      </ul>
+  <!-- Hero Section -->
+  <section id="home" class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-r from-emerald-900 to-blue-900 opacity-90"></div>
     </div>
-  </section>
 
-  <!-- Research Lab Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Research Lab</h2>
-      <p class="mt-4"><strong>2022–Present</strong>: Socio-technical Resistance and Ethical Technologies (STREET) Lab, University of Toronto, Canada</p>
-      <p class="mt-2">Knowledge Media Design Institute (KMDI), University of Toronto, Canada.</p>
-      <div class="flex flex-wrap gap-4 mt-4">
-        <img src="images/uoft-logo.png" alt="University of Toronto" class="w-24 h-auto">
-        <img src="images/street-lab-logo.png" alt="STREET Lab" class="w-24 h-auto">
+    <!-- Content -->
+    <div class="relative z-10 text-white px-4 max-w-4xl animate-fade-in hero-content">
+      <h1 class="text-4xl md:text-6xl font-bold text-shadow-md mb-4">Ashique Ali Thuppilikkat</h1>
+      <p class="text-xl md:text-2xl mb-8 text-shadow-md">
+        PhD Student | University of Toronto | Technology & Resistance Researcher
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6 flex-wrap">
+        <a href="#about" class="bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg border border-emerald-700 hover:bg-emerald-500 hover:shadow-xl transition-all duration-300 btn-mobile">
+          Learn More
+        </a>
+        <a href="#contact" class="bg-transparent text-white font-semibold px-6 py-3 rounded-lg shadow-lg border border-white hover:bg-white hover:text-emerald-700 transition-all duration-300 btn-mobile">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <div class="animate-bounce">
+        <i class="fas fa-chevron-down text-white text-2xl"></i>
       </div>
     </div>
   </section>
 
-  <!-- Grants and Awards Section -->
-  <section class="container mx-auto py-8" data-aos="fade-up">
-    <div class="bg-white p-6 rounded-lg shadow card">
-      <h2 class="text-2xl font-semibold border-b-2 border-emerald-200 pb-2">Grants and Awards</h2>
-      <ul class="list-disc pl-6 mt-4">
-        <li><strong>2025–26</strong>: Connaught PhDs for Public Impact Fellowship</li>
-        <li><strong>2025</strong>: EDI Student Initiative Fund</li>
-        <li><strong>2025</strong>: University of Toronto Graduate Students' Union Bursary</li>
-        <li><strong>2024–25</strong>: Sustainable Development Goal (SDG) UofT Graduate Student Award</li>
-        <li><strong>2024–25</strong>: Gary Marsden Travel Awards</li>
-        <li><strong>2024–25</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-        <li><strong>2023–24</strong>: Graduate Fellow, School of Cities, University of Toronto</li>
-        <li><strong>2023–24</strong>: PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-        <li><strong>2023</strong>: SGS Conference Grant</li>
-        <li><strong>2023</strong>: Travel Bursary, British Sociology Association</li>
-        <li><strong>2020–22</strong>: National Fellowship for Other Backward Classes, Ministry of Social Justice and Empowerment, Government of India</li>
-        <li><strong>2018</strong>: National Eligibility Test for Assistant Professor in Political Science, India</li>
-      </ul>
+  <!-- About Section -->
+  <section id="about" class="py-16" style="background-color: var(--bg-body);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="card-bg p-8 rounded-lg shadow-lg card">
+          <h3 class="text-2xl font-semibold mb-4 text-accent">Background</h3>
+          <p class="mb-4 improved-contrast">
+            I am a PhD student at the Faculty of Information, University of Toronto, Canada. 
+            My research examines the role of technology in worker resistance and unionisation amidst 
+            the platformisation of urban life.
+          </p>
+          <p class="mb-6 improved-contrast">
+            Specifically, I investigate how digital tools can support unions and workers in 
+            location-based labour platforms to organise around and resist/confront the impacts of 
+            climate change on their working conditions.
+          </p>
+          <a href="#" class="inline-flex items-center text-emerald-600 hover:text-emerald-500 font-semibold">
+            Read Full Bio <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+        
+        <div class="card-bg p-8 rounded-lg shadow-lg card">
+          <h3 class="text-2xl font-semibold mb-4 text-accent">Research Interests</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+              <span class="improved-contrast">Worker-centric platform designs</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+              <span class="improved-contrast">Tech-mediated resistance in social movements</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+              <span class="improved-contrast">Critical studies of caste and technology</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+              <span class="improved-contrast">Climate change impacts on labor</span>
+            </li>
+          </ul>
+          <p class="mt-6 improved-contrast">
+            My doctoral studies are advised by Prof. Priyank Chandra.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Recent News & Achievements</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card-bg p-6 rounded-lg shadow card">
+          <div class="text-accent font-bold text-lg mb-2">2025</div>
+          <h3 class="text-xl font-semibold mb-3">Connaught PhDs for Public Impact Fellowship</h3>
+          <p class="improved-contrast">Awarded the prestigious Connaught PhDs for Public Impact Fellowship at the University of Toronto.</p>
+        </div>
+        
+        <div class="card-bg p-6 rounded-lg shadow card">
+          <div class="text-accent font-bold text-lg mb-2">2025</div>
+          <h3 class="text-xl font-semibold mb-3">CHI 2025 Publication</h3>
+          <p class="improved-contrast">Published "Generative Politics and Labour Markets" in the CHI 2025 conference proceedings.</p>
+        </div>
+        
+        <div class="card-bg p-6 rounded-lg shadow card">
+          <div class="text-accent font-bold text-lg mb-2">2024</div>
+          <h3 class="text-xl font-semibold mb-3">SDG Graduate Student Award</h3>
+          <p class="improved-contrast">Received the Sustainable Development Goal (SDG) UofT Graduate Student Award for research impact.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center text-emerald-600 hover:text-emerald-500 font-semibold">
+          View All News <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16" style="background-color: var(--bg-body);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-emerald-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="improved-contrast">ashique.ali@example.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-emerald-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Location</h4>
+                <p class="improved-contrast">University of Toronto, Canada</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                <i class="fas fa-university text-emerald-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Department</h4>
+                <p class="improved-contrast">Faculty of Information</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="font-semibold mb-4">Connect With Me</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-500 transition-colors" rel="noopener noreferrer">
+                <i class="fab fa-google-scholar"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-bg p-8 rounded-lg shadow card">
+          <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block font-medium mb-2 improved-contrast">Name</label>
+              <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+            </div>
+            
+            <div class="mb-4">
+              <label for="email" class="block font-medium mb-2 improved-contrast">Email</label>
+              <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+            </div>
+            
+            <div class="mb-4">
+              <label for="message" class="block font-medium mb-2 improved-contrast">Message</label>
+              <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"></textarea>
+            </div>
+            
+            <button type="submit" class="bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-emerald-500 transition-colors w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-4">
-    <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
-    <p>Updated <span id="current-date"></span></p>
+  <footer class="text-center py-8">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2025 Ashique Ali Thuppilikkat. All rights reserved.</p>
+      <p class="mt-2">Updated <span id="current-date"></span></p>
+      
+      <div class="mt-6">
+        <a href="/" class="text-emerald-400 hover:text-emerald-300 mx-2">Home</a>
+        <a href="/academic-publications.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Academic Publications</a>
+        <a href="/public-scholarship.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Public Scholarship</a>
+        <a href="/teaching.html" class="text-emerald-400 hover:text-emerald-300 mx-2">Teaching</a>
+      </div>
+    </div>
   </footer>
 
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  // Hamburger menu toggle (for mobile)
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('hidden');
-  });
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-  // Publications dropdown toggle for mobile (click to open/close)
-  const publicationsDropdown = document.getElementById('publications-dropdown');
-  const publicationsSubmenu = document.getElementById('publications-submenu');
-  publicationsDropdown.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) { // Mobile only
-      e.preventDefault();
-      publicationsSubmenu.classList.toggle('hidden');
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.dataset.theme === 'dark';
+      document.body.dataset.theme = isDark ? 'light' : 'dark';
+      themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      
+      // Save theme preference to localStorage
+      localStorage.setItem('theme', document.body.dataset.theme);
+    });
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.body.dataset.theme = savedTheme;
+      themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
-  });
 
-  // Dark mode toggle
-  const themeToggle = document.querySelector('.theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-    themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-  });
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
 
-  // Close dropdown on outside click (for better UX)
-  document.addEventListener('click', (e) => {
-    if (!publicationsDropdown.contains(e.target)) {
-      publicationsSubmenu.classList.add('hidden');
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        hamburger.textContent = '☰';
+      });
+    });
+
+    // Update current date in footer
+    const currentDate = document.getElementById('current-date');
+    if (currentDate) {
+      currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
     }
-  });
 
-  // Set current date in footer
-  const currentDate = document.getElementById('current-date');
-  if (currentDate) {
-    currentDate.textContent = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-  }
-</script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
