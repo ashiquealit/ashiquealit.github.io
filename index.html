@@ -15,12 +15,9 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         h1, h2, h3, h4, .font-serif {
             font-family: 'Lora', serif;
         }
-
-        /* Style for the active navigation link */
         .nav-link.active {
             color: #2563eb; /* blue-600 */
             font-weight: 600;
@@ -35,8 +32,6 @@
             height: 2px;
             background-color: #2563eb; /* blue-600 */
         }
-
-        /* Underline for section titles */
         .section-title {
             position: relative;
             padding-bottom: 0.75rem; /* pb-3 */
@@ -55,71 +50,20 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
-        /* Style for publication/talk list items */
-        .item-list > li {
-            padding-bottom: 1.5rem; /* pb-6 */
-            margin-bottom: 1.5rem; /* mb-6 */
-            border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
-        }
-        .item-list > li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        /* Style for tags associated with publications */
-        .tag {
-            display: inline-block;
-            background-color: #eef2ff; /* indigo-50 */
-            color: #4338ca; /* indigo-800 */
-            font-size: 0.75rem; /* text-xs */
-            font-weight: 600;
-            padding: 0.25rem 0.75rem; /* py-1 px-3 */
-            border-radius: 9999px; /* rounded-full */
-            margin-right: 0.5rem; /* mr-2 */
-            margin-top: 0.5rem; /* mt-2 */
-        }
-        
-        /* Style for tab buttons */
-        .active-tab {
-            border-color: #2563eb; /* border-blue-600 */
-            color: #1e3a8a; /* text-blue-900 */
-            font-weight: 600;
-        }
-
-        /* Toast notification for copy actions */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #2d3748; /* gray-800 */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            z-index: 100;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .toast.show {
-            opacity: 1;
-        }
-
     </style>
 </head>
 <body class="text-gray-700 leading-relaxed bg-gray-50">
 
-    <!-- Header & Navigation -->
     <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
+            <a href="index.html" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
             
             <nav class="hidden lg:flex space-x-6">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#research" class="nav-link">Research</a>
-                <a href="#writing" class="nav-link">Writing</a>
-                <a href="#talks" class="nav-link">Talks & Workshops</a>
+                <a href="writing.html" class="nav-link">Writing</a>
+                <a href="talks.html" class="nav-link">Talks & Workshops</a>
                 <a href="#teaching" class="nav-link">Teaching</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
@@ -134,8 +78,8 @@
                 <a href="#home" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Home</a>
                 <a href="#about" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">About</a>
                 <a href="#research" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Research</a>
-                <a href="#writing" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Writing</a>
-                <a href="#talks" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Talks & Workshops</a>
+                <a href="writing.html" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Writing</a>
+                <a href="talks.html" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Talks & Workshops</a>
                 <a href="#teaching" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Teaching</a>
                 <a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </nav>
@@ -143,7 +87,6 @@
     </header>
 
     <main>
-        <!-- Home Section -->
         <section id="home" class="pt-20 lg:pt-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12">
@@ -155,15 +98,9 @@
                         <p class="text-lg text-blue-700 font-semibold mb-4">Labour & Social Computing</p>
                         <div class="mt-4 flex flex-wrap gap-x-6 gap-y-4 items-center">
                             <div class="flex gap-4">
-                                <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.566 12.392c.38.384.568.88.568 1.38v.03c0 .49-.187.986-.568 1.378a2.03 2.03 0 0 1-1.428.583 2.03 2.03 0 0 1-1.428-.583c-.38-.392-.568-.888-.568-1.378v-.03c0-.5.188-1 .568-1.38a2.03 2.03 0 0 1 1.428-.583c.535 0 1.049.2 1.428.583Zm6.918-6.925a.73.73 0 0 1 .536.223.77.77 0 0 1 .215.553v13.514a.77.77 0 0 1-.215.553.73.73 0 0 1-.536.223H4.516a.73.73 0 0 1-.536-.223.77.77 0 0 1-.215-.553V5.468c0-.224.072-.42.215-.553a.73.73 0 0 1 .536-.223h15zM12 21.667c2.652 0 5.006-1.012 6.78-2.697V5.03H5.22v13.94c1.774 1.685 4.128 2.698 6.78 2.698Zm0-15.004c2.81 0 5.168 1.09 6.918 2.898H5.082c1.75-1.808 4.108-2.898 6.918-2.898Z"/></svg>
-                                </a>
-                                <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18v6.32L1 21l11 6 11-6-4-3.5v-6.32L23 9z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                </a>
+                                <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.566 12.392c.38.384.568.88.568 1.38v.03c0 .49-.187.986-.568 1.378a2.03 2.03 0 0 1-1.428.583 2.03 2.03 0 0 1-1.428-.583c-.38-.392-.568-.888-.568-1.378v-.03c0-.5.188-1 .568-1.38a2.03 2.03 0 0 1 1.428-.583c.535 0 1.049.2 1.428.583Zm6.918-6.925a.73.73 0 0 1 .536.223.77.77 0 0 1 .215.553v13.514a.77.77 0 0 1-.215.553.73.73 0 0 1-.536.223H4.516a.73.73 0 0 1-.536-.223.77.77 0 0 1-.215-.553V5.468c0-.224.072-.42.215-.553a.73.73 0 0 1 .536-.223h15zM12 21.667c2.652 0 5.006-1.012 6.78-2.697V5.03H5.22v13.94c1.774 1.685 4.128 2.698 6.78 2.698Zm0-15.004c2.81 0 5.168 1.09 6.918 2.898H5.082c1.75-1.808 4.108-2.898 6.918-2.898Z"/></svg></a>
+                                <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18v6.32L1 21l11 6 11-6-4-3.5v-6.32L23 9z"/></svg></a>
+                                <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
                             </div>
                         </div>
                         <p class="mb-4 mt-6">
@@ -175,8 +112,7 @@
             </div>
         </section>
         
-        <!-- About Section -->
-        <section id="about" class="py-20 lg:py-24 hidden">
+        <section id="about" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">About Me</h2>
                 <p class="mb-12 max-w-3xl">Ashique is a recipient of the 2025–26 Connaught PhDs for Public Impact Fellowship and the 2024 SDGs@UofT Student Award, and a former School of Cities Graduate Fellow. Ashique is also the co-founder of SAFAR, a research-action centre based in West Bengal, India.</p>
@@ -208,13 +144,6 @@
                             <li><b class="font-semibold">2025-26:</b> EDI Student Initiative Fund</li>
                             <li><b class="font-semibold">2025-26:</b> University of Toronto Graduate Students' Union Bursary</li>
                             <li><b class="font-semibold">2024-25:</b> Sustainable Development Goal (SDG) UofT graduate student award</li>
-                            <li><b class="font-semibold">2024-25:</b> Gary Marsden Travel Awards</li>
-                            <li><b class="font-semibold">2024-25:</b> PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-                            <li><b class="font-semibold">2023-24:</b> Graduate Fellow, School of Cities, University of Toronto, Canada</li>
-                            <li><b class="font-semibold">2023-24:</b> PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-                            <li><b class="font-semibold">2023:</b> SGS Conference Grant</li>
-                            <li><b class="font-semibold">2023:</b> Travel Bursary, British Sociology Association</li>
-                            <li><b class="font-semibold">2020-22:</b> National Fellowship for Other Backward Classes, Govt. of India</li>
                         </ul>
                     </div>
                     <div>
@@ -224,37 +153,25 @@
                             <li>Workers Governing Technologies (May 2025- March 2026). <a href="https://creativelabourcriticalfutures.ca/blog/workers-governing-technologies-workshop/" class="text-blue-600 hover:underline">[Link]</a></li>
                         </ul>
                         <h4 class="font-semibold text-gray-700">Working Groups</h4>
-                        <ul class="list-disc list-inside space-y-2 mb-6">
+                        <ul class="list-disc list-inside space-y-2">
                             <li>Theories and Praxis of Digital Labour, Jackman Humanities Institute (2024-2026)</li>
                             <li>Digital Labour and Data Subjectivities, University of Toronto (2023-24)</li>
-                            <li>Critical Computing Group, University of Toronto (2022-present)</li>
-                            <li>Theorizing Social Movements, Jackman Humanities Institute (2022-2023)</li>
-                        </ul>
-                        <h4 class="font-semibold text-gray-700">Other Affiliations</h4>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Jamhoor, South Asian Labour Magazine</li>
-                            <li>Forum for Anti-Caste Activism at University of Toronto</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Latest News Section -->
         <section class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Latest News</h2>
-                <div id="news-preview" class="grid md:grid-cols-3 gap-8">
-                   </div>
-
-                 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-        <h3 class="font-semibold text-blue-700">Published in CSCW '25</h3>
-        <p class="text-sm mt-1">
-            Published <em>"Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community"</em>. 
-            The paper also received the CSCW 2025 Diversity, Equity, and Inclusion (DEI) Award.
-        </p>
-    </div>
-                    
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                        <h3 class="font-semibold text-blue-700">Published in CSCW '25</h3>
+                        <p class="text-sm mt-1">
+                            Published <em>"Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community"</em>. The paper also received the CSCW 2025 Diversity, Equity, and Inclusion (DEI) Award.
+                        </p>
+                    </div>
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
                         <h3 class="font-semibold text-blue-700">Connaught PhDs for Public Impact Fellowship</h3>
                         <p class="text-sm mt-1">Awarded the prestigious Connaught PhDs for Public Impact Fellowship at the University of Toronto for 2025-26.</p>
@@ -262,367 +179,34 @@
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
                         <h3 class="font-semibold text-blue-700">SDG Graduate Student Award</h3>
                         <p class="text-sm mt-1">Received the Sustainable Development Goal (SDG) UofT Graduate Student Award for research impact in 2024.</p>
-                   
-                    <!-- More news items for the full page, but hidden on home -->
-                  </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Published in CHI '25</h3>
-                        <p class="text-sm mt-1">Published "Generative Politics and Labour Markets" in the CHI 2025 conference proceedings.</p>
-                    </div>
-                    
-                    <div class="hidden bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Another News Item</h3>
-                        <p class="text-sm mt-1">Details about another achievement or event.</p>
-                    </div>
-                    <div class="hidden bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Fifth News Item</h3>
-                        <p class="text-sm mt-1">Details about a fifth achievement or event.</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <button id="view-all-news-btn" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">View All News</button>
+                    <a href="news.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">View News Archive</a>
                 </div>
             </div>
         </section>
 
-        <!-- Research Section -->
         <section id="research" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Research Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Project 1 -->
                     <a href="project-labour-resistance.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
                         <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Labour+Resistance" alt="Labour Resistance concept image" class="rounded-md mb-4 object-cover">
                         <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology, Design & Labour Resistance</h3>
                         <p class="flex-grow">Investigating the role of digital tools in worker organization, unionization, and resistance against algorithmic management.</p>
                         <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
                     </a>
-                    <!-- Project 2 -->
-                     <a href="project-social-movements.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                    <a href="project-social-movements.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
                         <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Social+Movements" alt="Social Movements concept image" class="rounded-md mb-4 object-cover">
                         <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology & Social Movements</h3>
                         <p class="flex-grow">Examining how technology is used by and against social movements, with a focus on diasporic communities and digital propaganda.</p>
                         <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
                     </a>
-                    <!-- Project 3 -->
-                    <a href="project-caste-studies.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
-                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Critical+Caste+Studies" alt="Critical Caste Studies concept image" class="rounded-md mb-4 object-cover">
-                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Critical Caste Studies in Social Computing</h3>
-                        <p class="flex-grow">Analyzing the reproduction of caste hierarchies in digital spaces and the potential for technology to challenge them.</p>
-                        <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
-                    </a>
-                    <!-- Project 4 -->
-                    <a href="project-solidarity-economy.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group">
-                        <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Solidarity+Economy" alt="Solidarity Economy concept image" class="rounded-md mb-4 object-cover">
-                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Solidarity Economy</h3>
-                        <p class="flex-grow">Exploring cooperative models and digital tools that foster economic and social solidarity.</p>
-                        <span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span>
-                    </a>
-                </div>
+                    </div>
             </div>
         </section>
 
-        <!-- Writing Section -->
-        <section id="writing" class="py-20 lg:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Writing</h2>
-                
-                <!-- Tab Navigation -->
-                <div class="mb-8 border-b border-gray-200">
-                    <nav class="-mb-px flex space-x-6" aria-label="Tabs">
-                        <button class="tab-button writing-tab active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="academic-scholarship">
-                            Academic Scholarship
-                        </button>
-                        <button class="tab-button writing-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300" data-target="public-scholarship">
-                            Public Scholarship
-                        </button>
-                    </nav>
-                </div>
-        
-                <!-- Academic Scholarship Content -->
-                <div id="academic-scholarship" class="writing-content">
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mb-6">Journal Articles</h4>
-                    <ul class="item-list">
-                        <li data-tags="Technology & Social Movements,Belarus">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Janna Akimova, and Priyank Chandra. 2025. “Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community.”</p>
-                            <p class="italic text-gray-600">Proceedings of the ACM on Human-Computer Interaction 9, no. 7, Article CSCW288.</p>
-                            <div class="mt-2"><a href="#" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@article{thuppilikkat2025dissent, title={Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community}, author={Thuppilikkat, Ashique Ali and Akimova, Janna and Chandra, Priyank}, journal={Proc. ACM Hum.-Comput. Interact.}, volume={9}, number={7}, year={2025}}</div>
-                            <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Janna Akimova, and Priyank Chandra. 2025. “Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community.” *Proceedings of the ACM on Human-Computer Interaction* 9, no. 7: CSCW288.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span><span class="tag">Belarus</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.”</p>
-                            <p class="italic text-gray-600">In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25).</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1145/3706598.3713266" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@article{thuppilikkat2025generative, title = {Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Raval, Noopur and Chandra, Priyank}, year = {2025}, journal = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems}, pages = {1--18}, url = {https://dl.acm.org/doi/full/10.1145/3706598.3713266}}</div>
-                            <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.” In *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)*. https://doi.org/10.1145/3706598.3713266.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. 2024. “Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms.”</p>
-                            <p class="italic text-gray-600">Proceedings of the ACM on Human-Computer Interaction 8, no. CSCW2, Article 463.</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1145/3687002" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@article{thuppilikkat2024union, title = {Union Makes Us Strong: Space, Technology, and On-Demand Ridesourcing Digital Labour Platforms}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Chandra, Priyank}, year = {2024}, journal = {Proceedings of the ACM on Human-Computer Interaction}, volume = {8}, number = {CSCW2}, pages = {1--36}, url = {https://dl.acm.org/doi/abs/10.1145/3687002}}</div>
-                            <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. 2024. “Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms.” *Proceedings of the ACM on Human-Computer Interaction* 8, no. CSCW2: 463. https://doi.org/10.1145/3687002.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Solidarity Economy">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.”</p>
-                            <p class="italic text-gray-600">Economic and Political Weekly 59, no. 31: 47-52.</p>
-                            <div class="mt-2"><a href="https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@article{thuppilikkat2024cooperative, title = {A Short History of the Cooperative Movement in Northern Malabar, Kerala}, author = {Thuppilikkat, Ashique Ali}, year = {2024}, journal = {Economic and Political Weekly}, volume = {59}, number = {31}, pages = {47--52}, url = {https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html}}</div>
-                            <div class="cite-data hidden">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.” *Economic and Political Weekly* 59, no. 31: 47–52. https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html.</div>
-                            <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. 2022. “Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi.”</p>
-                            <p class="italic text-gray-600">Gender & Development 30, no. 3: 667–86.</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1080/13552074.2022.2127574" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@article{dhar2022gendered, title = {Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi}, author = {Dhar, Dipsita and Thuppilikkat, Ashique Ali}, year = {2022}, journal = {Gender & Development}, volume = {30}, number = {3}, pages = {667--686}, url = {https://www.tandfonline.com/doi/full/10.1080/13552074.2022.2127574}}</div>
-                            <div class="cite-data hidden">Dhar, Dipsita, and Ashique Ali Thuppilikkat. 2022. “Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi.” *Gender & Development* 30, no. 3: 667–86. https://doi.org/10.1080/13552074.2022.2127574.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mt-10 mb-6">Book Chapters</h4>
-                    <ul class="item-list">
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a neo liberal city through identity and labour power.”</p>
-                            <p class="italic text-gray-600">In *Migrant Labour in the Gig Economy: The intersection of labour digitization, platform capitalism, and migration, and resistance*, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</p>
-                            <div class="mt-2"><a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@incollection{dhar2025transversal, title = {Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power}, author = {Dhar, Dipsita and Thuppilikkat, Ashique Ali and Battacharya, Soham}, year = {2025}, booktitle = {Migrant Labour in the Gig Economy: The Intersection of Labour Digitization, Platform Capitalism, and Migration, and Resistance}, editor = {Della Puppa, Francesco and Dhar, Dipsita and Monttagna, Nicola}, publisher = {Palgrave}, address = {London}}</div>
-                            <div class="cite-data hidden">Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a Neoliberal City through Identity and Labour Power.” In *Migrant Labour in the Gig Economy: The Intersection of Labour Digitization, Platform Capitalism, and Migration, and Resistance*, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                    </ul>
-                </div>
-        
-                <!-- Public Scholarship Content (initially hidden) -->
-                <div id="public-scholarship" class="writing-content hidden">
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mb-6">Comic Strip</h4>
-                    <ul class="item-list">
-                        <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the smog: A ‘roznamcha’ of ride-sourcing bike taxis.”</p>
-                            <p class="italic text-gray-600">School of Cities, University of Toronto.</p>
-                            <div class="mt-2"><a href="https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
-                        </li>
-                    </ul>
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mt-10 mb-6">Book Chapter</h4>
-                    <ul class="item-list">
-                        <li data-tags="">
-                            <p class="font-semibold">Sanu, V.P., and Ashique Ali Thuppilikkat. 2022. “Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies.”</p>
-                            <p class="italic text-gray-600">In *Education or Exclusion? The Plight of Indian Students*, edited by Dipsita Dhar and Nitheesh Narayanan, 144-55. New Delhi: LeftWord Books.</p>
-                            <div class="mt-2"><a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@incollection{sanu2022entrenching, title = {Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies}, author = {Sanu, V.P. and Thuppilikkat, Ashique Ali}, year = {2022}, booktitle = {Education or Exclusion? The Plight of Indian Students}, editor = {Dhar, Dipsita and Narayanan, Nitheesh}, pages = {144--155}, publisher = {LeftWord Books}, address = {New Delhi}}</div>
-                            <div class="cite-data hidden">Sanu, V.P., and Ashique Ali Thuppilikkat. 2022. “Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies.” In *Education or Exclusion? The Plight of Indian Students*, edited by Dipsita Dhar and Nitheesh Narayanan, 144–55. New Delhi: LeftWord Books.</div>
-                        </li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mt-10 mb-6">English Articles</h4>
-                    <ul class="item-list">
-                        <li data-tags="Technology & Social Movements,India">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. 2023. “Far-right Hindu nationalists are using digital propaganda to delegitimize India’s wrestler protests.”</p>
-                            <p class="italic text-gray-600">The Conversation.</p>
-                            <div class="mt-2"><a href="https://theconversation.com/far-right-hindu-nationalists-are-using-digital-propaganda-to-delegitimize-indias-wrestler-protests-206747" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span><span class="tag">India</span></div>
-                        </li>
-                        <li data-tags="Technology & Social Movements,India">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. 2021. “The Indian Farmers’ Movement Has Shattered Narendra Modi’s Strongman Image.”</p>
-                            <p class="italic text-gray-600">Jacobin.</p>
-                            <div class="mt-2"><a href="https://jacobin.com/2021/11/indian-farmers-movement-neoliberal-farm-bills-modi-bjp" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span><span class="tag">India</span></div>
-                        </li>
-                        <li data-tags="Solidarity Economy">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, and Angshuman Sharma. 2021. “Kerala’s Communists Are Showing India a Path Out of Poverty.”</p>
-                            <p class="italic text-gray-600">Jacobin.</p>
-                            <div class="mt-2"><a href="https://jacobin.com/2021/11/kerala-india-communist-party-farmers-cooperatives-bds-wayanad" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                            <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span></div>
-                        </li>
-                        <li data-tags="Technology & Social Movements,India">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. 2019. “Breaking barriers: Women enter Sabarimala hours after Women’s Wall.”</p>
-                            <p class="italic text-gray-600">Indian Cultural Forum.</p>
-                            <div class="mt-2"><a href="https://indianculturalforum.in/2019/01/02/women-enter-sabarimala-hours-after-womens-wall/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span><span class="tag">India</span></div>
-                        </li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold font-serif text-gray-700 mt-10 mb-6">Malayalam Articles</h4>
-                    <ul class="item-list">
-                        <li>
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2020. “Techno-nationalism and Chinese Cyber Dominance.”</p>
-                            <p class="italic text-gray-600">Deshabhimani Weekly 13, no. 51: 6-11.</p>
-                        </li>
-                        <li>
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, and Arun Kumar P.K. 2019. “Ours is a struggle for survival.”</p>
-                            <p class="italic text-gray-600">Kalakaumudi Weekly 44, no. 35: 16-19.</p>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Talks and Workshops Section -->
-        <section id="talks" class="py-20 lg:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Talks & Workshops</h2>
-
-                <div class="mb-8 border-b border-gray-200">
-                    <nav class="-mb-px flex space-x-6" aria-label="Tabs">
-                        <button class="tab-button talks-tab active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="conference-presentations">
-                           Conference Presentations
-                        </button>
-                        <button class="tab-button talks-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300" data-target="invited-talks">
-                            Invited Talks
-                        </button>
-                        <button class="tab-button talks-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300" data-target="workshop-organising">
-                            Workshop Organising
-                        </button>
-                    </nav>
-                </div>
-
-                <div id="conference-presentations" class="talks-content">
-                    <ul class="item-list">
-                        <li data-tags="Digital Solidarity Economy">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, and Priyank Chandra. "Women, Platforms, and State Power: The Lunch Bell Project and Digital Solidarity Economies in Kerala."</p>
-                            <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
-                            <p class="font-semibold">Chung, Hiu-Fung, Ashique Ali Thuppilikkat, and Kaushar Mahetaji. "Delivering ``Broken Promises'' to Save the Planet: Climate Crisis, Breakdowns and Socio-Ecological Infrastructure in Platform Capitalism."</p>
-                            <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "From Riders to Influencers: Exploring the Gigfluencer Phenomenon in Ridesourcing DLPs."</p>
-                            <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Critical Caste Studies in Social Computing,Technology, Design & Labour Resistance,Methods,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Aditya Nayak, and Aditi Vashistha. "Delivering Inequality: Caste and Labour in Location-based Digital Labour Platforms."</p>
-                            <p class="italic text-gray-600">Paper presented at 4s 2025, Seattle, United States of America, September 03-06, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Critical Caste Studies in Social Computing</span><span class="tag">Technology, Design & Labour Resistance</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. "Traditional Trade Unions in Transition: Confronting the Gig Economy."</p>
-                            <p class="italic text-gray-600">Paper presented at the Workshop on Labour in the Global South and from a Global South Lens, University of Toronto Scarborough, Canada, April 02, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Digital Solidarity Economy">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. "Big Tech and Worker Alternatives."</p>
-                            <p class="italic text-gray-600">Paper presented at Cyber-Marx @25: reflecting on 25 years of impact, Centre for Culture and Technology, University of Toronto, Canada, February 28, 2025.</p>
-                            <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, and Priyank Chandra. "Nudging away from protests and unions?: Exploring Dynamics of Power, Agency and Resistance in Online Communities of Auto-rickshaw drivers in On-demand Ridesourcing Digital Labour Platforms."</p>
-                            <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-7 (INDL) conference, Santiago, Chile, October 28-30, 2024.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. "Tech-mediated Resistance and Traditional Trade Union: A Case Study of Kolkata App Cab Ola Uber Union, West Bengal."</p>
-                            <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. "Union Makes us Strong: Experiences of Traditional Trade Union Organizing in Ride Sharing Digital Labour Platforms in Kolkata, West Bengal."</p>
-                            <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "Gendered Vulnerabilities in Platform Capitalism and the Strategies of Women's Resistance: A case study from India."</p>
-                            <p class="italic text-gray-600">Paper presented at the BSA Work, Employment and Society Conference, Glasgow, Scotland, September 13-15, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "The Survival Strategy among the Malayali Diaspora in Malta: Negotiating through the Gig Economy."</p>
-                            <p class="italic text-gray-600">Paper presented at the Second Athens Historical Materialism Conference, Panteion University, Athens, Greece, April 20-23, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
-                            <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. "Understanding Gig Economy & Socially Reproductive Labour: A Case Study from India."</p>
-                            <p class="italic text-gray-600">Paper presented at the 41st International Labour Process Conference (ILPC), Glasgow, Scotland, April 12-14, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
-                        </li>
-                        <li data-tags="Critical Caste Studies in Social Computing,Methods">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. "Understanding Digital Caste Publics: Examining YouTube Vlogging amongst the Brahmin-Savarnas in Kerala."</p>
-                            <p class="italic text-gray-600">Paper presented at the Eastern Sociological Society, Baltimore, MD, USA, February 23-26, 2023.</p>
-                            <div class="tags-container mt-1"><span class="tag">Critical Caste Studies in Social Computing</span><span class="tag">Methods</span></div>
-                        </li>
-                        <li data-tags="">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali. "Caste Inequalities and State Responses in the Education Sector: Marginalising Dalit Students’ Access to Education during the Covid-19 Pandemic in India."</p>
-                            <p class="italic text-gray-600">Paper presented at Dublin City University’s 5th Annual South Asia Conference, Dublin, Ireland, April 26-29, 2022.</p>
-                        </li>
-                        <li>
-                            <p class="font-semibold">Gupta, Paridhi, Ashique Ali Thuppilikkat, Cagdas Dedeoglu and Priyank Chandra. "Mediated Activism: Clicks for Justice and Freedom."</p>
-                            <p class="italic text-gray-600">Panel presentation at the International Federation of Information Processing (IFIP) 9.4, Lima, Peru, May 25-27, 2022.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="invited-talks" class="talks-content hidden">
-                    <ul class="item-list">
-                        <li>
-                            <p class="font-semibold">"Unions and Gig Economy."</p>
-                            <p class="italic text-gray-600">Invited talk for 'Labour and Media' course, York University, Canada, February 07, 2025.</p>
-                        </li>
-                        <li>
-                            <p class="font-semibold">"Transport Infrastructures."</p>
-                            <p class="italic text-gray-600">Invited talk for 'Platform Politics and Power' course, Faculty of Information, University of Toronto, October 16, 2024.</p>
-                        </li>
-                        <li>
-                            <p class="font-semibold">"Digital Labour Platforms: A Study of Workplace Resistance and Unionization."</p>
-                            <p class="italic text-gray-600">Invited talk at Mahatma Gandhi University, Kerala, India, April 04, 2024.</p>
-                        </li>
-                        <li>
-                            <p class="font-semibold">"Caste in Canada: Discrimination and Resistance."</p>
-                            <p class="italic text-gray-600">Invited talk for the Department of History, University of Toronto, Canada, November 15, 2023.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="workshop-organising" class="talks-content hidden">
-                    <ul class="item-list">
-                        <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
-                            <p class="font-semibold">Thuppilikkat, Ashique Ali, et al. 2025. “(Re) working for Sustainable Futures: Climate Change and Platform Economies.”</p>
-                            <p class="italic text-gray-600">In *Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies*.</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1145/3715335.3737685" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@inproceedings{thuppilikkat2025re,
-                                 title={(Re) working for Sustainable Futures: Climate Change and Platform Economies},
-                                 author={Thuppilikkat, Ashique Ali and Chung, Hiu-Fung and Mahetaji, Kaushar and Singh, Anubha and Tieanklin, Nussara and Rodriguez, Isabella Jaimes and Liu, Jen and Raval, Noopur and Chandra, Priyank},
-                                 booktitle={Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies},
-                                 pages={848--852},
-                                 year={2025}
-                               }</div>
-                            <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Hiu-Fung Chung, Kaushar Mahetaji, Anubha Singh, Nussara Tieanklin, Isabella Jaimes Rodriguez, Jen Liu, Noopur Raval, and Priyank Chandra. 2025. “(Re) working for Sustainable Futures: Climate Change and Platform Economies.” In *Proceedings of the ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies*, 848-852. https://doi.org/10.1145/3715335.3737685.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
-                        </li>
-                        <li data-tags="Technology & Social Movements">
-                            <p class="font-semibold">Fernandes, Kim, et al. 2024. “Organizing for More Just and Inclusive Futures: A Community Discussion.”</p>
-                            <p class="italic text-gray-600">In *Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing*.</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1145/3678884.3687143" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@inproceedings{fernandes2024organizing, title = {Organizing for More Just and Inclusive Futures: A Community Discussion}, author = {Fernandes, Kim and Alharbi, Rahaf and Sum, Cella and Kameswaran, Vaishnav and Spektor, Franchesca and Thuppilikkat, Ashique Ali and Petterson, Adrian and Marathe, Megh and Hamidi, Foad and Chandra, Priyank}, year = {2024}, booktitle = {Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing}, pages = {689--692}, url = {https://dl.acm.org/doi/pdf/10.1145/3678884.3687143}}</div>
-                            <div class="cite-data hidden">Fernandes, Kim, Rahaf Alharbi, Cella Sum, Vaishnav Kameswaran, Franchesca Spektor, Ashique Ali Thuppilikkat, Adrian Petterson, Megh Marathe, Foad Hamidi, and Priyank Chandra. 2024. “Organizing for More Just and Inclusive Futures: A Community Discussion.” In *Companion Publication of the 2024 Conference on Computer-Supported Cooperative Work and Social Computing*, 689–92. New York, NY: Association for Computing Machinery. https://doi.org/10.1145/3678884.3687143.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span></div>
-                        </li>
-                        <li data-tags="Technology & Social Movements">
-                            <p class="font-semibold">Petterson, Adrian, et al. 2023. “Supporting Social Movements Through HCI and Design.”</p>
-                            <p class="italic text-gray-600">In *Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems*.</p>
-                            <div class="mt-2"><a href="https://doi.org/10.1145/3544549.3573812" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                            <div class="bibtex-data hidden">@inproceedings{petterson2023supporting, title = {Supporting Social Movements through HCI and Design}, author = {Petterson, Adrian and Thuppilikkat, Ashique Ali and Gupta, Paridhi and Klassen, Shamika and Jack, Margaret C. and Liu, Jun and Chandra, Priyank}, year = {2023}, booktitle = {Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems}, pages = {1--5}, url = {https://dl.acm.org/doi/full/10.1145/3544549.3573812}}</div>
-                            <div class="cite-data hidden">Petterson, Adrian, Ashique Ali Thuppilikkat, Paridhi Gupta, Shamika Klassen, Margaret C. Jack, Jun Liu, and Priyank Chandra. 2023. “Supporting Social Movements Through HCI and Design.” In *Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems*, Article 364, 1–5. New York, NY: Association for Computing Machinery. https://doi.org/10.1145/3544549.3573812.</div>
-                            <div class="tags-container mt-1"><span class="tag">Technology & Social Movements</span></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="text-center mt-12">
-                    <button id="toggle-talks-btn" class="hidden inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5" data-state="collapsed">View More</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Teaching Section -->
         <section id="teaching" class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Teaching</h2>
@@ -632,7 +216,6 @@
                         <ul class="list-disc list-inside space-y-2">
                             <li>ICT, Designs & Marginality (Fall 2023, Fall 2024)</li>
                             <li>Information Experience (Fall 2023)</li>
-                            <li>Accessibility and Inclusive Design (Winter 2023)</li>
                         </ul>
                     </div>
                     <div>
@@ -652,7 +235,6 @@
             </div>
         </section>
         
-        <!-- Contact Section -->
         <section id="contact" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title text-center">Get In Touch</h2>
@@ -675,22 +257,6 @@
         </div>
     </footer>
     
-    <!-- Full News Page Modal -->
-    <div id="news-page" class="hidden fixed top-0 left-0 w-full h-full bg-white/90 backdrop-blur-md z-50 overflow-y-auto">
-        <div class="container mx-auto px-6 py-20 lg:py-24">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold font-serif text-gray-800">News Archive</h2>
-                <button id="close-news-btn" class="text-4xl font-light text-gray-600 hover:text-gray-800 transition-colors">&times;</button>
-            </div>
-            <div id="full-news-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- News items will be cloned here -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Toast Notification -->
-    <div id="toast-notification" class="toast"></div>
-
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         // --- Mobile Menu ---
@@ -701,130 +267,15 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // --- Learn More & About Nav Button Logic ---
-        const aboutSection = document.getElementById('about');
-        const aboutNavLinks = document.querySelectorAll('a[href="#about"]');
-
-        const showAndScrollToAbout = (e) => {
-            e.preventDefault();
-            aboutSection.classList.remove('hidden');
-            aboutSection.scrollIntoView({ behavior: 'smooth' });
-        };
-        
-        // This handles the "Learn More" button, the desktop "About" link, and the mobile "About" link.
-        aboutNavLinks.forEach(link => {
-            link.addEventListener('click', showAndScrollToAbout);
-        });
-        
-        // --- Tabbed Content (Generic Function) ---
-        function setupTabs(tabSelector, contentSelector, callback) {
-            const tabs = document.querySelectorAll(tabSelector);
-            const contents = document.querySelectorAll(contentSelector);
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const targetId = tab.dataset.target;
-                    
-                    tabs.forEach(t => t.classList.remove('active-tab'));
-                    tab.classList.add('active-tab');
-                    
-                    contents.forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-
-                    // If a callback function is provided, call it.
-                    if (callback) {
-                        callback();
-                    }
-                });
-            });
-        }
-
-        // --- News Page Modal ---
-        const viewAllNewsBtn = document.getElementById('view-all-news-btn');
-        const newsPage = document.getElementById('news-page');
-        const closeNewsBtn = document.getElementById('close-news-btn');
-        const newsPreview = document.getElementById('news-preview');
-        const fullNewsList = document.getElementById('full-news-list');
-
-        viewAllNewsBtn.addEventListener('click', () => {
-            fullNewsList.innerHTML = ''; 
-            Array.from(newsPreview.children).forEach(child => {
-                const clone = child.cloneNode(true);
-                clone.classList.remove('hidden');
-                fullNewsList.appendChild(clone);
-            });
-            newsPage.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeNewsBtn.addEventListener('click', () => {
-            newsPage.classList.add('hidden');
-            document.body.style.overflow = '';
-        });
-
-        // --- Toast Notification for Copying ---
-        const toast = document.getElementById('toast-notification');
-        function showToast(message) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2000);
-        }
-
-        // --- BibTeX and Cite Buttons ---
-        document.body.addEventListener('click', function(event) {
-            const target = event.target;
-            let textToCopy = '';
-            
-            if (target.classList.contains('bibtex-btn')) {
-                event.preventDefault();
-                textToCopy = target.closest('li').querySelector('.bibtex-data').textContent;
-                copyToClipboard(textToCopy, "BibTeX copied to clipboard!");
-            }
-            
-            if (target.classList.contains('cite-btn')) {
-                event.preventDefault();
-                textToCopy = target.closest('li').querySelector('.cite-data').textContent;
-                copyToClipboard(textToCopy, "Citation copied to clipboard!");
-            }
-        });
-
-        function copyToClipboard(text, message) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                showToast(message);
-            } catch (err) {
-                showToast('Failed to copy.');
-            }
-            document.body.removeChild(textarea);
-        }
-
         // --- Active Nav Link on Scroll ---
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('header nav a.nav-link');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.4
-        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -832,81 +283,19 @@
                     const id = entry.target.getAttribute('id');
                     navLinks.forEach(link => {
                         link.classList.remove('active');
+                        // Check if the link's hash matches the section id
                         if (link.getAttribute('href') === `#${id}`) {
                             link.classList.add('active');
                         }
                     });
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.4 });
 
         sections.forEach(section => {
             observer.observe(section);
         });
-
-        const homeLink = document.querySelector('a.nav-link[href="#home"]');
-        if (window.scrollY < 200) {
-             homeLink.classList.add('active');
-        }
-
-        // --- Initialize Writing Tabs ---
-        setupTabs('.writing-tab', '.writing-content');
-
-        // --- Talks & Workshops "View More" Logic ---
-        const toggleTalksBtn = document.getElementById('toggle-talks-btn');
-        const TALKS_LIMIT = 4; // Number of items to show initially
-
-        function updateTalksVisibility() {
-            if (!toggleTalksBtn) return;
-            
-            const currentState = toggleTalksBtn.dataset.state;
-            const activeContent = document.querySelector('.talks-content:not(.hidden)');
-
-            if (!activeContent) return;
-
-            const listItems = activeContent.querySelectorAll('ul.item-list > li');
-
-            // Toggle visibility of items beyond the limit
-            listItems.forEach((item, index) => {
-                if (currentState === 'collapsed' && index >= TALKS_LIMIT) {
-                    item.classList.add('hidden');
-                } else {
-                    item.classList.remove('hidden');
-                }
-            });
-
-            // Show or hide the button based on the number of items
-            if (listItems.length <= TALKS_LIMIT) {
-                toggleTalksBtn.classList.add('hidden');
-            } else {
-                toggleTalksBtn.classList.remove('hidden');
-            }
-
-            // Update button text
-            toggleTalksBtn.textContent = currentState === 'collapsed' ? 'View More' : 'View Less';
-        }
-
-        // Initialize Talks Tabs with a callback to update visibility on tab switch
-        setupTabs('.talks-tab', '.talks-content', () => {
-            if(toggleTalksBtn) {
-                toggleTalksBtn.dataset.state = 'collapsed'; // Reset to collapsed state
-                updateTalksVisibility();
-            }
-        });
-        
-        // Handle "View More" button click for the currently active Talks tab
-        if(toggleTalksBtn) {
-            toggleTalksBtn.addEventListener('click', () => {
-                const currentState = toggleTalksBtn.dataset.state;
-                toggleTalksBtn.dataset.state = currentState === 'collapsed' ? 'expanded' : 'collapsed';
-                updateTalksVisibility();
-            });
-        }
-        
-        // Run the visibility function once on page load for the default tab
-        updateTalksVisibility();
     });
     </script>
 </body>
 </html>
-
