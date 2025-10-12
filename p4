@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Solidarity Economy | Ashique Ali Thuppilikkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Lora', serif; }
+        .nav-link.active { color: #2563eb; font-weight: 600; position: relative; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background-color: #2563eb; }
+        .item-list > li { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .item-list > li:last-child { border-bottom: none; margin-bottom: 0; }
+        .tag { display: inline-block; background-color: #eef2ff; color: #4338ca; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-right: 0.5rem; margin-top: 0.5rem; }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #2d3748; color: white; padding: 10px 20px; border-radius: 8px; z-index: 100; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .toast.show { opacity: 1; }
+    </style>
+</head>
+<body class="text-gray-700 leading-relaxed bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
+            <nav class="hidden lg:flex space-x-6">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link active">Research</a>
+                <a href="index.html#writing" class="nav-link">Writing</a>
+                <a href="index.html#talks" class="nav-link">Talks & Workshops</a>
+                <a href="index.html#teaching" class="nav-link">Teaching</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="lg:hidden p-2"><svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h16"></path></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
+             <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="block py-2">Home</a>
+                <a href="index.html#about" class="block py-2">About</a>
+                <a href="index.html#research" class="block py-2">Research</a>
+                <a href="index.html#writing" class="block py-2">Writing</a>
+                <a href="index.html#talks" class="block py-2">Talks & Workshops</a>
+                <a href="index.html#teaching" class="block py-2">Teaching</a>
+                <a href="index.html#contact" class="block py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 lg:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <a href="index.html#research" class="text-blue-600 hover:underline mb-8 inline-block">&larr; Back to All Research</a>
+                <h1 class="text-4xl font-bold font-serif text-gray-800 mb-4">Solidarity Economy</h1>
+                 <p class="text-lg text-gray-600 max-w-3xl mb-12">
+                   This research explores alternatives to the extractive models of platform capitalism by focusing on solidarity economies and platform cooperativism. I examine historical and contemporary cooperative movements, such as those in Kerala, India, to draw lessons for building worker-owned and democratically-governed digital platforms. This work seeks to understand how technology can be designed and implemented to foster principles of mutual aid, social solidarity, and economic democracy, creating more equitable and sustainable digital ecosystems for workers and communities alike.
+                </p>
+                
+                <h2 class="text-2xl font-bold font-serif text-gray-800 mt-16 mb-8">Sub-Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <!-- Platform Cooperativism -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Platform Cooperativism</h3>
+                        <p>Examines the potential for worker-owned cooperative models as alternatives to traditional, venture-capital-funded digital labour platforms.</p>
+                    </div>
+                     <!-- Cooperative Movements -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Cooperative Movements</h3>
+                        <p>Draws on historical case studies, such as the cooperative movement in Kerala, to inform the design and governance of contemporary digital solidarity economies.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">All Related Publications & Talks</h2>
+                <ul class="item-list">
+                    <li data-tags="Solidarity Economy">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.”</p>
+                        <p class="italic text-gray-600">Economic and Political Weekly 59, no. 31: 47-52.</p>
+                        <div class="mt-2"><a href="https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@article{thuppilikkat2024cooperative, title = {A Short History of the Cooperative Movement in Northern Malabar, Kerala}, author = {Thuppilikkat, Ashique Ali}, year = {2024}, journal = {Economic and Political Weekly}, volume = {59}, number = {31}, pages = {47--52}, url = {https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html}}</div>
+                        <div class="cite-data hidden">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.” *Economic and Political Weekly* 59, no. 31: 47–52. https://www.epw.in/journal/2024/31/special-articles/short-history-cooperative-movement-northern.html.</div>
+                        <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span></div>
+                    </li>
+                    <li data-tags="Solidarity Economy">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, and Priyank Chandra. "Women, Platforms, and State Power: The Lunch Bell Project and Digital Solidarity Economies in Kerala."</p>
+                        <p class="italic text-gray-600">Paper presented at the International Network on Digital Labour-8 (INDL) conference, Bologna, Italy, September 10-12, 2025.</p>
+                        <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-500 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Ashique Ali Thuppilikkat. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <div id="toast-notification" class="toast"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            
+            const toast = document.getElementById('toast-notification');
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => { toast.classList.remove('show'); }, 2000);
+            }
+
+            document.body.addEventListener('click', function(event) {
+                const target = event.target;
+                if (target.classList.contains('bibtex-btn') || target.classList.contains('cite-btn')) {
+                    event.preventDefault();
+                    const isBibtex = target.classList.contains('bibtex-btn');
+                    const selector = isBibtex ? '.bibtex-data' : '.cite-data';
+                    const message = isBibtex ? 'BibTeX copied to clipboard!' : 'Citation copied to clipboard!';
+                    const textToCopy = target.closest('li').querySelector(selector).textContent;
+                    
+                    const textarea = document.createElement('textarea');
+                    textarea.value = textToCopy;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try { document.execCommand('copy'); showToast(message); } catch (err) { showToast('Failed to copy.'); }
+                    document.body.removeChild(textarea);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
