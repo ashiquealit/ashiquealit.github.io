@@ -169,7 +169,7 @@
                         <p class="mb-4 mt-6">
                             Ashique Ali Thuppilikkat (he/him) is a PhD student at the Faculty of Information, University of Toronto, Canada and a researcher at STREET Lab. His research focuses on the role of technology in worker resistance and unionisation amidst the platformization of urban life. Specifically, he examines how digital tools can support unions and workers on location-based digital labour platforms to organise and resist the impacts of algorithmic management and environmental hazards on labour practices.
                         </p>
-                        <a href="#about" id="learn-more-btn" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">Learn More About Me</a>
+                        <a href="#about" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">Learn More About Me</a>
                     </div>
                 </div>
             </div>
@@ -696,14 +696,19 @@
             });
         });
 
-        // --- Learn More Button ---
-        const learnMoreBtn = document.getElementById('learn-more-btn');
+        // --- Learn More & About Nav Button Logic ---
         const aboutSection = document.getElementById('about');
+        const aboutNavLinks = document.querySelectorAll('a[href="#about"]');
 
-        learnMoreBtn.addEventListener('click', (e) => {
+        const showAndScrollToAbout = (e) => {
             e.preventDefault();
             aboutSection.classList.remove('hidden');
             aboutSection.scrollIntoView({ behavior: 'smooth' });
+        };
+        
+        // This handles the "Learn More" button, the desktop "About" link, and the mobile "About" link.
+        aboutNavLinks.forEach(link => {
+            link.addEventListener('click', showAndScrollToAbout);
         });
         
         // --- Tabbed Content (Generic Function) ---
