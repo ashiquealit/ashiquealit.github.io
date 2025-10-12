@@ -604,6 +604,9 @@
                         </li>
                     </ul>
                 </div>
+                <div class="text-center mt-12">
+                    <button id="toggle-talks-btn" class="hidden inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5" data-state="collapsed">View More</button>
+                </div>
             </div>
         </section>
 
@@ -703,8 +706,8 @@
             aboutSection.scrollIntoView({ behavior: 'smooth' });
         });
         
-        // --- Tabbed Content (Writing & Talks) ---
-        function setupTabs(tabSelector, contentSelector) {
+        // --- Tabbed Content (Generic Function) ---
+        function setupTabs(tabSelector, contentSelector, callback) {
             const tabs = document.querySelectorAll(tabSelector);
             const contents = document.querySelectorAll(contentSelector);
             
@@ -722,11 +725,14 @@
                             content.classList.add('hidden');
                         }
                     });
+
+                    // If a callback function is provided, call it.
+                    if (callback) {
+                        callback();
+                    }
                 });
             });
         }
-        setupTabs('.writing-tab', '.writing-content');
-        setupTabs('.talks-tab', '.talks-content');
 
         // --- News Page Modal ---
         const viewAllNewsBtn = document.getElementById('view-all-news-btn');
@@ -736,15 +742,14 @@
         const fullNewsList = document.getElementById('full-news-list');
 
         viewAllNewsBtn.addEventListener('click', () => {
-            // Clone all children (including hidden ones) from the preview to the full list
-            fullNewsList.innerHTML = ''; // Clear previous content
+            fullNewsList.innerHTML = ''; 
             Array.from(newsPreview.children).forEach(child => {
                 const clone = child.cloneNode(true);
-                clone.classList.remove('hidden'); // Make sure all cloned items are visible
+                clone.classList.remove('hidden');
                 fullNewsList.appendChild(clone);
             });
             newsPage.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         });
 
         closeNewsBtn.addEventListener('click', () => {
@@ -822,11 +827,67 @@
             observer.observe(section);
         });
 
-        // Set home as active by default
         const homeLink = document.querySelector('a.nav-link[href="#home"]');
         if (window.scrollY < 200) {
              homeLink.classList.add('active');
         }
+
+        // --- Initialize Writing Tabs ---
+        setupTabs('.writing-tab', '.writing-content');
+
+        // --- Talks & Workshops "View More" Logic ---
+        const toggleTalksBtn = document.getElementById('toggle-talks-btn');
+        const TALKS_LIMIT = 4; // Number of items to show initially
+
+        function updateTalksVisibility() {
+            if (!toggleTalksBtn) return;
+            
+            const currentState = toggleTalksBtn.dataset.state;
+            const activeContent = document.querySelector('.talks-content:not(.hidden)');
+
+            if (!activeContent) return;
+
+            const listItems = activeContent.querySelectorAll('ul.item-list > li');
+
+            // Toggle visibility of items beyond the limit
+            listItems.forEach((item, index) => {
+                if (currentState === 'collapsed' && index >= TALKS_LIMIT) {
+                    item.classList.add('hidden');
+                } else {
+                    item.classList.remove('hidden');
+                }
+            });
+
+            // Show or hide the button based on the number of items
+            if (listItems.length <= TALKS_LIMIT) {
+                toggleTalksBtn.classList.add('hidden');
+            } else {
+                toggleTalksBtn.classList.remove('hidden');
+            }
+
+            // Update button text
+            toggleTalksBtn.textContent = currentState === 'collapsed' ? 'View More' : 'View Less';
+        }
+
+        // Initialize Talks Tabs with a callback to update visibility on tab switch
+        setupTabs('.talks-tab', '.talks-content', () => {
+            if(toggleTalksBtn) {
+                toggleTalksBtn.dataset.state = 'collapsed'; // Reset to collapsed state
+                updateTalksVisibility();
+            }
+        });
+        
+        // Handle "View More" button click for the currently active Talks tab
+        if(toggleTalksBtn) {
+            toggleTalksBtn.addEventListener('click', () => {
+                const currentState = toggleTalksBtn.dataset.state;
+                toggleTalksBtn.dataset.state = currentState === 'collapsed' ? 'expanded' : 'collapsed';
+                updateTalksVisibility();
+            });
+        }
+        
+        // Run the visibility function once on page load for the default tab
+        updateTalksVisibility();
     });
     </script>
 </body>
