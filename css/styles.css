@@ -1,303 +1,65 @@
-/* Existing styles from previous response */
-:root {
-  --primary-accent: #6B8E23; /* Olive Green, slightly brighter */
-  --secondary-accent: #A8BCA1; /* Lighter Sage Green */
-  --hover-color: #8B5A2B; /* Warm Bronze */
-  --background-body: #FAF9F7; /* Warm Stone */
-  --background-card: #FFFFFF; /* Pure White */
-  --text-primary: #1F1F1F; /* Charcoal */
-  --background-section: #F2F2F0; /* Cool Gray */
-  --background-dark: #2D2D2D; /* Dark mode background */
-  --text-dark: #E0E0E0; /* Dark mode text */
-}
-
-[data-theme="dark"] {
-  --background-body: var(--background-dark);
-  --text-primary: var(--text-dark);
-  --background-section: #3C3C3C;
-  --background-card: #4A4A4A;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background-body);
-  color: var(--text-primary);
-  line-height: 1.6;
-  margin-top: 80px;
-  transition: background-color 0.3s, color 0.3s;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+h1, h2, h3, .font-serif {
+    font-family: 'Lora', serif;
 }
-
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/background-hero.jpg') no-repeat center center;
-  background-size: cover;
-  color: var(--background-card);
-  padding: 4rem 0;
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-  height: 400px;
+.nav-link {
+    position: relative;
+    color: #4a5568;
+    transition: color 0.3s;
+    font-size: 0.95rem;
 }
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+.nav-link:hover, .nav-link.active {
+    color: #0056b3;
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.main-content {
-  display: block; /* Changed from flex to block to remove sidebar layout */
-  width: 100%; /* Ensures content takes full width */
-}
-
-.sidebar {
-  display: none; /* Hide sidebar on home page; can be kept for other pages if needed */
-}
-
-.content {
-  width: 100%; /* Full width since sidebar is removed */
-}
-
-.intro, .category, .news, .contact, .research-item, .publications {
-  background: var(--background-section);
-  padding: 2rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-/* Rest of the styles remain unchanged */
-h1, h2, h3, h4 {
-  color: var(--text-primary);
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--primary-accent);
-  padding-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-a {
-  color: var(--primary-accent);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover, a:focus {
-  color: var(--hover-color);
-}
-
-.news-item, .publication-item {
-  background: var(--background-card);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.news-item:hover, .publication-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.news-date, .pub-date {
-  color: var(--secondary-accent);
-  font-weight: 700;
-  margin-right: 1rem;
-}
-
-.news-title, .pub-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.logo-img {
-  width: 100px;
-  height: auto;
-  margin: 0.5rem;
-  object-fit: contain;
-}
-
-button, .toggle-citation, .download-btn, .bibtex-btn {
-  background-color: var(--primary-accent);
-  color: var(--background-card);
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0.5rem 0 0;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background-color 0.2s;
-}
-
-button:hover, button:focus, .toggle-citation:hover, .toggle-citation:focus, 
-.download-btn:hover, .download-btn:focus, .bibtex-btn:hover, .bibtex-btn:focus {
-  background-color: var(--hover-color);
-}
-
-button:focus, a:focus {
-  outline: 2px solid var(--secondary-accent);
-  outline-offset: 2px;
-}
-
-.subcategory {
-  margin-bottom: 2rem;
-}
-
-.tag {
-  background-color: var(--secondary-accent);
-  color: var(--background-card);
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  margin-right: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.social-links a {
-  color: var(--primary-accent);
-  margin-right: 1rem;
-  font-size: 1.2rem;
-}
-
-.social-links a:hover, .social-links a:focus {
-  color: var(--hover-color);
-}
-
-.category-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.button {
-  background-color: var(--primary-accent);
-  color: var(--background-card);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.button:hover, .button:focus {
-  background-color: var(--hover-color);
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--primary-accent);
-  color: var(--background-card);
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.research-item ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* New styles for publications */
-.filter-section select, .filter-section label {
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-@media (max-width: 768px) {
-  body {
-    margin-top: 60px;
-  }
-  .main-content {
-    display: block; /* Ensures content stacks on mobile */
-  }
-  .sidebar {
-    display: none;
-  }
-  #hamburger {
-    display: block;
-  }
-  #navMenu {
-    display: none;
-  }
-  #navMenu.active {
-    display: block;
+.nav-link::after {
+    content: '';
     position: absolute;
-    top: 60px;
-    left: 0;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 50%;
+    background-color: #0056b3;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.nav-link:hover::after, .nav-link.active::after {
     width: 100%;
-    background-color: var(--primary-accent);
-    padding: 1rem;
-  }
-  nav ul {
-    flex-direction: column;
-  }
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-  .logo-img {
-    width: 80px;
-  }
-  .filter-section select, .filter-section label {
-    display: block;
-    margin-right: 0;
-  }
-  .hero {
-    height: 300px;
-  }
+    left: 0;
+}
+.section-title {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+.item-list > li {
+    border-left: 3px solid #0056b3;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+.tag {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+/* Modal styles */
+.modal {
+    transition: opacity 0.25s ease;
+}
+body.modal-active {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.modal-content {
+    max-height: 90vh;
+}
+.tab-button.active-tab {
+    color: #2563eb; /* blue-600 */
+    border-color: #2563eb;
 }
