@@ -18,6 +18,7 @@
         .tag { display: inline-block; background-color: #eef2ff; color: #4338ca; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-right: 0.5rem; margin-top: 0.5rem; }
         .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #2d3748; color: white; padding: 10px 20px; border-radius: 8px; z-index: 100; opacity: 0; transition: opacity 0.3s ease-in-out; }
         .toast.show { opacity: 1; }
+        h4.font-serif { font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600; }
     </style>
 </head>
 <body class="text-gray-700 leading-relaxed bg-gray-50">
@@ -53,6 +54,11 @@
     <main>
         <section class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
+                 <div class="mb-12">
+                    <img src="driver.jpg" alt="A street view of a bustling city with auto-rickshaws" class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg">
+                    <p class="text-xs text-gray-500 text-right mt-2 pr-1">Photo by Nitin Shivaprasad on Unsplash</p>
+                </div>
+
                 <a href="index.html#research" class="text-blue-600 hover:underline mb-8 inline-block">&larr; Back to All Research</a>
                 <h1 class="text-4xl font-bold font-serif text-gray-800 mb-4">Technology, Design & Labour Resistance</h1>
                 <p class="text-lg text-gray-600 max-w-3xl mb-12">
@@ -73,23 +79,40 @@
                     </div>
                 </div>
 
-                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">All Related Publications & Talks</h2>
-                <ul class="item-list">
-                    <!-- Publications will be dynamically added here based on tags -->
-                    <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
-                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the smog: A ‘roznamcha’ of ride-sourcing bike taxis.”</p>
-                        <p class="italic text-gray-600">School of Cities, University of Toronto.</p>
-                        <div class="mt-2"><a href="https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
-                    </li>
-                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">Publications</h2>
+                
+                <h3 class="text-2xl font-semibold font-serif text-gray-800 mt-12 mb-6">Academic Scholarship</h3>
+                
+                <h4 class="font-serif text-gray-700">Journal Articles</h4>
+                <ul class="item-list mt-4">
+                     <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
                         <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.”</p>
                         <p class="italic text-gray-600">In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25).</p>
-                        <div class="mt-2"><a href="https://doi.org/10.1145/3706598.3713266" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
-                        <div class="bibtex-data hidden">@article{thuppilikkat2025generative, title = {Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Raval, Noopur and Chandra, Priyank}, year = {2025}, journal = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems}, pages = {1--18}, url = {https://dl.acm.org/doi/full/10.1145/3706598.3713266}}</div>
+                        <div class="mt-2"><a href="publications/thuppilikkat-2025-generative.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@inproceedings{thuppilikkat2025generative, title = {Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Raval, Noopur and Chandra, Priyank}, year = {2025}, booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)}, url = {https://doi.org/10.1145/3706598.3713266}}</div>
                         <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Dipsita Dhar, Noopur Raval, and Priyank Chandra. 2025. “Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis.” In *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)*. https://doi.org/10.1145/3706598.3713266.</div>
                         <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
                     </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. 2024. “Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms.”</p>
+                        <p class="italic text-gray-600">Proceedings of the ACM on Human-Computer Interaction 8, no. CSCW2, Article 463.</p>
+                         <div class="mt-2"><a href="publications/thuppilikkat-2024-union.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@article{thuppilikkat2024union, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and Chandra, Priyank}, title = {Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms}, journal = {Proc. ACM Hum.-Comput. Interact.}, volume = {8}, number = {CSCW2}, year = {2024}, articleno = {463}, numpages = {30}}</div>
+                        <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Dipsita Dhar, and Priyank Chandra. 2024. “Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms.” *Proceedings of the ACM on Human-Computer Interaction* 8, no. CSCW2, Article 463.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                    <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
+                        <p class="font-semibold">Dhar, Dipsita, and Ashique Ali Thuppilikkat. 2022. “Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi.”</p>
+                        <p class="italic text-gray-600">Gender & Development 30, no. 3: 667–86.</p>
+                        <div class="mt-2"><a href="publications/dhar-2022-gendered.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[PDF]</a> | <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a></div>
+                        <div class="bibtex-data hidden">@article{dhar2022gendered, title={Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi}, author={Dhar, Dipsita and Thuppilikkat, Ashique Ali}, journal={Gender & Development}, volume={30}, number={3}, pages={667--686}, year={2022}, publisher={Routledge}}</div>
+                        <div class="cite-data hidden">Dhar, Dipsita, and Ashique Ali Thuppilikkat. 2022. “Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance: A Case Study of Women Workers’ Struggle in Urban Company, New Delhi.” *Gender & Development* 30 (3): 667–86.</div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
+                    </li>
+                </ul>
+
+                <h4 class="font-serif text-gray-700">Book Chapters</h4>
+                 <ul class="item-list mt-4">
                      <li data-tags="Technology, Design & Labour Resistance,Unions, Worker Resistance & Digital Labour Platforms">
                         <p class="font-semibold">Dhar, Dipsita, Ashique Ali Thuppilikkat, and Soham Battacharya. 2025. “Transversal Unionism: Resisting and Navigating a neo liberal city through identity and labour power.”</p>
                         <p class="italic text-gray-600">In *Migrant Labour in the Gig Economy: The intersection of labour digitization, platform capitalism, and migration, and resistance*, edited by Francesco Della Puppa, Dipsita Dhar, and Nicola Monttagna. London: Palgrave.</p>
@@ -99,6 +122,17 @@
                         <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Unions, Worker Resistance & Digital Labour Platforms</span></div>
                     </li>
                 </ul>
+
+                 <h3 class="text-2xl font-semibold font-serif text-gray-800 mt-12 mb-6">Public Scholarship</h3>
+                 <ul class="item-list">
+                    <li data-tags="Technology, Design & Labour Resistance,Environmental Hazards & Digital Labour">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the smog: A ‘roznamcha’ of ride-sourcing bike taxis.”</p>
+                        <p class="italic text-gray-600">School of Cities, University of Toronto.</p>
+                        <div class="mt-2"><a href="https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
+                        <div class="tags-container mt-1"><span class="tag">Technology, Design & Labour Resistance</span><span class="tag">Environmental Hazards & Digital Labour</span></div>
+                    </li>
+                </ul>
+
             </div>
         </section>
     </main>
@@ -146,4 +180,3 @@
     </script>
 </body>
 </html>
-
