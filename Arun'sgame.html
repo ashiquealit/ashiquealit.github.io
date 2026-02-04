@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Organizer - Labor Narrative</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React and ReactDOM CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @keyframes fade-in-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slide-in-bottom { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes flicker { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
+        @keyframes celebrate { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+        .animate-slide-in-bottom { animation: slide-in-bottom 0.5s ease-out forwards; }
+        .animate-celebrate { animation: celebrate 2s ease-in-out infinite; }
+        .fill-forwards { animation-fill-mode: forwards; }
+        body { background-color: #050505; color: #f4f4f5; font-family: sans-serif; overflow-x: hidden; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
+        .passage-content blockquote {
+            border-left: 4px solid #52525b;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #a1a1aa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Custom Inline SVG Icons to avoid library dependency issues
+        const Icon = ({ name, className }) => {
+            const icons = {
+                Users: (
+                    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                ),
+                Shield: (
+                    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                ),
+                TrendingUp: (
+                    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                ),
+                Coffee: (
+                    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+                    </svg>
+                ),
+                AlertTriangle: (
+                    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                )
+            };
+            return icons[name] || null;
+        };
+
+        const BTN_BASE = "w-full font-medium py-3 px-6 rounded-xl border transition-all flex items-center justify-center text-sm md:text-base active:scale-[0.98] animate-slide-in-bottom opacity-0 fill-forwards";
+        const BTN_ACTION = `${BTN_BASE} bg-zinc-800 hover:bg-zinc-700 text-white border-white/10 [animation-delay:400ms]`;
+        const BTN_GREEN = `${BTN_BASE} bg-green-600 hover:bg-green-500 text-white border-transparent shadow-lg shadow-green-900/20 font-bold [animation-delay:500ms]`;
+        const BTN_ORANGE = `${BTN_BASE} bg-orange-600 hover:bg-orange-500 text-white border-transparent shadow-lg shadow-orange-900/20 font-bold [animation-delay:500ms]`;
+
+        const Illustration = () => (
+            <div className="w-full h-40 md:h-56 rounded-xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-white relative flex items-center justify-center group">
+                <div className="absolute inset-0 bg-zinc-50 opacity-10" />
+                <svg viewBox="0 0 200 100" className="w-40 h-40 text-zinc-200 drop-shadow-sm transition-transform duration-700 group-hover:scale-105">
+                    <path d="M40 0 L100 40 L160 0 L200 0 L200 100 L0 100 L0 0 Z" fill="currentColor" />
+                    <path d="M40 0 L100 40 L160 0" fill="none" stroke="#e4e4e7" strokeWidth="2" />
+                </svg>
+            </div>
+        );
+
+        function App() {
+            const [passage, setPassage] = useState('Start');
+            const [stats, setStats] = useState({
+                support: 0,
+                filed: false,
+                appeals: 0,
+                years: 0,
+                victory: false,
+                bargain: false,
+                turnover: 80,
+                risk: "low",
+                morale: "neutral",
+                alliances: "",
+                negotiationStyle: "",
+                strategy: "",
+                endState: ""
+            });
+            const [isUpdating, setIsUpdating] = useState(false);
+
+            const updateStats = (updates) => {
+                setIsUpdating(true);
+                setStats(prev => {
+                    let newState = { ...prev, ...updates };
+                    if (typeof updates.support !== 'undefined') {
+                        newState.support = Math.max(0, Math.min(100, newState.support));
+                    }
+                    return newState;
+                });
+                setTimeout(() => setIsUpdating(false), 800);
+            };
+
+            const navigate = (nextPassage, statUpdates = {}) => {
+                updateStats(statUpdates);
+                setPassage(nextPassage);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+            const renderPassage = () => {
+                const pKey = passage;
+                switch (passage) {
+                    case 'Start':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h1 className="text-3xl font-bold text-orange-500 uppercase tracking-tighter">The Organizer</h1>
+                                <p className="text-zinc-300 leading-relaxed">You clock out after a ten-hour shift at the Amazon fulfillment center. Boxes, scanners, quotas — an endless rhythm of control. You’re tired, underpaid, and fed up.</p>
+                                <p className="text-zinc-400 italic border-l-2 border-orange-500/50 pl-4 py-1">You’ve read about the warehouse in Bessemer. You’ve seen the clips of <span className="text-white font-medium">Chris Smalls</span> outside JFK8, grilling burgers and organizing in defiance. Tonight, you’ve decided: you’ll start organizing your facility.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('Breakroom', { support: 0 })} className={BTN_ACTION}>Start talking to coworkers in the breakroom</button>
+                                    <button onClick={() => navigate('UnionBasics')} className={BTN_ACTION}>Read about how to file for a union election</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'Breakroom':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Breakroom</h2>
+                                <p className="text-zinc-300">You bring up pay and safety with a few coworkers during break. Some listen, others stay silent. Cameras hum overhead.</p>
+                                <div className="bg-orange-500/10 border border-orange-500/30 p-4 rounded-lg text-sm text-orange-200">
+                                    The next day, HR posts flyers: “Amazon listens to associates directly — no third party needed.” Classic anti-union language.
+                                </div>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('CardDrive', { support: stats.support + 10 })} className={BTN_ACTION}>Ignore it and keep organizing</button>
+                                    <button onClick={() => navigate('UnionBasics')} className={BTN_ACTION}>Ask a labor lawyer how to proceed</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'UnionBasics':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Union Basics</h2>
+                                <p className="text-zinc-300">To trigger an election with the <span className="font-bold text-white uppercase">National Labor Relations Board (NLRB)</span>, you need signatures from <span className="text-orange-400">30% of eligible workers</span> on authorization cards.</p>
+                                <p className="text-zinc-400">But veterans warn: filing with just 30% is a <span className="text-red-400 font-bold">recipe for disaster</span> — Amazon’s list will never match yours, and turnover can hit 100% per year. You’ll need closer to <span className="text-green-400 font-bold">70% support</span> before filing.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('CardDrive')} className={BTN_ACTION}>Begin collecting cards</button>
+                                    <button onClick={() => navigate('TurnoverTalk')} className={BTN_ACTION}>Consult experienced organizers about Amazon’s turnover problem</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'TurnoverTalk':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">The Turnover Problem</h2>
+                                <p className="text-zinc-300 text-lg italic">“At Amazon, the warehouse can replace its entire workforce in a year. People quit before you can even get their contact info.”</p>
+                                <p className="text-zinc-400">An older organizer explains that tying beyond work — mutual aid, solidarity networks — is the only way to outlast the churn.</p>
+                                <button onClick={() => navigate('CardDrive', { support: stats.support + 10 })} className={BTN_ACTION}>Start the card drive anyway</button>
+                            </div>
+                        );
+
+                    case 'CardDrive':
+                        const supGain = getRandom(10, 25);
+                        const curSup = stats.support + supGain;
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Distributing Authorization Cards</h2>
+                                <p className="text-zinc-300">You and your coworkers begin distributing authorization cards quietly.</p>
+                                {curSup >= 70 ? (
+                                    <div className="space-y-4 animate-celebrate">
+                                        <div className="bg-green-500/20 p-4 rounded-lg border border-green-500/50 text-green-300 font-bold">You’ve reached strong majority support ({curSup}%).</div>
+                                        <button onClick={() => navigate('ElectionFiling', { support: curSup, filed: true })} className={BTN_GREEN}>File for election</button>
+                                    </div>
+                                ) : curSup >= 30 ? (
+                                    <div className="space-y-3">
+                                        <div className="bg-yellow-500/20 p-4 rounded-lg border border-yellow-500/50 text-yellow-200">You’ve reached the minimum threshold ({curSup}%), but it’s risky.</div>
+                                        <button onClick={() => navigate('ElectionFiling', { support: curSup, filed: true })} className={BTN_ORANGE}>File now (risky)</button>
+                                        <button onClick={() => navigate('CardDrive', { support: curSup })} className={BTN_ACTION}>Wait and build stronger support</button>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-400">Current support: {curSup}%.</p>
+                                        <button onClick={() => navigate('Breakroom', { support: curSup })} className={BTN_ACTION}>Keep talking to workers</button>
+                                    </div>
+                                )}
+                            </div>
+                        );
+
+                    case 'ElectionFiling':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Filing with the NLRB</h2>
+                                <p className="text-zinc-300">You file with the NLRB. Amazon responds instantly with mandatory “information sessions” — <span className="text-red-400 font-bold uppercase">captive audience meetings.</span></p>
+                                <p className="text-zinc-400">Supervisors warn: “Unions take your dues. We already pay well.”</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('RebuildSupport', { support: stats.support - 10 })} className={BTN_ACTION}>Hold one-on-one conversations to rebuild trust</button>
+                                    <button onClick={() => navigate('PreHearing', { support: stats.support - 5 })} className={BTN_ACTION}>Attend the NLRB pre-election hearing</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'RebuildSupport':
+                        const rbSup = stats.support + 15;
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Rebuilding Support</h2>
+                                <p className="text-zinc-300">You talk to coworkers after meetings, countering misinformation. Some regain confidence; others stay afraid.</p>
+                                <button onClick={() => navigate('VoteDay', { support: rbSup })} className={BTN_ACTION}>
+                                    {rbSup >= 60 ? "Proceed to election" : "Proceed anyway, hoping for the best"}
+                                </button>
+                            </div>
+                        );
+
+                    case 'PreHearing':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">The Pre-Hearing</h2>
+                                <p className="text-zinc-300">The NLRB schedules your election. Amazon’s lawyers file <span className="text-red-400 font-bold">objections</span>, trying to exclude key workers.</p>
+                                <button onClick={() => navigate('VoteDay', { support: stats.support - 5 })} className={BTN_ACTION}>Push through to the election</button>
+                            </div>
+                        );
+
+                    case 'VoteDay':
+                        const won = stats.support >= 60;
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 text-center passage-content">
+                                <Illustration />
+                                <h2 className="text-3xl font-bold mb-4">Election Day</h2>
+                                <p className="text-zinc-400 mb-6 italic">Voting begins. Amazon floods phones with anti-union texts and builds a mailbox outside to monitor ballots.</p>
+                                {won ? (
+                                    <div className="bg-green-600/20 border border-green-500 p-8 rounded-xl animate-celebrate">
+                                        <Icon name="TrendingUp" className="mx-auto w-12 h-12 text-green-500 mb-4" />
+                                        <h3 className="text-2xl font-bold">VICTORY</h3>
+                                        <p className="text-zinc-300">You win the election — 52% yes. The room erupts.</p>
+                                        <button onClick={() => navigate('Aftermath', { victory: true })} className={BTN_GREEN + " mt-6"}>Continue</button>
+                                    </div>
+                                ) : (
+                                    <div className="bg-red-600/20 border border-red-500 p-8 rounded-xl">
+                                        <Icon name="AlertTriangle" className="mx-auto w-12 h-12 text-red-500 mb-4" />
+                                        <h3 className="text-2xl font-bold">DEFEAT</h3>
+                                        <p className="text-zinc-300">You lose. Fear and confusion win this round.</p>
+                                        <button onClick={() => navigate('Start', { support: 0 })} className={BTN_ACTION + " mt-6"}>Regroup and try again</button>
+                                    </div>
+                                )}
+                            </div>
+                        );
+
+                    case 'Aftermath':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold text-green-400">Election Victory</h2>
+                                <p className="text-zinc-300">You’ve done it. The workers voted to unionize. But Amazon refuses to bargain and <span className="text-red-400 font-bold uppercase underline">appeals the result.</span></p>
+                                <p className="text-zinc-400 italic">It could take three to five years before the company is legally forced to negotiate.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('Appeals')} className={BTN_ACTION}>Track the appeals process</button>
+                                    <button onClick={() => navigate('Morale')} className={BTN_ACTION}>Hold solidarity events to keep morale alive</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'Appeals':
+                        const yrInc = getRandom(1, 2);
+                        const newYrs = stats.years + yrInc;
+                        if (newYrs >= 5) {
+                            return (
+                                <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                    <Illustration />
+                                    <h2 className="text-2xl font-bold text-green-400 uppercase">Bargaining Order</h2>
+                                    <p className="text-zinc-300 font-bold">You finally get a bargaining order.</p>
+                                    <button onClick={() => navigate('UnionContractNegotiations', { bargain: true, years: newYrs })} className={BTN_GREEN}>Begin Negotiations</button>
+                                </div>
+                            );
+                        }
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">Legal Delays: Year {newYrs}</h2>
+                                <p className="text-zinc-300">Every few months, another appeal. Regional Board → National Board → Circuit Court. Each victory brings another stall.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('Appeals', { years: newYrs, appeals: stats.appeals + 1 })} className={BTN_ACTION}>Continue waiting through legal delays</button>
+                                    <button onClick={() => navigate('MediaCoverage')} className={BTN_ACTION}>Organize public pressure to speed things up</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'Morale':
+                        const toInc = getRandom(5, 10);
+                        const supDec = getRandom(5, 15);
+                        const newTO = stats.turnover + toInc;
+                        const newSup = stats.support - supDec;
+                        if (newTO >= 100) {
+                            return (
+                                <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                    <h2 className="text-2xl font-bold text-red-400">Critical Turnover</h2>
+                                    <p className="text-zinc-300">You realize no one from the original drive remains. Turnover is too high.</p>
+                                    <button onClick={() => navigate('Resolution')} className={BTN_ACTION}>Reflect on the struggle</button>
+                                </div>
+                            );
+                        }
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">The Morale Struggle</h2>
+                                <p className="text-zinc-300">You organize rallies and support drives. Turnover rises; faces change faster than you can learn names.</p>
+                                <button onClick={() => navigate('StrategyMeeting', { turnover: newTO, support: newSup })} className={BTN_ACTION}>Keep organizing through exhaustion</button>
+                            </div>
+                        );
+
+                    case 'StrategyMeeting':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Strategy Meeting</h2>
+                                <p className="text-zinc-300 italic">You gather your organizing committee. Tired faces, shared pizza, determination. You need a plan.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('SaltingPlan', { support: stats.support + 10, strategy: "salting" })} className={BTN_ACTION}>Salting: place trusted workers strategically</button>
+                                    <button onClick={() => navigate('CommitteePlan', { support: stats.support + 15, strategy: "committee" })} className={BTN_ACTION}>Committee Building: deepen internal trust</button>
+                                    <button onClick={() => navigate('ProtestPlan', { support: stats.support + 20, strategy: "protest" })} className={BTN_ACTION}>Public Protest: go loud and visible</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'SaltingPlan':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">The Salt Strategy</h2>
+                                <p className="text-zinc-300">You decide to <span className="font-bold text-orange-400">salt</span> the warehouse—placing allies in strategic departments to quietly build trust and gather information. It’s slow work. After three months, whispers about “the union” spread beyond your floor.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('MediaCoverage')} className={BTN_ACTION}>Move to Media Coverage to shape the story</button>
+                                    <button onClick={() => navigate('StrategyMeeting')} className={BTN_ACTION}>Schedule a follow-up Strategy Meeting</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'CommitteePlan':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">Deep Organizing</h2>
+                                <p className="text-zinc-300">You choose to build a strong committee. Weekly meetings after shifts, shared spreadsheets of contacts, message boards for updates. This is how the <span className="font-bold text-orange-400 uppercase">Amazon Labor Union (ALU)</span> grew—small, steady, disciplined.</p>
+                                <p className="text-zinc-400 italic">Coworkers begin trusting each other enough to wear union pins on the floor. HR notices.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('NightCookout', { support: stats.support + 10 })} className={BTN_ACTION}>Hold a Night Cookout to celebrate progress</button>
+                                    <button onClick={() => navigate('MediaCoverage')} className={BTN_ACTION}>Plan media outreach</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'ProtestPlan':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 text-center passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold uppercase tracking-widest">“We are not robots!”</h2>
+                                <p className="text-zinc-300 leading-relaxed">Amazon calls the police. You and two others are detained briefly—like <span className="font-bold">Chris Smalls</span> was during early organizing at JFK8.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('MediaCoverage', { support: stats.support + 15 })} className={BTN_ACTION}>Turn publicity into pressure</button>
+                                    <button onClick={() => navigate('NLRBPrep')} className={BTN_ACTION}>Refocus on NLRB filing</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'NightCookout':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold italic">Midnight Cookout</h2>
+                                <p className="text-zinc-300">You organize a midnight cookout in the parking lot, mirroring what ALU did outside JFK-8—music, food, laughter, exhaustion, hope.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('CardDrive', { support: stats.support + 15 })} className={BTN_ACTION}>Keep distributing cards</button>
+                                    <button onClick={() => navigate('MediaCoverage')} className={BTN_ACTION}>Invite local reporters</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'WarehouseChallenges':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold">Shop Floor Challenges</h2>
+                                <p className="text-zinc-300">The warehouse hums under fluorescent light. You remember <span className="italic font-bold">Union</span> — organizers meeting workers at bus stops before sunrise. A coworker whispers: <span className="text-red-400 font-bold uppercase underline">“They brought in consultants.”</span></p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('ConsultantConfrontation')} className={BTN_ACTION}>Confront the consultants</button>
+                                    <button onClick={() => navigate('NightCookout')} className={BTN_ACTION}>Hold a night cookout</button>
+                                    <button onClick={() => navigate('NLRBPrep')} className={BTN_ACTION}>Quietly prepare NLRB charges</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'ConsultantConfrontation':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">The Front Lines</h2>
+                                <p className="text-zinc-300">The consultants tell everyone “unions are outsiders” and hint that the warehouse might close. You interrupt one meeting—like ALU organizer <span className="font-bold">Natalie Monarrez</span> did—and are escorted out by security.</p>
+                                <div className="bg-red-900/20 border border-red-500/50 p-4 rounded-lg text-sm text-red-200">
+                                    Hours later, HR schedules you for “review.” You might be fired.
+                                </div>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('MediaCoverage', { support: stats.support + 5, risk: "high" })} className={BTN_ACTION}>Challenge the retaliation publicly</button>
+                                    <button onClick={() => navigate('NLRBPrep')} className={BTN_ACTION}>File an unfair labor practice charge</button>
+                                    <button onClick={() => navigate('NightCookout')} className={BTN_ACTION}>Lay low and focus on rebuilding</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'NLRBPrep':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold uppercase tracking-widest text-zinc-500">Legal Filing</h2>
+                                <p className="text-zinc-300">You collect affidavits about retaliation. The NLRB warns: “Even if you win, appeals take years.”</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('Aftermath', { appeals: stats.appeals + 1, years: stats.years + 1 })} className={BTN_ACTION}>File the charge and keep organizing</button>
+                                    <button onClick={() => navigate('TeamstersAffiliation')} className={BTN_ACTION}>Reach out to Teamsters for support</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'TeamstersAffiliation':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">The Solidarity Network</h2>
+                                <p className="text-zinc-300">You reach out to the <span className="font-bold uppercase">Teamsters</span>. They warn: “Amazon will stall — build for the long fight.”</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('MediaCoverage', { support: stats.support + 10, alliances: "Teamsters" })} className={BTN_ACTION}>Coordinate a joint rally</button>
+                                    <button onClick={() => navigate('WarehouseChallenges')} className={BTN_ACTION}>Focus inward, strengthen committee</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'MediaCoverage':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold uppercase tracking-tighter">The News Cycle</h2>
+                                <p className="text-zinc-300 leading-relaxed">The campaign draws outside attention. Reporters ask for interviews, invoking the ALU and <span className="font-bold">Chris Smalls.</span></p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('PublicReaction', { support: stats.support + 10, morale: "shared" })} className={BTN_ACTION}>Emphasize collective effort</button>
+                                    <button onClick={() => navigate('PublicReaction', { support: stats.support + 5, morale: "personal" })} className={BTN_ACTION}>Make yourself the public face</button>
+                                    <button onClick={() => navigate('PublicReaction', { support: stats.support - 5, morale: "quiet" })} className={BTN_ACTION}>Stay quiet, focus on shop floor</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'PublicReaction':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold italic">Trending</h2>
+                                <p className="text-zinc-300">Your story trends briefly online.</p>
+                                {stats.morale === 'shared' ? <p className="text-zinc-300">Community support grows.</p> : stats.morale === 'personal' ? <p className="text-zinc-300">Amazon issues PR attacks, calling you “not articulate.”</p> : <p className="text-zinc-300">The story fades. You gain privacy but lose momentum.</p>}
+                                <button onClick={() => navigate('WarehouseChallenges')} className={BTN_ACTION}>Return to warehouse organizing</button>
+                            </div>
+                        );
+
+                    case 'SolidarityNetwork':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">Coalition Building</h2>
+                                <p className="text-zinc-300 italic">After months of burnout and internal division, you realize the campaign can’t survive alone. You need allies beyond the warehouse walls.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('SolidarityOutcome', { alliances: "formal", support: stats.support + 10, morale: "renewed" })} className={BTN_ACTION}>Formal alliance with established unions</button>
+                                    <button onClick={() => navigate('SolidarityOutcome', { alliances: "community", support: stats.support + 15, morale: "grassroots" })} className={BTN_ACTION}>Grassroots mutual aid (food, rent help)</button>
+                                    <button onClick={() => navigate('SolidarityOutcome', { alliances: "digital", support: stats.support + 5, morale: "media" })} className={BTN_ACTION}>Digital campaign (TikTok, Twitter)</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'SolidarityOutcome':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold uppercase tracking-widest text-zinc-500">Solidarity Network</h2>
+                                {stats.alliances === 'formal' ? (
+                                    <p className="text-zinc-300">You sign a solidarity agreement with the Teamsters. They send organizers and banners. For the first time in months, the warehouse feels connected to something bigger.</p>
+                                ) : stats.alliances === 'community' ? (
+                                    <p className="text-zinc-300">Your network builds a food pantry outside the warehouse gates. Power starts to mean more than a signature.</p>
+                                ) : (
+                                    <p className="text-zinc-300">#PeopleOverPackages trends. Donations pour in, but clicks are not contracts.</p>
+                                )}
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('UnionContractNegotiations')} className={BTN_ACTION}>Move to Contract Negotiations</button>
+                                    <button onClick={() => navigate('InternalUnionTensions')} className={BTN_ACTION}>Manage Internal Union Tensions</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'UnionContractNegotiations':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold uppercase tracking-tighter">The Bargaining Table</h2>
+                                <p className="text-zinc-300">You sit across from Amazon’s bargaining team. Five years have passed. Amazon drags its feet. You must decide your approach.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('NegotiationOutcome', { negotiationStyle: "aggressive", support: stats.support + 10, risk: "high" })} className={BTN_ACTION}>Push for aggressive demands (Raises, Security)</button>
+                                    <button onClick={() => navigate('NegotiationOutcome', { negotiationStyle: "compromise", support: stats.support + 5, risk: "medium" })} className={BTN_ACTION}>Seek compromise (Basic Agreement first)</button>
+                                    <button onClick={() => navigate('NegotiationOutcome', { negotiationStyle: "stall", support: stats.support + 5, risk: "low" })} className={BTN_ACTION}>Stall strategically (Rebuild unity)</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'NegotiationOutcome':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">Negotiation Result</h2>
+                                {stats.negotiationStyle === 'aggressive' ? (
+                                    <p className="text-zinc-300">Amazon declares you “unreasonable.” Members respect your fight. You organize walkouts.</p>
+                                ) : stats.negotiationStyle === 'compromise' ? (
+                                    <p className="text-zinc-300">You secure a memorandum of understanding. It’s not everything, but it’s something.</p>
+                                ) : (
+                                    <p className="text-zinc-300">The committee stays steady. You re-organize members while the clock ticks.</p>
+                                )}
+                                <button onClick={() => navigate('Resolution')} className={BTN_ACTION}>Continue</button>
+                            </div>
+                        );
+
+                    case 'InternalUnionTensions':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold uppercase tracking-widest text-red-500">Internal Friction</h2>
+                                <p className="text-zinc-300 italic">Inside the union hall, tension builds. Factions form. Ego, exhaustion, and the weight of expectation grapple with the movement.</p>
+                                <div className="grid grid-cols-1 gap-3 pt-4">
+                                    <button onClick={() => navigate('UnionTensionsResolution', { morale: "open", support: stats.support + 5 })} className={BTN_ACTION}>Call a full membership meeting</button>
+                                    <button onClick={() => navigate('UnionTensionsResolution', { morale: "avoidant", support: stats.support - 5 })} className={BTN_ACTION}>Avoid confrontation</button>
+                                    <button onClick={() => navigate('UnionTensionsResolution', { morale: "divided" })} className={BTN_ACTION}>Side with one faction</button>
+                                </div>
+                            </div>
+                        );
+
+                    case 'UnionTensionsResolution':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <h2 className="text-2xl font-bold">Conflict Outcome</h2>
+                                {stats.morale === 'open' ? (
+                                    <p className="text-zinc-300">Tears, shouting, and then honesty. You rebuild some trust.</p>
+                                ) : stats.morale === 'avoidant' ? (
+                                    <p className="text-zinc-300">Text chains go unanswered. Momentum fades like a slow leak.</p>
+                                ) : (
+                                    <p className="text-zinc-300">Your side wins the vote, but others walk away. The group splinters.</p>
+                                )}
+                                <button onClick={() => navigate('Resolution')} className={BTN_ACTION}>Move forward</button>
+                            </div>
+                        );
+
+                    case 'OrganizerFatigue':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold italic">Burnout</h2>
+                                <p className="text-zinc-300 italic">Weeks blur into months. You’re tired. You wonder if it’s worth it. Turnover climbs — new hires don’t even know there was a vote.</p>
+                                <button onClick={() => navigate('Appeals', { support: stats.support - 5 })} className={BTN_ACTION}>Push through exhaustion</button>
+                            </div>
+                        );
+
+                    case 'Resolution':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold text-orange-400">The Long Struggle</h2>
+                                <p className="text-zinc-300 italic">“We didn’t just build a union. We built a community.”</p>
+                                <button onClick={() => navigate('Epilogue')} className={BTN_GREEN + " mt-6"}>Final Epilogue</button>
+                            </div>
+                        );
+
+                    case 'Epilogue':
+                        let resState = "memory";
+                        if (stats.support >= 80 || stats.alliances === "community") resState = "legacy";
+                        else if (stats.alliances === "formal" || stats.alliances === "Teamsters") resState = "institutional";
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-6 passage-content">
+                                <Illustration />
+                                <h2 className="text-2xl font-bold uppercase tracking-widest text-zinc-500">Ten Years Later</h2>
+                                <div className="border-l-4 border-zinc-700 pl-4 py-2">
+                                    {resState === 'legacy' ? <p className="text-green-300">The union endures. A community center thrives. Your fight inspired others.</p> : 
+                                     resState === 'institutional' ? <p className="text-blue-300">Modest raises, safer shifts. A steady institutional win.</p> : 
+                                     <p className="text-zinc-400">The union dissolved, but seeds were planted. People still remember.</p>}
+                                </div>
+                                <button onClick={() => navigate('Start', { support: 0, years: 0 })} className={BTN_ACTION + " mt-8"}>Play Again</button>
+                            </div>
+                        );
+
+                    case 'EndGame':
+                        return (
+                            <div key={pKey} className="animate-fade-in-up space-y-4 text-center py-10 passage-content">
+                                <h1 className="text-4xl font-black text-orange-500 mb-6 uppercase tracking-tighter">Labor Struggle Narrative</h1>
+                                <p className="text-zinc-300 mt-4 italic font-bold">Every signature, every meeting, every act of solidarity lays groundwork for the next fight.</p>
+                                <button onClick={() => navigate('Start', { support: 0, filed: false, victory: false, years: 0, turnover: 80 })} className={BTN_ACTION + " mt-12"}>Restart Narrative</button>
+                            </div>
+                        );
+
+                    default:
+                        return <div className="text-zinc-500">Node not found. <button onClick={() => setPassage('Start')}>Go back</button></div>;
+                }
+            };
+
+            return (
+                <div className="min-h-screen bg-[#050505] text-zinc-100 p-4 md:p-8 font-sans selection:bg-orange-500/30">
+                    <div className="max-w-3xl mx-auto space-y-6">
+                        {/* SIMPLIFIED DASHBOARD: SUPPORT ONLY */}
+                        <div className="bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sticky top-4 z-50 shadow-2xl overflow-hidden">
+                            {isUpdating && <div className="absolute inset-0 bg-orange-500/5 animate-pulse pointer-events-none" />}
+                            <div className="flex flex-col">
+                                <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-2 flex items-center">
+                                    <Icon name="Users" className="w-3 h-3 mr-1" /> Worker Support
+                                </span>
+                                <div className="flex items-center">
+                                    <div className="flex-1 h-3 bg-zinc-800 rounded-full mr-4 overflow-hidden border border-white/5 relative">
+                                        <div className="h-full bg-orange-500 transition-all duration-1000 shadow-[0_0_10px_rgba(249,115,22,0.3)]" style={{ width: `${stats.support}%` }} />
+                                    </div>
+                                    <span className="text-base font-mono font-black text-white">{stats.support}%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* NARRATIVE AREA */}
+                        <div className="bg-zinc-900 border border-white/5 rounded-3xl p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] min-h-[480px] custom-scrollbar overflow-y-auto max-h-[85vh]">
+                            {renderPassage()}
+                        </div>
+
+                        {/* FOOTER */}
+                        <div className="text-center pb-12 opacity-30 text-[9px] uppercase tracking-[0.4em] text-zinc-500">The Organizer — Amazon Labor Narrative</div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
