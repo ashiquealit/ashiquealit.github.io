@@ -25,16 +25,15 @@
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #2563eb; }
         .section-title.text-center::after { left: 50%; transform: translateX(-50%); }
         :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 4px; }
-        /* Style for the new circular bullet */
         .list-bullet {
             display: inline-block;
-            width: 0.5rem; /* 8px */
-            height: 0.5rem; /* 8px */
-            background-color: #2563eb; /* blue-600 */
-            border-radius: 9999px; /* rounded-full */
-            margin-right: 0.75rem; /* mr-3 */
-            margin-top: 0.4rem; /* Adjust vertical alignment */
-            flex-shrink: 0; /* Prevent shrinking in flex container */
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #2563eb;
+            border-radius: 9999px;
+            margin-right: 0.75rem;
+            margin-top: 0.4rem;
+            flex-shrink: 0;
         }
         .project-card-image {
             aspect-ratio: 4 / 3;
@@ -55,7 +54,6 @@
                 <a href="talks.html" class="nav-link">Talks</a>
                 <a href="#teaching" class="nav-link">Teaching</a>
                 <a href="#contact" class="nav-link">Contact</a>
-
             </nav>
             <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Open main menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h16"></path></svg>
@@ -173,35 +171,33 @@
             </div>
         </section>
 
+        <!-- News Section -->
         <section class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Latest News</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-
-                      
-                    
+                    <!-- News Item 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">New Book Chapter</h3>
-                       <p class="text-sm mt-1">Paper Title: “Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves</p>
-            </div>
-        
-                    
-                  <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Invited Talk at School of Cities</h3>
-                        <p class="text-sm mt-1">Delivered talk on "Infrastructures of Platforms" at the School of Cities, University of Toronto, on November 12, 2025.</p>
+                        <h3 class="font-semibold text-blue-700">New Article</h3>
+                        <p class="text-sm mt-1">Paper Title: “Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves - Published in CHI 26</p>
                     </div>
                     
+                    <!-- News Item 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Published in CSCW '25</h3>
-                        <p class="text-sm mt-1">Lawson Climate and Sustainability student research award (December 2025).</p>
-            </div>
+                        <h3 class="font-semibold text-blue-700">New Article</h3>
+                        <p class="text-sm mt-1">Kudumbashree's Lunch Bell project and digital solidarity economy in Kerala, India - paper published in Internet Policy Review.</p>
+                    </div>
                     
-                   </div>
+                    <!-- News Item 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                        <h3 class="font-semibold text-blue-700">Award</h3>
+                        <p class="text-sm mt-1">Lawson Climate and Sustainability student research award (December 2025).</p>
+                    </div>
+                </div>
                 <div class="text-center mt-12">
                     <a href="news.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">View News Archive</a>
                 </div>
             </div>
-
         </section>
 
         <section id="research" class="py-20 lg:py-24">
@@ -211,7 +207,7 @@
                     <a href="project-labour-resistance.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="driver.jpg" alt="An auto-rickshaw driver in a bustling city street" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology, Design & Labour Resistance</h3><p class="flex-grow">Investigating the role of digital tools in worker organization and resistance against algorithmic management.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
                     <a href="project-social-movements.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="socialmovement.jpg" alt="Protestors gathered for a social movement" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology & Social Movements</h3><p class="flex-grow">Examining how technology is used by and against social movements, focusing on diasporic communities.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
                     <a href="project-caste-studies.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="casteproject.jpg" alt="Activists at a protest for caste equality" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Critical Caste Studies</h3><p class="flex-grow">Analyzing the reproduction of caste hierarchies in digital spaces and potentials for technology to challenge them.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
-                    <a href="project-solidarity-economy.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="coopmarket.jpg" alt="A worker in a banana market" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Solidarity Economy</h3><p class="flex-grow">Exploring cooperative models and digital tools that foster economic and social solidarity.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
+                    <a href="solidarity_economies.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="coopmarket.jpg" alt="A worker in a banana market" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Solidarity Economy</h3><p class="flex-grow">Exploring cooperative models and digital tools that foster economic and social solidarity.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
                 </div>
             </div>
         </section>
@@ -319,7 +315,6 @@
                     if (toggleAboutBtn) toggleAboutBtn.textContent = 'Show Less';
                     aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
-                    // Only scroll to the top of the home section if we are collapsing the about section
                     if (window.scrollY > aboutSection.offsetTop - 100) {
                         document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
@@ -332,4 +327,3 @@
     </script>
 </body>
 </html>
-
