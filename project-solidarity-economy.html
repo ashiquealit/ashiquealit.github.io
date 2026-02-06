@@ -54,7 +54,7 @@
         <section class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                  <div class="mb-12">
-                    <img src="coopmarket.jpg" alt="A group of people working together in a community garden" class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=2000&auto=format&fit=crop" alt="A group of people working together in a community garden" class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg">
                     <p class="text-xs text-gray-500 text-right mt-2 pr-1">Photo by Arun Geetha Viswanathan on Unsplash</p>
                 </div>
 
@@ -78,8 +78,28 @@
                     </div>
                 </div>
 
-                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">Publications</h2>
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">Peer-Reviewed Articles</h2>
                 <ul class="item-list">
+                    <li data-tags="Solidarity Economy, Digital Platforms">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali, Priyank Chandra, and Fibin Filal. 2026. “Kudumbashree's Lunch Bell project and digital solidarity economy in Kerala, India.”</p>
+                        <p class="italic text-gray-600">Internet Policy Review 15, no. 1.</p>
+                        <div class="mt-2">
+                            <a href="https://doi.org/10.14763/2026.1.2071" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a> | 
+                            <a href="#" class="text-blue-600 hover:underline bibtex-btn">BibTeX</a> | 
+                            <a href="#" class="text-blue-600 hover:underline cite-btn">Cite</a>
+                        </div>
+                        <div class="bibtex-data hidden">@article{thuppilikkat2026lunchbell,
+    title = {Kudumbashree's Lunch Bell project and digital solidarity economy in Kerala, India},
+    author = {Thuppilikkat, Ashique Ali and Chandra, Priyank and Filal, Fibin},
+    year = {2026},
+    journal = {Internet Policy Review},
+    volume = {15},
+    number = {1},
+    doi = {10.14763/2026.1.2071}
+}</div>
+                        <div class="cite-data hidden">Thuppilikkat, Ashique Ali, Chandra, Priyank, & Filal, Fibin. (2026). Kudumbashree's Lunch Bell project and digital solidarity economy in Kerala, India. *Internet Policy Review*, 15(1). https://doi.org/10.14763/2026.1.2071</div>
+                        <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span><span class="tag">Kerala</span><span class="tag">India</span></div>
+                    </li>
                     <li data-tags="Solidarity Economy">
                         <p class="font-semibold">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.”</p>
                         <p class="italic text-gray-600">Economic and Political Weekly 59, no. 31: 47-52.</p>
@@ -88,11 +108,21 @@
                         <div class="cite-data hidden">Thuppilikkat, Ashique Ali. 2024. “Short History of Cooperative Movement in Northern Malabar, Kerala.” *Economic and Political Weekly* 59, no. 31: 47–52.</div>
                         <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span></div>
                     </li>
-                    <li data-tags="Solidarity Economy">
-                        <p class= Narayanan,Nitheesh, and "font-semibold">Thuppilikkat, Ashique Ali. 2025. “Kerala Dinesh Beedi Workers’ Central Cooperative Society.”</p>
+                </ul>
+
+                <h2 class="text-3xl font-bold font-serif text-gray-800 mt-16 mb-8">Public Scholarship</h2>
+                <ul class="item-list">
+                    <li data-tags="Digital Solidarity Economy, Governance, Public Scholarship">
+                        <p class="font-semibold">Thuppilikkat, Ashique Ali. 2026. “Lessons from Workers Governing Technologies.”</p>
+                        <p class="italic text-gray-600">Creative Labour Critical Futures.</p>
+                        <div class="mt-2"><a href="https://creativelabourcriticalfutures.ca/blog/lessons-from-workers-governing-technologies/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
+                        <div class="tags-container mt-1"><span class="tag">Digital Solidarity Economy</span><span class="tag">Governance</span><span class="tag">Public Scholarship</span></div>
+                    </li>
+                    <li data-tags="Solidarity Economy, India, Public Scholarship">
+                        <p class="font-semibold">Narayanan, Nitheesh, and Thuppilikkat, Ashique Ali. 2025. “Kerala Dinesh Beedi Workers’ Central Cooperative Society.”</p>
                         <p class="italic text-gray-600">Tricontinental: Institute for Social Research.</p>
                         <div class="mt-2"><a href="https://thetricontinental.org/study-kerala-cooperatives/#toc-section-5" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Link]</a></div>
-                        <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span><span class="tag">India</span></div>
+                        <div class="tags-container mt-1"><span class="tag">Solidarity Economy</span><span class="tag">India</span><span class="tag">Public Scholarship</span></div>
                     </li>
                 </ul>
 
@@ -151,7 +181,11 @@
                     const isBibtex = target.classList.contains('bibtex-btn');
                     const selector = isBibtex ? '.bibtex-data' : '.cite-data';
                     const message = isBibtex ? 'BibTeX copied to clipboard!' : 'Citation copied to clipboard!';
-                    const textToCopy = target.closest('li').querySelector(selector).textContent;
+                    
+                    const dataEl = target.closest('li').querySelector(selector);
+                    if (!dataEl) return;
+                    
+                    const textToCopy = dataEl.textContent;
                     
                     const textarea = document.createElement('textarea');
                     textarea.value = textToCopy;
@@ -165,4 +199,3 @@
     </script>
 </body>
 </html>
-
