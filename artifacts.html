@@ -153,98 +153,35 @@ h1, h2, h3, h4, .font-serif { font-family: 'Lora', serif; }
 <button class="chip active" data-filter="all">All</button>
 <button class="chip" data-filter="Dashboard">Dashboard</button>
 <button class="chip" data-filter="Map">Interactive Map</button>
-<button class="chip" data-filter="Dataset">Dataset</button>
-<button class="chip" data-filter="Report">Report</button>
-<button class="chip" data-filter="Visualization">Visualization</button>
-<button class="chip" data-filter="Workshop">Workshop</button>
-<button class="chip" data-filter="Presentation">Presentation</button>
-<button class="chip" data-filter="Prototype">Prototype</button>
-<button class="chip" data-filter="AI Tool">AI Tool</button>
-<button class="chip" data-filter="Research">Research</button>
+<button class="chip" data-filter="Election Monitor">Election Monitor</button>
 </div>
 </div>
 
 <!-- Artifact Grid -->
-<div id="artifact-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div id="artifact-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 <article class="artifact-card p-6" data-category="Dashboard" tabindex="0">
 <div class="artifact-icon mb-5"><i class="fa-solid fa-chart-column"></i></div>
 <h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Heat Exposure Dashboard</h3>
 <p class="text-sm text-gray-600 flex-grow">Interactive dashboard for exploring worker heat exposure patterns across Kolkata.</p>
 <div class="flex flex-wrap gap-2 my-4"><span class="tag">Dashboard</span><span class="tag">Climate</span><span class="tag">Labour</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm group-hover:underline hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
+<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
 </article>
 
 <article class="artifact-card p-6" data-category="Map" tabindex="0">
 <div class="artifact-icon mb-5"><i class="fa-solid fa-map-location-dot"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Air Quality Map</h3>
-<p class="text-sm text-gray-600 flex-grow">Interactive map of PM2.5 readings across seven WBPCB monitoring stations in the city.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Map</span><span class="tag">Air Quality</span><span class="tag">Spatial</span></div>
+<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Air Quality Map of Kolkata</h3>
+<p class="text-sm text-gray-600 flex-grow">Interactive map of PM2.5 air-quality readings across seven WBPCB monitoring stations in Kolkata.</p>
+<div class="flex flex-wrap gap-2 my-4"><span class="tag">Map</span><span class="tag">Kolkata</span><span class="tag">Air Quality</span></div>
 <a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
 </article>
 
-<article class="artifact-card p-6" data-category="Dataset" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-database"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Ride-Hailing Worker Dataset</h3>
-<p class="text-sm text-gray-600 flex-grow">Open dataset of anonymised survey responses from auto-rickshaw and app-cab drivers.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Dataset</span><span class="tag">Open Data</span><span class="tag">Labour</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Report" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-file-lines"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Annual Civic Data Report</h3>
-<p class="text-sm text-gray-600 flex-grow">A comprehensive report synthesising key findings on civic and environmental data in Kolkata.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Report</span><span class="tag">Policy</span><span class="tag">Summary</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Visualization" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-chart-line"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Seasonal AQI Trends</h3>
-<p class="text-sm text-gray-600 flex-grow">Visualization of monthly air-quality trends revealing winter pollution peaks and monsoon lows.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Visualization</span><span class="tag">Climate</span><span class="tag">Trends</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Workshop" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-chalkboard-user"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Community Workshop Kit</h3>
-<p class="text-sm text-gray-600 flex-grow">Facilitation materials and slides for community workshops on reading and using civic data.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Workshop</span><span class="tag">Community</span><span class="tag">Education</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Presentation" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-person-chalkboard"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Conference Presentation</h3>
-<p class="text-sm text-gray-600 flex-grow">Slide deck presented on digital labour and civic data at the INDL conference.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Presentation</span><span class="tag">Slides</span><span class="tag">Research</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Prototype" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-mobile-screen-button"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Worker Reporting App</h3>
-<p class="text-sm text-gray-600 flex-grow">Mobile prototype enabling gig workers to log working conditions and heat-stress incidents.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Prototype</span><span class="tag">Mobile</span><span class="tag">Labour</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="AI Tool" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-robot"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Civic Data Assistant</h3>
-<p class="text-sm text-gray-600 flex-grow">An AI tool that answers natural-language questions over the project's open civic datasets.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">AI Tool</span><span class="tag">NLP</span><span class="tag">Open Data</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
-</article>
-
-<article class="artifact-card p-6" data-category="Research" tabindex="0">
-<div class="artifact-icon mb-5"><i class="fa-solid fa-flask"></i></div>
-<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">Working Paper</h3>
-<p class="text-sm text-gray-600 flex-grow">Peer-reviewed research output examining technology-mediated resistance among urban workers.</p>
-<div class="flex flex-wrap gap-2 my-4"><span class="tag">Research</span><span class="tag">Paper</span><span class="tag">Methods</span></div>
-<a href="#" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
+<article class="artifact-card p-6" data-category="Election Monitor" tabindex="0">
+<div class="artifact-icon mb-5"><i class="fa-solid fa-square-poll-vertical"></i></div>
+<h3 class="text-lg font-semibold font-serif text-gray-800 mb-2">SAFAR Election Monitor — West Bengal</h3>
+<p class="text-sm text-gray-600 flex-grow">Civic platform tracking and monitoring electoral data and developments across West Bengal.</p>
+<div class="flex flex-wrap gap-2 my-4"><span class="tag">Election Monitor</span><span class="tag">West Bengal</span><span class="tag">Civic Data</span></div>
+<a href="https://safarelectionmonitor-westbengal.github.io" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">View Artifact <span aria-hidden="true">&rarr;</span></a>
 </article>
 
 </div>
