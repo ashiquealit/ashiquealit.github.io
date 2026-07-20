@@ -273,7 +273,7 @@
     { deg: 'MA, Political Science', place: 'Jawaharlal Nehru University' },
     { deg: 'BA (H), Political Science', place: 'Ramjas College, University of Delhi' }
   ];
-  var affil = ['STREET Lab', 'Critical Computing Group, UofT', 'Jamhoor — South Asian Labour Magazine', 'Forum for Anti-Caste Activism, UofT'];
+  var affil = ['STREET Lab', 'SAFAR', 'Critical Computing Group, UofT', 'Jamhoor — South Asian Labour Magazine', 'Forum for Anti-Caste Activism, UofT'];
 
   var REFS = { academic: writingAcademic, public: writingPublic };
 
@@ -1033,6 +1033,25 @@
           a.appendChild(im);
           if (relt) relt.insertAdjacentElement('afterend', a); else row.appendChild(a);
         }
+      });
+      // Org logos for STREET Lab and SAFAR affiliation entries
+      var LOGOS = [
+        { match: 'STREET Lab', src: 'images/Streetlab-logo.png', alt: 'STREET Lab logo' },
+        { match: 'SAFAR', src: 'images/safar-logo.jpg', alt: 'SAFAR logo' }
+      ];
+      LOGOS.forEach(function (lg) {
+        document.querySelectorAll('.cv.hl').forEach(function (el) {
+          if ((el.textContent || '').trim() === lg.match && !el.querySelector('.org-logo')) {
+            el.style.display = 'flex';
+            el.style.alignItems = 'center';
+            el.style.gap = '10px';
+            var im = document.createElement('img');
+            im.className = 'org-logo';
+            im.src = lg.src; im.alt = lg.alt; im.loading = 'lazy';
+            im.style.cssText = 'height:22px;width:auto;object-fit:contain;border-radius:3px;background:#fff;flex:0 0 auto';
+            el.insertBefore(im, el.firstChild);
+          }
+        });
       });
     }
 
