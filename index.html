@@ -1,345 +1,270 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Ashique Ali Thuppilikkat | University of Toronto</title>
-    <meta name="description" content="The academic portfolio of Ashique Ali Thuppilikkat, a PhD candidate at the University of Toronto, whose work focuses on socio-technical designs for resistance.">
-    <meta name="theme-color" content="#ffffff">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        h1, h2, h3, h4, .font-serif { font-family: 'Lora', serif; }
-        .nav-link { position: relative; transition: color 0.2s ease-in-out; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background-color: #2563eb; transform: scaleX(0); transition: transform 0.2s ease-in-out; }
-        .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
-        .nav-link.active { color: #2563eb; font-weight: 600; }
-        .section-title { position: relative; padding-bottom: 0.75rem; margin-bottom: 2rem; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #2563eb; }
-        .section-title.text-center::after { left: 50%; transform: translateX(-50%); }
-        :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 4px; }
-        .list-bullet {
-            display: inline-block;
-            width: 0.5rem;
-            height: 0.5rem;
-            background-color: #2563eb;
-            border-radius: 9999px;
-            margin-right: 0.75rem;
-            margin-top: 0.4rem;
-            flex-shrink: 0;
-        }
-        .project-card-image {
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08080a">
+<title>Ashique Ali Thuppilikkat — PhD Candidate, University of Toronto</title>
+<meta name="description" content="Ashique Ali Thuppilikkat — PhD candidate at the Faculty of Information, University of Toronto. Socio-technical designs for resistance: building worker power in the platformized city.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2308080a'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f3f3f0' font-family='monospace'>AT</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#08080a;-webkit-tap-highlight-color:transparent}
+button{font:inherit}
+:root{--accent:#8d93f2;--accentSoft:rgba(141,147,242,.55)}
+.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+.cv{font-family:'Archivo',sans-serif}
+.mono{font-family:'IBM Plex Mono',monospace}
+.fx{display:flex}.grid{display:grid}
+.ac{align-items:center}.jc{justify-content:center}.jb{justify-content:space-between}
+.fw{flex-wrap:wrap}.nowrap{white-space:nowrap}
+.gap8{gap:8px}.gap10{gap:10px}.gap16{gap:16px}
+.app{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;background:#08080a;color:#f3f3f0;font-family:'Archivo',sans-serif}
+.app::-webkit-scrollbar{width:9px}.app::-webkit-scrollbar-thumb{background:#222226;border-radius:9px}.app::-webkit-scrollbar-track{background:#0c0c0e}
+.bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform}
+.glow1{width:540px;height:540px;background:rgba(124,140,196,.16);left:-120px;top:-60px}
+.glow2{width:460px;height:460px;background:rgba(255,255,255,.05);right:-140px;top:30%}
+.glow3{width:420px;height:420px;background:rgba(150,128,184,.13);left:30%;bottom:-120px}
+.tone-violet .glow1{background:rgba(168,120,196,.17)}.tone-violet .glow3{background:rgba(120,110,200,.14)}
+.tone-mono .glow1{background:rgba(255,255,255,.07)}.tone-mono .glow2{background:rgba(255,255,255,.05)}.tone-mono .glow3{background:rgba(255,255,255,.05)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 40px}
+.nav{position:fixed;left:50%;transform:translateX(-50%);top:20px;width:min(1080px,calc(100% - 48px));z-index:40;border-radius:14px;padding:0 12px 0 22px;height:58px}
+.glass{background:rgba(16,16,20,.55);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid rgba(255,255,255,.09)}
+.navlink{position:relative;color:#b6b6b0;font-size:13px;letter-spacing:.01em;cursor:pointer;font-family:'IBM Plex Mono',monospace;background:none;border:none;padding:6px 4px;flex-shrink:0}
+.navbrand{font-size:15px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0}
+.navcta{flex-shrink:0;margin-left:10px}
+.navburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;border-radius:10px;flex-shrink:0;margin-left:4px}
+.navburger span{display:block;width:18px;height:2px;background:#e7e7e1;border-radius:2px;transition:transform .25s,opacity .2s}
+.navburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navburger.open span:nth-child(2){opacity:0}
+.navburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.navdrop{position:fixed;left:50%;transform:translateX(-50%);top:84px;width:min(1080px,calc(100% - 24px));z-index:39;border-radius:14px;padding:8px;display:none;flex-direction:column}
+.navdrop.open{display:flex;animation:dropfu .22s cubic-bezier(.2,.7,.2,1)}
+@keyframes dropfu{from{opacity:0;transform:translateX(-50%) translateY(-8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.navdroplink{text-align:left;padding:14px 16px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#cfcfc9;background:none;border:none;border-radius:10px;cursor:pointer;transition:background .18s,color .18s}
+.navdroplink:hover{background:rgba(255,255,255,.06);color:#fff}
+.navdroplink.on{color:#fff;background:rgba(141,147,242,.13);box-shadow:inset 2px 0 0 var(--accent)}
+.navlink:hover{color:#fff}
+.navlink.on{color:#fff}
+.navlink.on:after{content:"";position:absolute;left:3px;right:3px;bottom:-7px;height:2px;background:var(--accent);border-radius:2px}
+.cta{background:#f3f3f0;color:#0a0a0b;border-radius:999px;height:38px;padding:0 18px;font-weight:600;font-size:13px;cursor:pointer;border:none;font-family:'Archivo',sans-serif}
+.cta:hover{background:#fff}
+.ghost{border:1px solid rgba(255,255,255,.2);color:#e7e7e1;border-radius:999px;height:38px;padding:0 18px;font-size:13px;cursor:pointer;background:none;font-family:'Archivo',sans-serif}
+.ghost:hover{border-color:rgba(255,255,255,.45);color:#fff}
+.kick{color:var(--accent);letter-spacing:.22em;font-size:12px}
+.herokick{font-size:11.5px;letter-spacing:.16em}
+.kcount{color:#9d9d95}
+.muted{color:#9d9d95}.faint{color:#8c8c84}.hl{color:#f5f5f0}
+.tilt{transition:transform .14s ease,border-color .25s;transform-style:preserve-3d;will-change:transform}
+.tcard{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.1);border-radius:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;overflow:hidden}
+.tcard:hover{border-color:rgba(255,255,255,.3)}
+.shine{position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.15),transparent 58%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tcard:hover .shine{opacity:1}
+.parr{transition:transform .12s ease}
+.chip{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;color:#cfcfc9;font-size:12px;font-family:'IBM Plex Mono',monospace}
+.thumb{background:repeating-linear-gradient(135deg,#161618,#161618 8px,#101012 8px,#101012 16px);border:1px solid rgba(255,255,255,.06)}
+.rule{height:1px;background:rgba(255,255,255,.08)}
+.newsrow{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;transition:.25s;cursor:default}
+.newsrow:hover{padding-left:12px}
+.foot{border-top:1px solid rgba(255,255,255,.08);margin-top:0}
+.back{cursor:pointer;color:#b6b6b0;font-family:'IBM Plex Mono',monospace;font-size:12px;background:none;border:none}
+.back:hover{color:#fff}
+.linkrow{border-top:1px solid rgba(255,255,255,.08);padding:16px 0;cursor:pointer;transition:.2s;color:#e7e7e1}
+.linkrow:hover{color:#fff;padding-left:8px}
+.fadeup{animation:fu .6s cubic-bezier(.2,.7,.2,1)}
+@keyframes fu{from{transform:translateY(16px)}to{transform:none}}
+.pagefade{animation:pf .5s ease}
+@keyframes pf{from{transform:translateY(6px)}to{transform:none}}
+.tabbar{border-bottom:1px solid rgba(255,255,255,.1)}
+.tab{background:none;border:none;border-bottom:2px solid transparent;color:#8a8a84;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.02em;padding:14px 2px;margin-right:26px;cursor:pointer;transition:color .2s,border-color .2s}
+.tab:hover{color:#cfcfc9}
+.tab.on{color:#f5f5f0;border-color:#f3f3f0}
+.grouphd{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#f4f4ef;border-left:2px solid rgba(185,194,224,.6);padding-left:14px;letter-spacing:-.01em;display:flex;align-items:center;justify-content:space-between}
+.gcount{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a8a84;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:3px 11px;letter-spacing:.04em}
+.pubrow{position:relative;border-top:1px solid rgba(255,255,255,.08);padding:22px 0 22px 52px;border-left:2px solid transparent;transition:padding .25s,background .25s,border-color .25s}
+.pubrow:last-child{border-bottom:1px solid rgba(255,255,255,.08)}
+.pubrow:hover{padding-left:60px;background:linear-gradient(90deg,rgba(185,194,224,.05),transparent 65%);border-left-color:rgba(185,194,224,.5)}
+.pubnum{position:absolute;left:4px;top:23px;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600;color:#585860;line-height:1;letter-spacing:-.02em;transition:color .25s}
+.pubrow:hover .pubnum{color:#b9c2e0}
+.pubt{color:#f1f1ec;font-size:16px;line-height:1.45}
+.pubv{color:#9a9a93;font-size:14px;font-style:italic;margin-top:5px;line-height:1.4}
+.act{color:#b9c2e0;font-family:'IBM Plex Mono',monospace;font-size:12px;text-decoration:none;background:none;border:none;cursor:pointer;padding:0}
+.act:hover{color:#fff}
+.sep{color:#3a3a3e}
+.tagsm{border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 11px;color:#a7a7a1;font-size:10.5px;font-family:'IBM Plex Mono',monospace;letter-spacing:.02em}
+.tagbtn{cursor:pointer;background:none;font-family:'IBM Plex Mono',monospace;transition:border-color .18s,color .18s,background .18s}
+.tagbtn:hover{border-color:var(--accentSoft);color:#fff}
+.tagbtn.on{background:var(--accent);color:#0a0a0b;border-color:var(--accent)}
+.filterbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;padding:11px 16px;border:1px solid var(--accentSoft);border-radius:12px;background:linear-gradient(90deg,rgba(141,147,242,.08),transparent)}
+.filterclr{background:none;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#e7e7e1;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 12px;cursor:pointer;transition:.18s}
+.filterclr:hover{border-color:#fff;color:#fff}
+.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(10px);background:#f3f3f0;color:#0a0a0b;padding:11px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:90;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.search{width:100%;height:50px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#f3f3f0;padding:0 22px;font-size:14px;font-family:'Archivo',sans-serif;outline:none}
+.search:focus{border-color:rgba(255,255,255,.32)}
+.search::placeholder{color:#8c8c86}
+.fchip{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:9px 16px;color:#cfcfc9;font-size:12.5px;font-family:'IBM Plex Mono',monospace;background:none;cursor:pointer;transition:.2s}
+.fchip:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.fchip.on{background:#f3f3f0;color:#0a0a0b;border-color:#f3f3f0}
+.acard{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px;text-decoration:none;display:flex;flex-direction:column;overflow:hidden;transition:border-color .25s,transform .2s}
+.acard:hover{border-color:rgba(255,255,255,.3);transform:translateY(-4px)}
+.athumb{height:124px;margin:-28px -28px 4px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:46px;color:#dfe4f5;position:relative;overflow:hidden}
+.athumb:after{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at 30% 20%,rgba(185,194,224,.16),transparent 60%)}
+.athumb span{position:relative;z-index:1}
+.iconbtn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.16);color:#d7d7d1;font-size:18px;text-decoration:none;transition:.2s}
+.iconbtn:hover{border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.05)}
+.iconbtn svg{width:18px;height:18px;fill:currentColor}
+.coursebox{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px;transition:border-color .25s,transform .25s}
+.coursebox:hover{border-color:rgba(185,194,224,.28);transform:translateY(-4px)}
+.courserow{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:padding .2s}
+.courserow:hover{padding-left:8px}
+.linkin{color:#b9c2e0;text-decoration:none}
+.linkin:hover{color:#fff;text-decoration:underline}
+.acc{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;background:none;border:none;border-top:1px solid rgba(255,255,255,.1);padding:20px 0;cursor:pointer;text-align:left;transition:padding .2s,background .2s}
+.acc:hover{padding-left:8px;background:linear-gradient(90deg,rgba(185,194,224,.04),transparent 60%)}
+.acctitle{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#f4f4ef;letter-spacing:-.01em}
+.accmeta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8a8a84;display:flex;align-items:center;gap:14px;white-space:nowrap}
+.accsign{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.16);color:#b9c2e0;font-size:16px;line-height:1;transition:transform .32s cubic-bezier(.2,.7,.2,1),background .3s,border-color .3s}
+.acc.on .accsign{background:rgba(185,194,224,.14);border-color:rgba(185,194,224,.5);transform:rotate(45deg)}
+.accbody{padding:4px 0 22px;animation:accfu .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes accfu{from{opacity:.4;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.relrow{position:relative;border-top:1px solid rgba(255,255,255,.06);padding:15px 0 15px 40px;transition:padding .2s,background .2s}
+.relrow:hover{background:linear-gradient(90deg,rgba(255,255,255,.025),transparent 70%)}
+.relnum{position:absolute;left:2px;top:17px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8c8c84}
+.relt{color:#eaeae4;font-size:14.5px;line-height:1.42}
+.relv{color:#9a9a93;font-size:12.5px;font-style:italic;margin-top:4px;line-height:1.4}
+.relgrp{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#b9c2e0;text-transform:uppercase;margin:22px 0 2px;padding-left:40px}
+.feature{display:grid;grid-template-columns:1.55fr .78fr;gap:16px;cursor:pointer}
+.fmain,.ftile{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#101013;transition:border-color .25s}
+.fmain{min-height:460px}
+.ftile{min-height:222px}
+.fmain img,.ftile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .35s,transform .5s;will-change:transform}
+.feature:hover .fmain,.feature:hover .ftile{border-color:rgba(255,255,255,.3)}
+.feature:hover .fmain img{opacity:1;transform:scale(1.04)}
+.feature:hover .ftile img{opacity:1}
+.fgrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.96) 0%,rgba(8,8,10,.78) 30%,rgba(8,8,10,.38) 54%,rgba(8,8,10,.04) 74%,rgba(8,8,10,.32) 100%)}
+.fbody .disp,.fbody .cv{text-shadow:0 2px 18px rgba(8,8,10,.75)}
+.ftop{position:absolute;left:26px;right:26px;top:22px;z-index:2}
+.fbody{position:absolute;left:26px;right:26px;bottom:26px;z-index:2}
+.fcap{position:absolute;left:16px;bottom:14px;z-index:2;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.13em;color:#e6e6e0}
+.fside{display:grid;gap:16px}
+.featchip{background:rgba(141,147,242,.16);border-color:rgba(141,147,242,.5);color:#dfe3fa}
+.scard{padding:0;display:flex;flex-direction:column}
+.scimg{position:relative;height:212px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.scimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;will-change:transform}
+.scard:hover .scimg img{transform:scale(1.05)}
+.scnum{position:absolute;top:14px;left:16px;z-index:2;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#f3f3f0;background:rgba(10,10,11,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 11px}
+.sckey{left:auto;right:16px;border-color:rgba(141,147,242,.55);color:#dfe3fa}
+.scbody{padding:20px 22px 24px}
+.heroimg{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(185,194,224,.08);display:block}
+.herowrap{position:relative}
+.herowrap:before{content:"";position:absolute;inset:-18px -18px auto auto;width:130px;height:130px;border-radius:50%;background:rgba(185,194,224,.16);filter:blur(50px);z-index:-1}
+.jumpnav{position:sticky;top:88px;z-index:20;display:flex;flex-wrap:wrap;gap:8px;padding:10px 0;margin-bottom:8px}
+.jbtn{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 15px;color:#cfcfc9;font-size:12px;font-family:'IBM Plex Mono',monospace;background:rgba(12,12,15,.6);backdrop-filter:blur(8px);cursor:pointer;transition:.2s}
+.jbtn:hover{border-color:var(--accentSoft);color:#fff}
+.navscroll{display:flex;align-items:center;gap:8px;flex:1;min-width:0;justify-content:flex-end;margin:0 4px}
+.pagetop{padding-top:170px}
+.pagebot{padding-bottom:120px}
+.secgap{margin-top:120px}
+.pthumb{height:340px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.rgrid{display:grid}
+@media(max-width:860px){
+.wrap{padding:0 22px}
+.rgrid{grid-template-columns:1fr !important;gap:22px !important}
+.nav{padding:0 10px 0 14px;height:56px;width:calc(100% - 24px)}
+.navbrand{font-size:14px}
+.navscroll{display:none}
+.navburger{display:flex}
+.navcta{height:36px;padding:0 14px;font-size:12.5px;margin-left:auto}
+.pagetop{padding-top:120px}
+.pagebot{padding-bottom:76px}
+.secgap{margin-top:72px}
+.pthumb{height:220px}
+.herokick{white-space:normal !important}
+.hero-h{font-size:52px !important}
+.hero-sub{font-size:19px !important}
+.bigh{font-size:40px !important}
+.heroimg{max-width:360px;margin:0 auto}
+.feature{grid-template-columns:1fr}
+.fmain{min-height:0;display:flex;flex-direction:column;padding:20px}
+.ftop,.fbody{position:static;left:auto;right:auto;top:auto;bottom:auto}
+.fbody{margin-top:130px}
+.feath{font-size:27px !important}
+.fside{grid-template-columns:1fr 1fr}
+.ftile{min-height:150px}
+.fcap{left:12px;bottom:11px;font-size:10px}
+.scimg{height:180px}
+.jumpnav{top:78px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.jumpnav::-webkit-scrollbar{display:none}
+.jbtn{white-space:nowrap;flex-shrink:0;padding:10px 15px}
+.newsrow{flex-direction:column;align-items:flex-start;gap:6px}
+.footmeta{flex-direction:column;align-items:flex-start;gap:6px}
+.footh{font-size:32px !important}
+.pubrow{padding:18px 0 18px 38px}
+.pubrow:hover{padding-left:38px}
+.pubnum{left:0;top:20px;font-size:16px}
+.relrow{padding-left:30px}
+.relnum{left:0}
+.relgrp{padding-left:30px}
+.tagsm{font-size:11.5px;padding:7px 12px}
+.tabbar{flex-wrap:wrap}
+.tab{padding:12px 2px;margin-right:20px}
+.search{font-size:16px}
+.back{padding:10px 0}
+.act{padding:9px 0;display:inline-block}
+.linkin{display:inline-block;padding:6px 0}
+.acctitle{font-size:18px}
+.toast{max-width:calc(100vw - 32px);white-space:normal;text-align:center}
+}
+@media(max-width:540px){
+.hero-h{font-size:40px !important}
+.hero-sub{font-size:18px !important}
+.bigh{font-size:31px !important}
+.nav{padding:0 8px 0 12px}
+.navbrand-sub{display:none}
+}
+@media(min-width:861px){
+.navdrop{display:none !important}
+}
+</style>
 </head>
-<body class="text-gray-700 leading-relaxed bg-gray-50">
-
-    <header id="header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-semibold font-serif text-gray-800">Ashique Ali Thuppilikkat</a>
-            <nav class="hidden lg:flex space-x-6" aria-label="Main Navigation">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="writing.html" class="nav-link">Writing</a>
-                <a href="talks.html" class="nav-link">Talks</a>
-<a href="artifacts.html" class="nav-link">Artifacts</a>
-                <a href="#teaching" class="nav-link">Teaching</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Open main menu" aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h16"></path></svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
-            <nav class="flex flex-col space-y-4" aria-label="Mobile Navigation">
-                <a href="#home" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#about" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="#research" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Research</a>
-                <a href="writing.html" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Writing</a>
-                <a href="talks.html" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Talks & Workshops</a>
-<a href="artifacts.html" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Artifacts</a>
-                <a href="#teaching" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Teaching</a>
-                <a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-blue-600">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="pt-20 lg:pt-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/3 text-center">
-                        <img src="profile.jpg" alt="Ashique Ali Thuppilikkat" class="rounded-full shadow-lg mx-auto w-64 h-64 object-cover border-4 border-white" loading="lazy">
-                    </div>
-                    <div class="md:w-2/3">
-                        <h1 class="text-4xl font-bold font-serif text-gray-800 mb-2">Ashique Ali Thuppilikkat</h1>
-                        <p class="text-lg text-blue-700 font-semibold mb-4">Socio-technical Designs for Resistance</p>
-                        <div class="mt-4 flex flex-wrap gap-4 items-center">
-                            <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg></a>
-                            <a href="https://orcid.org/0000-0002-9760-6847" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg></a>
-                            <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky"><i class="fa-brands fa-bluesky text-2xl"></i></a>
-                            <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                        </div>
-                        <p class="mb-4 mt-6 max-w-prose">
-                            Ashique Ali Thuppilikkat (he/him) is a PhD candidate at the Faculty of Information, University of Toronto, and a researcher at <a href="https://www.streetlab.tech/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">STREET Lab</a>. His research focuses on the role of technology in worker resistance and unionisation amidst the platformization of urban life. He examines how digital tools can support unions and workers on location-based digital labour platforms to organise and resist the impacts of algorithmic management and environmental hazards.
-                        </p>
-                        <a href="#about" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">Learn More About Me</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="about" class="py-20 lg:py-24 hidden">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">About Me</h2>
-                <p class="mb-6 max-w-3xl">Ashique is a recipient of the 2025–26 Connaught PhDs for Public Impact Fellowship and the 2024 SDGs@UofT Student Award, and a former School of Cities Graduate Fellow. He is also the co-founder of SAFAR, a research-action centre based in West Bengal, India.</p>
-                
-                <div class="flex items-center space-x-8 mb-12">
-                    <img src="image_3eb7b8.png" alt="STREET Lab Logo" class="h-12">
-                    <img src="image_3eb79c.png" alt="University of Toronto Logo" class="h-16">
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12 pt-8">
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">Research Streams</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Computer-Supported Cooperative Work (CSCW)</li>
-                            <li>Human-Computer Interaction (HCI)</li>
-                            <li>Digital Labour and Platform Studies</li>
-                        </ul>
-                        <h3 class="text-xl font-semibold font-serif mt-8 mb-3 text-gray-800">Research Advisor</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                           <li><a href="https://www.priyankc.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Priyank Chandra</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-3 text-gray-800">Education</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>M.Phil in Political Science: Jawaharlal Nehru University, India</li>
-                            <li>MA in Political Science: Jawaharlal Nehru University, India</li>
-                            <li>BA (H) in Political Science: Ramjas College, University of Delhi, India</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="border-t border-gray-200 mt-12 pt-12 grid md:grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-4 text-gray-800">Grants and Awards</h3>
-                        <ul class="space-y-3">
-                            <li><b class="font-semibold">2026:</b> Lawson Climate and Sustainability Student Research Award</li>
-                            <li><b class="font-semibold">2025-26:</b> Florence Partridge Scholarship</li>
-                            <li><b class="font-semibold">2025-26:</b> Connaught PhDs for Public Impact Fellowship</li>
-                            <li><b class="font-semibold">2025-26:</b> EDI Student Initiative Fund</li>
-                            <li><b class="font-semibold">2025-26:</b> University of Toronto Graduate Students' Union Bursary</li>
-                            <li><b class="font-semibold">2024-25:</b> Sustainable Development Goal (SDG) UofT graduate student award</li>
-                            <li><b class="font-semibold">2024-25:</b> Gary Marsden Travel Awards</li>
-                            <li><b class="font-semibold">2024-25:</b> PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-                            <li><b class="font-semibold">2023-24:</b> Graduate Fellow, School of Cities, University of Toronto, Canada</li>
-                            <li><b class="font-semibold">2023-24:</b> PhD Fellowship, SSHRC Institutional Grant, Canada</li>
-                            <li><b class="font-semibold">2023:</b> SGS Conference Grant</li>
-                            <li><b class="font-semibold">2023:</b> Travel Bursary, British Sociology Association</li>
-                            <li><b class="font-semibold">2020-22:</b> National Fellowship for Other Backward Classes, Govt. of India</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold font-serif mb-4 text-gray-800">Professional Activities</h3>
-                        <h4 class="font-semibold text-gray-700">Research Assistant</h4>
-                        <ul class="list-disc list-inside space-y-2 mb-6">
-                            <li><a href="https://creativelabourcriticalfutures.ca/blog/workers-governing-technologies-workshop/" class="text-blue-600 hover:underline">Workers Governing Technologies</a> (May 2025- March 2026).</li>
-                        </ul>
-                        <h4 class="font-semibold text-gray-700">Working Groups</h4>
-                        <ul class="list-disc list-inside space-y-2 mb-6">
-                            <li><a href="https://www.humanities.utoronto.ca/programs-research/research/working-groups/theories-and-praxis-digital-labour-fault-lines-digital" class="text-blue-600 hover:underline">Theories and Praxis of Digital Labour</a>, Jackman Humanities Institute (2024-2026)</li>
-                            <li>Digital Labour and Data Subjectivities, University of Toronto (2023-24)</li>
-                            <li>Critical Computing Group, University of Toronto (2022-present)</li>
-                        </ul>
-                        <h4 class="font-semibold text-gray-700">Other Affiliations</h4>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li><a href="https://www.jamhoor.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Jamhoor</a>, South Asian Labour Magazine</li>
-                            <li>Forum for Anti-Caste Activism at University of Toronto</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- News Section -->
-        <section class="py-20 lg:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Latest News</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- News Item: CCG Panel 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Panel at Critical Computing Gathering</h3>
-                        <p class="text-sm mt-1">Presented the panel "Race, Caste, and Frameworks of Resistance in Critical Computing Research" (with Zuri Wilson) at the Critical Computing Gathering (online), June 24, 2026.</p>
-                    </div>
-
-                    <!-- News Item: CCG Panel 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Panel at Critical Computing Gathering</h3>
-                        <p class="text-sm mt-1">Presented the panel "Nodes of (Dis)empowerment: Limits to Agency in Infrastructures" (with Amy Xiao, Lubna Razaq, Maggie Jack, Aditya Nayak, and Aditi Vashistha) at the Critical Computing Gathering (online), June 24, 2026.</p>
-                    </div>
-
-                    <!-- News Item 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">New Article</h3>
-                        <p class="text-sm mt-1">Paper Title: “Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves - Published in CHI 26</p>
-                    </div>
-                    
-                    <!-- News Item 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">New Article</h3>
-                        <p class="text-sm mt-1">Kudumbashree's Lunch Bell project and digital solidarity economy in Kerala, India - Published in Internet Policy Review (February 6, 2026).</p>
-                    </div>
-                    
-                    <!-- News Item 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                        <h3 class="font-semibold text-blue-700">Award</h3>
-                        <p class="text-sm mt-1">Lawson Climate and Sustainability student research award (December 2025).</p>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <a href="news.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow hover:shadow-md transform hover:-translate-y-0.5">View News Archive</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" class="py-20 lg:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Research Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="project-labour-resistance.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="driver.jpg" alt="An auto-rickshaw driver in a bustling city street" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology, Design & Labour Resistance</h3><p class="flex-grow">Investigating the role of digital tools in worker organization and resistance against algorithmic management.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
-                    <a href="project-social-movements.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="socialmovement.jpg" alt="Protestors gathered for a social movement" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Technology & Social Movements</h3><p class="flex-grow">Examining how technology is used by and against social movements, focusing on diasporic communities.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
-                    <a href="project-caste-studies.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="casteproject.jpg" alt="Activists at a protest for caste equality" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Critical Caste Studies</h3><p class="flex-grow">Analyzing the reproduction of caste hierarchies in digital spaces and potentials for technology to challenge them.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
-                    <a href="project-solidarity-economies.html" class="bg-white p-6 rounded-lg shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 group"><img src="coopmarket.jpg" alt="A worker in a banana market" class="rounded-md mb-4 project-card-image" loading="lazy"><h3 class="text-xl font-semibold font-serif mb-2 text-blue-700">Solidarity Economies</h3><p class="flex-grow">Exploring cooperative models and digital tools that foster economic and social solidarity.</p><span class="mt-4 text-blue-600 group-hover:underline text-left font-semibold">View Project Details →</span></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="teaching" class="py-20 lg:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title">Teaching</h2>
-                <div class="text-center mb-12">
-                      <p class="text-lg text-gray-600 italic">A summary of my teaching assistantship roles across various departments.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 text-left">
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
-                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Faculty of Information</h3>
-                        <p class="text-sm text-gray-500 mb-6">University of Toronto St. George Campus</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>ICT, Designs & Marginality</strong><br><span class="text-xs text-gray-500">Fall 2023, Fall 2024</span></div></li>
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Information Experience</strong><br><span class="text-xs text-gray-500">Fall 2023</span></div></li>
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Accessibility and Inclusive Design</strong><br><span class="text-xs text-gray-500">Winter 2023</span></div></li>
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong> Information Management in Organizations: Models and Platforms</strong><br><span class="text-xs text-gray-500">Winter 2026</span></div></li>
-Platforms
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
-                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Institute of Communication, Culture, Information & Technology (ICCIT)</h3>
-                        <p class="text-sm text-gray-500 mb-6">University of Toronto Mississauga</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Technology and City</strong><br><span class="text-xs text-gray-500">Fall 2023</span></div></li>
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Rhetoric and Media</strong><br><span class="text-xs text-gray-500">Winter 2023, Summer 2023, Summer 2025</span></div></li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
-                        <h3 class="text-xl font-semibold font-serif mb-2 text-gray-800">Department of Arts, Culture and Media</h3>
-                        <p class="text-sm text-gray-500 mb-6">University of Toronto Scarborough</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start"><span class="list-bullet"></span><div><strong>Platforms and Cultural Production</strong><br><span class="text-xs text-gray-500">Summer 2025</span></div></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="py-20 lg:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold font-serif text-gray-800 section-title text-center">Get In Touch</h2>
-                <div class="text-center max-w-xl mx-auto">
-                    <p class="text-lg"><b>Email:</b> <a href="mailto:ashique.thuppilikkat@mail.utoronto.ca" class="text-blue-600 hover:underline">ashique.thuppilikkat@mail.utoronto.ca</a></p>
-                    <p class="text-lg mt-2"><b>Location:</b> Faculty of Information, University of Toronto</p>
-                    <div class="mt-8 flex justify-center gap-4">
-                        <a href="https://scholar.google.com/citations?user=T4XvPfgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Google Scholar"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9 12 9s-5.548 2.249-6.758 4.769zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6s6-2.686 6-6s-2.686-6-6-6z"/></svg></a>
-                        <a href="https://orcid.org/0000-0002-8987-8175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="ORCID"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h3.953v10.446H7.369V4.378zM9.346 16.5c-1.037 0-1.875.838-1.875 1.875s.838 1.875 1.875 1.875 1.875-.838 1.875-1.875-.838-1.875-1.875-1.875zM16.63 8.125h-3.952v6.648c0 1.936-.838 2.94-2.52 2.94s-2.52-1.004-2.52-2.94v-1.46h-1.46v1.46c0 2.768 1.46 4.375 3.98 4.375s3.98-1.607 3.98-4.375V8.125z"/></svg></a>
-                        <a href="https://bsky.app/profile/ashiquealit.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="Bluesky"><i class="fa-brands fa-bluesky text-2xl"></i></a>
-                        <a href="https://www.linkedin.com/in/ashique-ali-t-3b693789/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 text-gray-400 py-6">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2025 Ashique Ali Thuppilikkat. All Rights Reserved.</p>
-        </div>
-    </footer>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-        function toggleMenu() {
-            const isExpanded = mobileMenu.classList.toggle('hidden');
-            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-        }
-        mobileMenuButton.addEventListener('click', toggleMenu);
-        mobileNavLinks.forEach(link => { link.addEventListener('click', () => { if (!mobileMenu.classList.contains('hidden')) { toggleMenu(); } }); });
-
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('header nav a.nav-link');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { rootMargin: '-50% 0px -50% 0px' });
-        sections.forEach(section => observer.observe(section));
-        if (window.scrollY < 200) { document.querySelector('a.nav-link[href="#home"]').classList.add('active'); }
-        
-        const aboutTriggers = document.querySelectorAll('a[href="#about"]');
-        const aboutSection = document.getElementById('about');
-        const toggleAboutBtn = document.querySelector('#home a[href="#about"]'); 
-
-        aboutTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                const isHidden = aboutSection.classList.contains('hidden');
-
-                if (isHidden) {
-                    aboutSection.classList.remove('hidden');
-                    if (toggleAboutBtn) toggleAboutBtn.textContent = 'Show Less';
-                    aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    if (window.scrollY > aboutSection.offsetTop - 100) {
-                        document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                    aboutSection.classList.add('hidden');
-                    if (toggleAboutBtn) toggleAboutBtn.textContent = 'Learn More About Me';
-                }
-            });
-        });
-    });
-    </script>
+<body>
+<div class="app tone-violet" id="app">
+<div class="bg" id="bg"><div class="glow glow1 parr" data-depth="2.4"></div><div class="glow glow2 parr" data-depth="1.5"></div><div class="glow glow3 parr" data-depth="3.1"></div></div>
+<div class="grain"></div>
+<nav class="nav glass fx ac">
+<button class="navlink navbrand disp" data-act="nav" data-to="home">Ashique Ali<span class="navbrand-sub" style="letter-spacing:.15px">&nbsp;Thuppilikkat</span></button>
+<div class="navscroll">
+<button class="navlink" data-nl="home" data-act="nav" data-to="home">Home</button>
+<button class="navlink" data-nl="about" data-act="nav" data-to="about">About</button>
+<button class="navlink" data-nl="work" data-act="nav" data-to="work">Research</button>
+<button class="navlink" data-nl="writing" data-act="nav" data-to="writing">Writing</button>
+<button class="navlink" data-nl="talks" data-act="nav" data-to="talks">Talks</button>
+<button class="navlink" data-nl="teaching" data-act="nav" data-to="teaching">Teaching</button>
+<button class="navlink" data-nl="artifacts" data-act="nav" data-to="artifacts">Artifacts</button>
+</div>
+<button class="cta navcta" data-act="contact">Contact</button>
+<button class="navburger" id="navburger" data-act="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navdrop"><span></span><span></span><span></span></button>
+</nav>
+<div class="navdrop glass" id="navdrop">
+<button class="navdroplink" data-nl="home" data-act="nav" data-to="home">Home</button>
+<button class="navdroplink" data-nl="about" data-act="nav" data-to="about">About</button>
+<button class="navdroplink" data-nl="work" data-act="nav" data-to="work">Research</button>
+<button class="navdroplink" data-nl="writing" data-act="nav" data-to="writing">Writing</button>
+<button class="navdroplink" data-nl="talks" data-act="nav" data-to="talks">Talks</button>
+<button class="navdroplink" data-nl="teaching" data-act="nav" data-to="teaching">Teaching</button>
+<button class="navdroplink" data-nl="artifacts" data-act="nav" data-to="artifacts">Artifacts</button>
+</div>
+<main id="page"></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="site.js"></script>
 </body>
 </html>
