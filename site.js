@@ -82,10 +82,10 @@
       matchAny: ['Environmental Hazards & Digital Labour'],
       sibling: 'unions',
       fieldwork: {
-        note: 'I conducted two health camps for gig workers — one in Delhi and one in Kolkata.',
+        note: 'Free health camps for gig workers affected by high air pollution in New Delhi (28 November 2024) and the Kolkata heatwave (21 May 2026).',
         camps: [
-          { t: 'Health Camp — Delhi', d: 'Health camp organised for platform gig workers in Delhi.', imgSrc: 'images/healthcamp-delhi.jpg' },
-          { t: 'Health Camp — Kolkata', d: 'Health camp organised for platform gig workers in Kolkata.', imgSrc: 'images/healthcamp-kolkata.jpg' }
+          { t: 'Health Camp — Delhi', d: 'Health camp organised for platform gig workers in Delhi.', imgSrc: 'images/healthcamp-delhi-1.jpg', imgs: ['images/healthcamp-delhi-1.jpg','images/healthcamp-delhi-2.jpg','images/healthcamp-delhi-3.jpg','images/healthcamp-delhi-4.jpg'] },
+          { t: 'Health Camp — Kolkata', d: 'Health camp organised for platform gig workers in Kolkata.', imgSrc: 'images/healthcamp-kolkata-1.jpg', imgs: ['images/healthcamp-kolkata-1.jpg','images/healthcamp-kolkata-2.jpg','images/healthcamp-kolkata-3.jpg','images/healthcamp-kolkata-4.jpg'] }
         ]
       }
     }
@@ -638,7 +638,7 @@
           '<div style="padding:18px 20px 22px"><div class="disp hl" style="font-size:17px;font-weight:600">' + esc(c.t) + '</div>' +
           '<div class="cv muted" style="font-size:13.5px;margin-top:8px;line-height:1.5">' + esc(c.d) + '</div></div></div>';
       }).join('');
-      fieldwork = '<div class="mono faint" style="font-size:11px;letter-spacing:.16em;margin-top:48px">FIELD WORK · HEALTH CAMPS</div>' +
+      fieldwork = '<div class="mono faint" style="font-size:11px;letter-spacing:.16em;margin-top:48px">COMMUNITY ENGAGEMENT · HEALTH CAMPS</div>' +
         '<div class="cv" style="font-size:16px;color:#cdcdc6;margin-top:14px;line-height:1.55;max-width:620px">' + esc(s.fieldwork.note) + '</div>' +
         '<div class="grid rgrid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:22px">' + campCards + '</div>';
     }
@@ -943,4 +943,104 @@
   var r = parseHash();
   state.page = r.page; state.proj = r.proj;
   render();
+
+  /* ---------------- Photo sliders + comic thumbnail (appended enhancement) ---------------- */
+  (function () {
+    var CAMP_IMGS = {
+      'Health Camp — Delhi': ['images/healthcamp-delhi-1.jpg','images/healthcamp-delhi-2.jpg','images/healthcamp-delhi-3.jpg','images/healthcamp-delhi-4.jpg'],
+      'Health Camp — Kolkata': ['images/healthcamp-kolkata-1.jpg','images/healthcamp-kolkata-2.jpg','images/healthcamp-kolkata-3.jpg','images/healthcamp-kolkata-4.jpg']
+    };
+    var COMIC_IMG = 'images/comic-roznamcha.jpg';
+
+    function buildSlider(imgWrap, imgs, label) {
+      if (!imgWrap || imgWrap.getAttribute('data-slider') === '1' || imgs.length < 1) return;
+      imgWrap.setAttribute('data-slider', '1');
+      imgWrap.style.position = 'relative';
+      var track = document.createElement('div');
+      track.style.cssText = 'display:flex;height:100%;transition:transform .45s cubic-bezier(.22,.61,.36,1)';
+      imgs.forEach(function (src, i) {
+        var im = document.createElement('img');
+        im.src = src; im.alt = label + ' photo ' + (i + 1); im.loading = 'lazy';
+        im.style.cssText = 'min-width:100%;width:100%;height:100%;object-fit:cover;display:block;flex:0 0 100%';
+        track.appendChild(im);
+      });
+      imgWrap.innerHTML = '';
+      imgWrap.appendChild(track);
+      var idx = 0, n = imgs.length;
+      function svg(d){return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="'+d+'"></polyline></svg>';}
+      function mkArrow(cls, side, poly){
+        var b = document.createElement('button');
+        b.className = cls; b.setAttribute('aria-label', cls);
+        b.style.cssText = 'position:absolute;top:50%;'+side+':8px;transform:translateY(-50%);width:34px;height:34px;border:none;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s,background .2s;z-index:3';
+        b.innerHTML = svg(poly);
+        return b;
+      }
+      var dotsWrap = document.createElement('div');
+      dotsWrap.style.cssText = 'position:absolute;bottom:8px;left:0;right:0;display:flex;gap:6px;justify-content:center;z-index:3';
+      var dots = imgs.map(function (_, i) {
+        var d = document.createElement('button');
+        d.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+        d.style.cssText = 'width:7px;height:7px;padding:0;border:none;border-radius:50%;cursor:pointer;transition:background .2s,transform .2s;background:' + (i === 0 ? '#fff' : 'rgba(255,255,255,.45)');
+        d.addEventListener('click', function () { go(i); });
+        dotsWrap.appendChild(d);
+        return d;
+      });
+      function render() {
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        dots.forEach(function (d, i) { d.style.background = i === idx ? '#fff' : 'rgba(255,255,255,.45)'; d.style.transform = i === idx ? 'scale(1.25)' : 'none'; });
+      }
+      function go(i) { idx = (i + n) % n; render(); }
+      if (n > 1) {
+        var prev = mkArrow('Previous photo', 'left', '15 18 9 12 15 6');
+        var next = mkArrow('Next photo', 'right', '9 18 15 12 9 6');
+        prev.addEventListener('click', function () { go(idx - 1); });
+        next.addEventListener('click', function () { go(idx + 1); });
+        imgWrap.appendChild(prev); imgWrap.appendChild(next);
+        imgWrap.addEventListener('mouseenter', function () { prev.style.opacity = 1; next.style.opacity = 1; });
+        imgWrap.addEventListener('mouseleave', function () { prev.style.opacity = 0; next.style.opacity = 0; });
+      }
+      imgWrap.appendChild(dotsWrap);
+    }
+
+    function enhance() {
+      // Health camp sliders: find each card by its caption title
+      document.querySelectorAll('.tcard').forEach(function (card) {
+        var title = (card.textContent || '').trim();
+        Object.keys(CAMP_IMGS).forEach(function (name) {
+          if (title.indexOf(name) === 0 || title.indexOf(name) > -1) {
+            var img = card.querySelector('img');
+            if (img && !img.closest('[data-slider="1"]')) {
+              var wrap = img.parentElement;
+              buildSlider(wrap, CAMP_IMGS[name], name);
+            }
+          }
+        });
+      });
+      // Comic thumbnail: find the roznamcha publication row
+      var rows = document.querySelectorAll('.relrow');
+      rows.forEach(function (row) {
+        if ((row.textContent || '').indexOf('roznamcha') > -1 && !row.querySelector('.comic-thumb')) {
+          var relt = row.querySelector('.relt');
+          var link = row.querySelector('a.act, a[href]');
+          var a = document.createElement('a');
+          a.href = link ? link.href : '#';
+          a.target = '_blank'; a.rel = 'noopener';
+          var im = document.createElement('img');
+          im.className = 'comic-thumb';
+          im.src = COMIC_IMG;
+          im.alt = 'Comic strip thumbnail — Riding through the smog: A roznamcha of ride-sourcing bike taxis';
+          im.style.cssText = 'display:block;width:100%;max-width:260px;height:auto;border-radius:8px;margin:8px 0 12px;box-shadow:0 2px 10px rgba(0,0,0,.35);background:#fff';
+          a.appendChild(im);
+          if (relt) relt.insertAdjacentElement('afterend', a); else row.appendChild(a);
+        }
+      });
+    }
+
+    var app = document.getElementById('app') || document.body;
+    var obs = new MutationObserver(function () { enhance(); });
+    obs.observe(app, { childList: true, subtree: true });
+    if (document.readyState !== 'loading') setTimeout(enhance, 0);
+    else document.addEventListener('DOMContentLoaded', enhance);
+  })();
+
 })();
