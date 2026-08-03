@@ -32,7 +32,7 @@
         { t: 'India', d: 'Examines the use of digital propaganda by the far-right to counter and delegitimize social protests and mobilizations.' },
         { t: 'Hong Kong', d: 'Investigates the use of decentralized digital tools and strategies by protestors to coordinate and evade state surveillance.' }],
       writings: [
-        { t: 'Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression', v: 'PACM HCI 10, no. 2' },
+        { t: 'Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression', v: 'PACM HCI 10, no. 2', pdf: P + 'publications/kei-2026-Risk, Technology, and Resistance.pdf' },
         { t: 'Dissent, Distance, Dilemmas: ICTs and the Belarusian Diasporic Social Movement Community', v: 'PACM HCI 9, CSCW288' },
         { t: 'Far-right Hindu nationalists are using digital propaganda to delegitimize India’s wrestler protests', v: 'The Conversation, 2023' },
         { t: 'Supporting Social Movements Through HCI and Design', v: 'CHI EA ’23' }] },
@@ -93,7 +93,7 @@
 
   var writingAcademic = [
     { group: 'Journal Articles', items: [
-      { t: 'Kei, Noah, Ashique Ali Thuppilikkat, Hiu-Fung Chung, and Priyank Chandra. 2026. “Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression.”', v: 'Proceedings of the ACM on Human-Computer Interaction 10, no. 2: 1–26.', links: [{ l: 'DOI', h: 'https://doi.org/10.1145/3788070' }], tags: ['Technology & Social Movements', 'Hong Kong'],
+      { t: 'Kei, Noah, Ashique Ali Thuppilikkat, Hiu-Fung Chung, and Priyank Chandra. 2026. “Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression.”', v: 'Proceedings of the ACM on Human-Computer Interaction 10, no. 2: 1–26.', links: [{ l: 'PDF', h: P + 'publications/kei-2026-Risk, Technology, and Resistance.pdf' }, { l: 'DOI', h: 'https://doi.org/10.1145/3788070' }], tags: ['Technology & Social Movements', 'Hong Kong'],
         bib: '@article{kei2026risk, title={Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression}, author={Kei, Noah and Thuppilikkat, Ashique Ali and Chung, Hiu-Fung and Chandra, Priyank}, journal={Proceedings of the ACM on Human-Computer Interaction}, volume={10}, number={2}, pages={1--26}, year={2026}, publisher={ACM New York, NY}}',
         cite: 'Kei, Noah, Ashique Ali Thuppilikkat, Hiu-Fung Chung, and Priyank Chandra. 2026. “Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression.” Proceedings of the ACM on Human-Computer Interaction 10, no. 2: 1–26. https://doi.org/10.1145/3788070.' },
       { t: 'Thuppilikkat, Ashique Ali, Aakash Solanki, and Priyank Chandra. 2026. ““Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves.”', v: 'In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI ’26).', links: [{ l: 'PDF', h: P + 'publications/thuppilikkat-2026-studyingup.pdf' }, { l: 'DOI', h: 'https://doi.org/10.1145/3772318.3791530' }], tags: ['Critical Caste & Technology Studies'],
@@ -571,7 +571,7 @@
     }).join('');
     var pubs = p.writings.map(function (w) {
       return '<div class="linkrow"><div class="cv hl" style="font-size:15px;line-height:1.35">' + esc(w.t) + '</div>' +
-        '<div class="mono faint" style="font-size:11px;margin-top:5px">' + esc(w.v) + '</div></div>';
+        '<div class="mono faint" style="font-size:11px;margin-top:5px">' + esc(w.v) + '</div>' + (w.pdf ? '<div style="margin-top:6px"><a class="act" href="' + esc(w.pdf) + '" target="_blank" rel="noopener">PDF</a></div>' : '') + '</div>';
     }).join('');
     var relPubs = relatedGroups(p, writingAcademic);
     var relPublic = relatedGroups(p, writingPublic);
