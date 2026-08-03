@@ -203,9 +203,8 @@
       { t: 'Thuppilikkat, Ashique Ali. "Democracy In the Age of Social Networking Sites."', v: 'Paper presented at Democracy and Public Institutions in India: Crisis and Opportunity?, Ambedkar University, New Delhi, India, March 29, 2019.', tags: ['Technology & Social Movements'] },
       { t: 'Thuppilikkat, Ashique Ali. "The Political Economy of a Successful Cooperative Movement: A Kerala Experience."', v: 'Paper presented at YSI Asia Convening, Hanoi, Vietnam, August 12-15, 2019.', tags: ['Solidarity Economy'] }
     ] },
-    { group: 'Invited Talks', items: [      
-       { t: '"Introduction to Digital Ethnography."', v: 'Invited talk for the Kashf Initiative (non-profit), online, July 18, 2026, 6:00 PM IST.', tags: [] },
-      { t: '"Unions and Gig Work."', v: "Invited talk for Graduate Course on 'Information Technology and Globalization', Institute of Communication and Culture, University of Toronto Mississauga. March 03, 2026.", tags: [] },
+    { group: 'Invited Talks', items: [      { t: '"Introduction to Digital Ethnography."', v: 'Invited talk for the Kashf Initiative (non-profit), online, July 18, 2026, 6:00 PM IST.', tags: [] },      
+       { t: '"Unions and Gig Work."', v: "Invited talk for Graduate Course on 'Information Technology and Globalization', Institute of Communication and Culture, University of Toronto Mississauga. March 03, 2026.", tags: [] },
       { t: '"Infrastructures of platforms."', v: 'Invited talk for School of Cities, University of Toronto, Canada, November 12, 2025.', links: [{ l: 'Event Page', h: 'https://schoolofcities.utoronto.ca/event/social-infrastructures-of-platforms/' }], tags: [] },
       { t: '"Unions and Gig Economy."', v: "Invited talk for 'Labour and Media' course, York University, Canada, February 07, 2025.", tags: [] },
       { t: '"Transport Infrastructures."', v: "Invited talk for 'Platform Politics and Power' course, Faculty of Information, University of Toronto, October 16, 2024.", tags: [] },
@@ -229,10 +228,9 @@
     { dept: 'Department of Arts, Culture and Media', campus: 'University of Toronto Scarborough', courses: [{ n: 'Platforms and Cultural Production', term: 'Summer 2025' }] }
   ];
 
-  var newsAll = [    
+  var newsAll = [    { kind: 'INVITED TALK', text: 'Giving an invited talk, “Introduction to Digital Ethnography,” for the Kashf Initiative (non-profit), online, on July 18, 2026 (6:00 PM IST).', date: 'JUL 2026' },    
      { kind: 'SIG', text: '“Studying Up and Sideways: Situating Workers within Broader Labor Ecosystems” — accepted to CSCW 2026 as a SIG submission (with Inha Cha, Yigang Qin, Richmond Y. Wong, Priyank Chandra, and Eunjeong Cheon).', date: '2026' },
-         { kind: 'INVITED TALK', text: 'Giving an invited talk, “Introduction to Digital Ethnography,” for the Kashf Initiative (non-profit), online, on July 18, 2026 (6:00 PM IST).', date: 'JUL 2026' },    
-     { kind: 'NEW ARTICLE', text: '“Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression” — published in Proceedings of the ACM on Human-Computer Interaction (CSCW).', date: '2026' },
+         { kind: 'NEW ARTICLE', text: '“Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression” — published in Proceedings of the ACM on Human-Computer Interaction (CSCW).', date: '2026' },
     { kind: 'PANEL', text: 'Presented the panel “Race, Caste, and Frameworks of Resistance in Critical Computing Research” (with Zuri Wilson) at the Critical Computing Gathering (online).', date: 'JUN 2026' },
     { kind: 'PANEL', text: 'Presented the panel “Nodes of (Dis)empowerment: Limits to Agency in Infrastructures” (with Amy Xiao, Lubna Razaq, Maggie Jack, Aditya Nayak, and Aditi Vashistha) at the Critical Computing Gathering (online).', date: 'JUN 2026' },
     { kind: 'NEW ARTICLE', text: '“Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves — published in CHI 2026.', date: '2026' },
