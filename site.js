@@ -154,6 +154,7 @@
         cite: 'Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the Smog: A ‘Roznamcha’ of Ride-Sourcing Bike Taxis.” School of Cities, University of Toronto. https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/.' }
     ] },
     { group: 'English Articles', items: [
+      { t: 'Thuppilikkat, Ashique Ali, and Dipsita Dhar. 2026. “At Kolkata’s Cab Drivers’ Strike, Protesters Discuss the ‘Green Burden’ Borne by India’s Gig Workers.”', v: 'The Wire.', links: [{ l: 'Link', h: 'https://thewire.in/labour/at-kolkatas-cab-drivers-strike-protesters-discuss-the-green-burden-borne-by-indias-gig-workers' }], tags: ['Technology, Design & Labour Resistance', 'Environmental Hazards & Digital Labour', 'India'] },
       { t: 'Narayanan, Nitheesh, and Thuppilikkat, Ashique Ali. 2025. “Kerala Dinesh Beedi Workers’ Central Cooperative Society.”', v: 'Tricontinental: Institute for Social Research.', links: [{ l: 'Link', h: 'https://thetricontinental.org/study-kerala-cooperatives/#toc-section-5' }], tags: ['Solidarity Economies', 'India'],
         bib: "@misc{narayanan2025kerala, title = {Kerala Dinesh Beedi Workers' Central Cooperative Society}, author = {Narayanan, Nitheesh and Thuppilikkat, Ashique Ali}, year = {2025}, howpublished = {Tricontinental: Institute for Social Research}, url = {https://thetricontinental.org/study-kerala-cooperatives/#toc-section-5}}",
         cite: 'Narayanan, Nitheesh, and Ashique Ali Thuppilikkat. 2025. “Kerala Dinesh Beedi Workers’ Central Cooperative Society.” Tricontinental: Institute for Social Research. https://thetricontinental.org/study-kerala-cooperatives/#toc-section-5.' },
@@ -228,7 +229,8 @@
     { dept: 'Department of Arts, Culture and Media', campus: 'University of Toronto Scarborough', courses: [{ n: 'Platforms and Cultural Production', term: 'Summer 2025' }] }
   ];
 
-  var newsAll = [    { kind: 'INVITED TALK', text: 'Giving an invited talk, “Introduction to Digital Ethnography,” for the Kashf Initiative (non-profit), online, on July 18, 2026 (6:00 PM IST).', date: 'JUL 2026' },    
+  var newsAll = [
+    { kind: 'NEW ARTICLE', text: '“At Kolkata’s Cab Drivers’ Strike, Protesters Discuss the ‘Green Burden’ Borne by India’s Gig Workers” (with Dipsita Dhar) — published in The Wire on August 12, 2026.', date: 'AUG 2026' },    { kind: 'INVITED TALK', text: 'Giving an invited talk, “Introduction to Digital Ethnography,” for the Kashf Initiative (non-profit), online, on July 18, 2026 (6:00 PM IST).', date: 'JUL 2026' },    
      { kind: 'SIG', text: '“Studying Up and Sideways: Situating Workers within Broader Labor Ecosystems” — accepted to CSCW 2026 as a SIG submission (with Inha Cha, Yigang Qin, Richmond Y. Wong, Priyank Chandra, and Eunjeong Cheon).', date: '2026' },
          { kind: 'NEW ARTICLE', text: '“Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression” — published in Proceedings of the ACM on Human-Computer Interaction (CSCW).', date: '2026' },
     { kind: 'PANEL', text: 'Presented the panel “Race, Caste, and Frameworks of Resistance in Critical Computing Research” (with Zuri Wilson) at the Critical Computing Gathering (online).', date: 'JUN 2026' },
