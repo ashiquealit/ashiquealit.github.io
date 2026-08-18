@@ -421,11 +421,8 @@
       '<div class="fx fw gap8" style="margin-top:16px"><span class="tagsm">CONFERENCE PAPER · 2025</span><span class="tagsm">COMIC STRIP</span><span class="tagsm">2 HEALTH CAMPS</span></div>' +
       '<div class="back" style="margin-top:18px;color:#fff">Explore the project →</div>' +
       '</div></div>' +
-      '<div class="fside">' +
-      '<div class="ftile"><img src="images/healthcamp-delhi.jpg" alt="Health camp for gig workers, Delhi" loading="lazy" decoding="async"><div class="fgrad"></div><div class="fcap">HEALTH CAMP · DELHI</div></div>' +
-      '<div class="ftile"><img src="images/healthcamp-kolkata.jpg" alt="Health camp for gig workers, Kolkata" loading="lazy" decoding="async"><div class="fgrad"></div><div class="fcap">HEALTH CAMP · KOLKATA</div></div>' +
-      '</div></div>' +
-      '</div>' +
+       '</div>' +
+       '</div>' +
       '<div class="wrap secgap">' +
       '<div class="fx ac jb" style="margin-bottom:26px"><div class="mono faint" style="letter-spacing:.2em;font-size:11px">RESEARCH STRANDS</div>' +
       '<button class="back" data-act="nav" data-to="work">All four projects →</button></div>' +
