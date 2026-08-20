@@ -401,7 +401,7 @@
       '<div class="cv hero-sub" style="font-size:24px;color:#c9c9c2;margin-top:26px;max-width:560px;line-height:1.4">Socio-technical designs for <span class="hl" style="font-weight:700">resistance</span> — building worker power in the platformized city.</div>' +
       '<div class="fx ac gap10" style="margin-top:34px"><button class="cta" style="height:46px;padding:0 24px;font-size:14px" data-act="nav" data-to="work">View research</button>' +
       '<button class="ghost" style="height:46px;padding:0 24px;font-size:14px" data-act="nav" data-to="about">About me</button></div></div>' +
-      '<div class="fadeup herowrap"><img src="images/profile.jpg" alt="Ashique Ali Thuppilikkat" class="heroimg" fetchpriority="high" decoding="async"></div>' +
+      '<div class="fadeup herowrap"><img src="images/profile.jpeg" alt="Ashique Ali Thuppilikkat" class="heroimg" fetchpriority="high" decoding="async"></div>' +
       '</div>' +
       '<div class="wrap secgap">' +
       '<div class="fx ac jb" style="margin-bottom:8px"><div class="mono faint" style="letter-spacing:.2em;font-size:11px">LATEST NEWS</div>' +
