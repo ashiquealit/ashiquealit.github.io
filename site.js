@@ -18,7 +18,6 @@
         { t: 'Unions & Digital Labour Platforms', sub: 'unions', d: 'Analyses how workers on location-based digital labour platforms and their unions use technology to organise and mobilise resistance.' },
         { t: 'Environmental Hazards & Digital Labour', sub: 'environment', d: 'Examines how environmental hazards and climate change intersect with work on digital labour platforms, focusing on the disproportionate impacts of risks such as pollution and extreme weather on gig workers.' }],
       writings: [
-        { t: 'Studying Up and Sideways: Situating Workers within Broader Labor Ecosystems', v: 'CSCW Companion ’26', pdf: P + 'publications/thuppilikkat-2026-studyingup-sideways-SIG.pdf' },
         { t: 'Generative Politics and Labour Markets: Unions and Collective Life in a City in Crisis', v: 'CHI ’25' },
         { t: 'Union Makes Us Strong: Space, Technology, and On-Demand Ride-Sourcing Digital Labour Platforms', v: 'PACM HCI 8, CSCW2' },
         { t: 'Gendered Labour’s Positions of Vulnerabilities in Digital Labour Platforms and Strategies of Resistance', v: 'Gender & Development 30(3)' },
