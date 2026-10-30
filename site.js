@@ -58,7 +58,8 @@
       writings: [
         { t: 'Kudumbashree’s Lunch Bell project and digital solidarity economy in Kerala, India', v: 'Internet Policy Review 15(1)' },
         { t: 'Short History of Cooperative Movement in Northern Malabar, Kerala', v: 'Economic and Political Weekly 59(31)' },
-        { t: 'Lessons from Workers Governing Technologies', v: 'Creative Labour Critical Futures, 2026' }] }
+        { t: 'Lessons from Workers Governing Technologies', v: 'Creative Labour Critical Futures, 2026' },
+        { t: 'Workers Governing Technologies: Shared Learning Across Contexts', v: 'DigiLabour, 2026' }] }
   ];
 
   /* Sub-project pages of Technology & Labour Resistance (projects[0]).
