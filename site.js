@@ -146,6 +146,11 @@
   ];
 
   var writingPublic = [
+    { group: 'Magazine', items: [
+      { t: 'Thuppilikkat, Ashique Ali, Madison Mackley, Julia Parke, Daphne Idiz, and Rafael Grohmann. 2026. “Workers Governing Technologies: Shared Learning Across Contexts.”', v: 'DigiLabour. Graphic design and illustrations by Isobel Woodiwiss.', links: [{ l: 'Link', h: 'https://digilabour.com.br/workers-governing-technologies-shared-learning-across-contexts/' }], tags: ['Digital Solidarity Economies', 'Unions'],
+        bib: '@misc{thuppilikkat2026workers, title = {Workers Governing Technologies: Shared Learning Across Contexts}, author = {Thuppilikkat, Ashique Ali and Mackley, Madison and Parke, Julia and Idiz, Daphne and Grohmann, Rafael}, year = {2026}, month = {oct}, howpublished = {DigiLabour}, note = {Magazine. Graphic design and illustrations by Isobel Woodiwiss}, url = {https://digilabour.com.br/workers-governing-technologies-shared-learning-across-contexts/}}',
+        cite: 'Thuppilikkat, Ashique Ali, Madison Mackley, Julia Parke, Daphne Idiz, and Rafael Grohmann. 2026. “Workers Governing Technologies: Shared Learning Across Contexts.” DigiLabour, October 28, 2026. Graphic design and illustrations by Isobel Woodiwiss. https://digilabour.com.br/workers-governing-technologies-shared-learning-across-contexts/.' }
+    ] },
     { group: 'Comic Strip', items: [
       { t: 'Thuppilikkat, Ashique Ali, Dipsita Dhar, Kadambari K. B., and Priyank Chandra. 2024. “Riding through the smog: A ‘roznamcha’ of ride-sourcing bike taxis.”', v: 'School of Cities, University of Toronto.', links: [{ l: 'Link', h: 'https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/' }], tags: ['Technology and Labour Resistance', 'Environmental Hazards & Digital Labour'],
         bib: "@misc{thuppilikkat2024riding, title = {Riding through the Smog: A 'Roznamcha' of Ride-Sourcing Bike Taxis}, author = {Thuppilikkat, Ashique Ali and Dhar, Dipsita and K. B., Kadambari and Chandra, Priyank}, year = {2024}, howpublished = {School of Cities, University of Toronto}, note = {Comic strip}, url = {https://fair.work/en/fw/blog/riding-throughthe-smog-a-roznamcha-of-ride-sourcing-bike-taxis/}}",
@@ -233,6 +238,7 @@
   ];
 
   var newsAll = [
+    { kind: 'MAGAZINE', text: 'Published the magazine “Workers Governing Technologies: Shared Learning Across Contexts” (with Madison Mackley, Julia Parke, Daphne Idiz, and Rafael Grohmann; graphic design and illustrations by Isobel Woodiwiss) on DigiLabour.', date: 'OCT 2026' },
     { kind: 'NEW ARTICLE', text: '“At Kolkata’s Cab Drivers’ Strike, Protesters Discuss the ‘Green Burden’ Borne by India’s Gig Workers” (with Dipsita Dhar) — published in The Wire on August 12, 2026.', date: 'AUG 2026' },    { kind: 'INVITED TALK', text: 'Giving an invited talk, “Introduction to Digital Ethnography,” for the Kashf Initiative (non-profit), online, on July 18, 2026 (6:00 PM IST).', date: 'JUL 2026' },    
      { kind: 'SIG', text: '“Studying Up and Sideways: Situating Workers within Broader Labor Ecosystems” — accepted to CSCW 2026 as a SIG submission (with Inha Cha, Yigang Qin, Richmond Y. Wong, Priyank Chandra, and Eunjeong Cheon).', date: '2026' },
          { kind: 'NEW ARTICLE', text: '“Risk, Technology, and Resistance: The Hong Kong Diaspora Amid Transnational Repression” — published in Proceedings of the ACM on Human-Computer Interaction (CSCW).', date: '2026' },
