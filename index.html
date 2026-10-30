@@ -60,6 +60,21 @@ button{font:inherit}
 .kick{color:var(--accent);letter-spacing:.22em;font-size:12px}
 .herokick{font-size:11.5px;letter-spacing:.16em}
 .kcount{color:#9d9d95}
+.hvenn{max-width:100%}
+.ixgrid{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);padding:34px 0}
+.ixcols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ixn{font-size:11px;color:var(--accent);letter-spacing:.2em}
+.ixt{font-size:12px;letter-spacing:.18em;color:#f3f3ee;margin-top:10px}
+.ixd{font-size:14.5px;color:#a9a9a2;line-height:1.55;margin-top:10px}
+@media(max-width:860px){.ixgrid{grid-template-columns:1fr;gap:30px}.ixgrid .hvenn{margin:0 auto}.ixcols{grid-template-columns:1fr;gap:22px}}
+.hvenn svg{display:block;max-width:100%;height:auto;overflow:visible}
+.hvenn .c circle{fill:rgba(141,147,242,.07);stroke:var(--accentSoft);stroke-width:1}
+.hvenn .lead{stroke:var(--accentSoft);stroke-dasharray:2 3}
+.hvenn .dot{fill:var(--accent);transform-origin:165px 73px;animation:hvpulse 2.4s ease-in-out infinite}
+.hvenn .lbl text{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:2px;fill:#c9c9c2}
+.hvenn .lbl .root{fill:var(--accent);font-weight:500}
+@keyframes hvpulse{0%,100%{transform:scale(.8)}50%{transform:scale(1.3)}}
+@media (prefers-reduced-motion:reduce){.hvenn .dot{animation:none}}
 .muted{color:#9d9d95}.faint{color:#8c8c84}.hl{color:#f5f5f0}
 .tilt{transition:transform .14s ease,border-color .25s;transform-style:preserve-3d;will-change:transform}
 .tcard{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.1);border-radius:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;overflow:hidden}
