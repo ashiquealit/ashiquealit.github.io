@@ -1,4 +1,4 @@
-/* Portfolio site — implemented from "Portfolio Site.dc.html" (Claude Design).
+/* Portfolio site — implemented from "Portfolio Site.dc.html"
    Vanilla JS single-page app with hash routing. No build step. */
 (function () {
   'use strict';
@@ -47,7 +47,7 @@
       writings: [
         { t: '“Studying Up” through Digital Ethnography: The Case of Conservative Caste Enclaves', v: 'CHI ’26' },
         { t: 'Entrenching Caste and Withdrawing State: An Analysis of Modi’s Education Policies', v: 'Education or Exclusion? (LeftWord Books, 2022)' }] },
-    { num: '04', tag: 'COOPERATIVES', img: 'worker in a banana market', imgSrc: 'images/coopmarket.jpg', match: ['Solidarity', 'Cooperative'],
+    { num: '04', tag: 'COOPERATIVES', img: 'illustration of people with placards beside a solar-powered data centre painted "other tech worlds are possible"', imgSrc: 'images/coopmarket.jpeg', credit: 'Illustration: Isobel Woodiwiss', match: ['Solidarity', 'Cooperative'],
       title: 'Solidarity Economies',
       card: 'Cooperative models & digital tools for social solidarity.',
       lede: 'Exploring cooperative models and digital tools that foster economic and social solidarity.',
@@ -600,6 +600,7 @@
       '<h1 class="disp bigh" style="font-size:58px;font-weight:700;color:#f6f6f1;margin:18px 0 0;line-height:1.02;max-width:840px">' + esc(p.title) + '</h1>' +
       '<div class="cv" style="font-size:21px;color:#cdcdc6;margin-top:22px;line-height:1.5;max-width:680px">' + esc(p.lede) + '</div></div>' +
       '<div class="thumb pthumb" style="border-radius:18px;margin-top:40px;position:relative;overflow:hidden"><img src="' + esc(p.imgSrc) + '" alt="' + esc(p.img) + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+      (p.credit ? '<div class="mono faint" style="font-size:11px;letter-spacing:.08em;margin-top:10px;text-align:right">' + esc(p.credit) + '</div>' : '') +
       '<div class="grid rgrid" style="grid-template-columns:2fr 1fr;gap:48px;margin-top:56px;align-items:start">' +
       '<div><div class="mono faint" style="font-size:11px;letter-spacing:.16em">OVERVIEW</div>' +
       '<div class="cv" style="font-size:18px;color:#d3d3cc;margin-top:16px;line-height:1.65">' + esc(p.overview) + '</div>' +
